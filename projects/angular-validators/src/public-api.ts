@@ -1,7 +1,5 @@
 /*
- * Public API Surface of angular-validators
+ * Custom Angular email validator
  */
-
-export * from './lib/angular-validators.service';
-export * from './lib/angular-validators.component';
-export * from './lib/angular-validators.module';
+export {IMEmailValidator} from './lib/validators/email.validator';
+export {IMEmailValidatorConfigModel} from './lib/validators/email.validator';
