@@ -1,6 +1,15 @@
-<div class="main-container" fxFlex="100%" fxLayout="column" fxLayoutAlign="center center">
+<form [formGroup]="sandboxFormGroup" autocomplete="off" class="main-container" fxFlex="100%" fxLayout="column" fxLayoutAlign="center center">
   <mat-form-field appearance="outline">
-    <input matInput [placeholder]="'EMAIL'" [formControl]="emailFormControl">
-    <mat-error *ngIf="emailFormControl.invalid">{{getErrorMessage(emailFormControl)}}</mat-error>
+    <input matInput [placeholder]="'Text field'" formControlName="text">
+    <mat-error *ngIf="sandboxFormGroup.get('text').invalid">
+      {{getErrorMessage(sandboxFormGroup.get('text'))}}
+    </mat-error>
   </mat-form-field>
-</div>
+
+  <mat-form-field appearance="outline">
+    <input type="number" matInput [placeholder]="'Number field'" formControlName="number">
+    <mat-error *ngIf="sandboxFormGroup.get('number').invalid">
+      {{getErrorMessage(sandboxFormGroup.get('number'))}}
+    </mat-error>
+  </mat-form-field>
+</form>
