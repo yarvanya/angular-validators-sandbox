@@ -5,10 +5,10 @@ export class IMEmailValidatorConfigModel {
 }
 
 export const IMEmailValidator = (config: IMEmailValidatorConfigModel = new IMEmailValidatorConfigModel()): ValidatorFn => {
-  const emailPattern: RegExp = /^[a-z0-9A-Z._%+-]+@[a-z0-9A-Z-]+\.[a-zA-Z]{1,4}$/;
+  const regexp: RegExp = new RegExp(`^[a-z0-9A-Z._%+-]+@[a-z0-9A-Z-]+\.[a-zA-Z]{1,${config.scale}}$`);
 
   return (control: AbstractControl): ValidationErrors => {
-    if (control.value && !control.value.match(emailPattern)) {
+    if (control.value && !regexp.test(control.value)) {
       return {isEmailInvalid: true};
     }
   };

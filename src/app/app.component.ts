@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {AbstractControl, FormControl} from '@angular/forms';
-import {IMEmailValidator} from 'angular-validators';
+import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {IMEmailValidator, IMPhoneNumberValidator, IMCountryCodeEnum} from 'angular-validators';
 import {ErrorResolverService} from '../services/error-resolver.service';
 
 @Component({
@@ -10,7 +10,10 @@ import {ErrorResolverService} from '../services/error-resolver.service';
 })
 
 export class AppComponent {
-  public emailFormControl = new FormControl(null, IMEmailValidator());
+  public sandboxFormGroup = new FormGroup({
+    text: new FormControl(null, IMEmailValidator({scale: 2})),
+    number: new FormControl(null, IMPhoneNumberValidator(IMCountryCodeEnum.fr))
+  });
 
   constructor(
     private errorResolverService: ErrorResolverService
