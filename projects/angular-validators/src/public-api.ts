@@ -6,3 +6,6 @@ export {IMEmailValidatorConfigModel} from './lib/validators/email.validator';
 export {IMPhoneNumberValidator} from './lib/validators/phone-number.validator';
 export {IMPhoneNumberErrorInterface} from './lib/interfaces/phone-number/phone-number-error.interface';
 export {IMCountryCodeEnum} from './lib/enums/country-code.enum';
+
+// Required validator exports
+export {IMRequiredValidator} from './lib/validators/required.validator';

@@ -12,4 +12,35 @@
       {{getErrorMessage(sandboxFormGroup.get('number'))}}
     </mat-error>
   </mat-form-field>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Required fields</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field appearance="outline">
+          <input type="text" matInput placeholder="Text Field Required *" formControlName="textRequired">
+          <mat-error *ngIf="sandboxFormGroup.get('textRequired').invalid">
+            {{getErrorMessage(sandboxFormGroup.get('textRequired'))}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <input type="number" matInput placeholder="Number Field Required *" formControlName="numberRequired">
+          <mat-error *ngIf="sandboxFormGroup.get('numberRequired').invalid">
+            {{getErrorMessage(sandboxFormGroup.get('numberRequired'))}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-slide-toggle formControlName="toggleRequired">Toggle Required *</mat-slide-toggle>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div class="actions-container">
+    <button [disabled]="sandboxFormGroup.invalid" color="primary" fxFlex="100" mat-raised-button>
+      Submit
+    </button>
+  </div>
 </form>

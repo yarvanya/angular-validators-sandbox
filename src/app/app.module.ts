@@ -7,6 +7,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ErrorResolverService} from '../services/error-resolver.service';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {ErrorResolverService} from '../services/error-resolver.service';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatExpansionModule
   ],
   bootstrap: [AppComponent],
   providers: [
