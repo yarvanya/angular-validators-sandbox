@@ -23,14 +23,8 @@ export class AppComponent {
     number: new FormControl(null, IMPhoneNumberValidator(IMCountryCodeEnum.fr)),
     textRequired: new FormControl(null, IMRequiredValidator({isTrimValueRequired: true})),
     numberRequired: new FormControl(null, IMRequiredValidator({isZeroAllowed: true})),
-    toggleRequired: new FormControl(null, IMRequiredValidator({isToggleRequiredActive: true})),
+    toggleRequired: new FormControl(null, IMRequiredValidator())
   });
 
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
-  }
+  constructor() {}
 }
