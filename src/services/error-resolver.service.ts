@@ -7,7 +7,8 @@ import {IMPhoneNumberErrorInterface} from 'angular-validators';
 export class ErrorResolverService {
   private errorResolver = {
     isEmailInvalid: () => 'Email is not valid',
-    phoneNumberError: (error: IMPhoneNumberErrorInterface) => `Phone number is not valid (${error.countryName}).`
+    phoneNumberError: (error: IMPhoneNumberErrorInterface) => `Phone number is not valid (${error.countryName}).`,
+    fieldRequiredError: () => 'This field is required.'
   };
 
   public getErrorMessage(control: AbstractControl): string {
