@@ -26,11 +26,5 @@ export class AppComponent {
     toggleRequired: new FormControl(null, IMRequiredValidator()),
   });
 
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
-  }
+  constructor() {}
 }

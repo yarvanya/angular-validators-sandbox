@@ -1,0 +1,53 @@
+<p>Here are 'custom required' validator examples</p>
+
+<form [formGroup]="diffTypesFormGroup" autocomplete="off" fxLayout="column" class="mt-1">
+  <span>Input with type text</span>
+  <mat-form-field appearance="outline">
+    <input type="text" matInput [placeholder]="'Text form control'" formControlName="text">
+    <mat-error *ngIf="diffTypesFormGroup.get('text').invalid">
+      {{getErrorMessage(diffTypesFormGroup.get('text'))}}
+    </mat-error>
+  </mat-form-field>
+
+  <span>Input with type number</span>
+  <mat-form-field appearance="outline">
+    <input type="text" matInput [placeholder]="'Number form control'" formControlName="number">
+    <mat-error *ngIf="diffTypesFormGroup.get('number').invalid">
+      {{getErrorMessage(diffTypesFormGroup.get('number'))}}
+    </mat-error>
+  </mat-form-field>
+
+  <span>Input with type time</span>
+  <mat-form-field appearance="outline">
+    <input type="time" matInput [placeholder]="'Time form control'" formControlName="time">
+    <mat-error *ngIf="diffTypesFormGroup.get('time').invalid">
+      {{getErrorMessage(diffTypesFormGroup.get('time'))}}
+    </mat-error>
+  </mat-form-field>
+
+  <span>Input with type date</span>
+  <mat-form-field appearance="outline">
+    <mat-datepicker-toggle matPrefix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-label>Date form control *</mat-label>
+    <input matInput formControlName="date" [matDatepicker]="datePicker">
+    <mat-datepicker #datePicker></mat-datepicker>
+    <mat-error *ngIf="diffTypesFormGroup.get('date').invalid">
+      {{getErrorMessage(diffTypesFormGroup.get('date'))}}
+    </mat-error>
+  </mat-form-field>
+
+  <span>Input with type select</span>
+  <mat-form-field appearance="outline">
+    <mat-label>Select gender *</mat-label>
+    <mat-select formControlName="select">
+      <mat-option [value]="'male'">Male</mat-option>
+      <mat-option [value]="'female'">Female</mat-option>
+      <mat-option [value]="'other'">Other</mat-option>
+    </mat-select>
+    <mat-error *ngIf="diffTypesFormGroup.get('select').invalid">
+      {{getErrorMessage(diffTypesFormGroup.get('select'))}}
+    </mat-error>
+  </mat-form-field>
+
+  <!--        <mat-slide-toggle formControlName="toggleRequired">Toggle Required *</mat-slide-toggle>-->
+</form>

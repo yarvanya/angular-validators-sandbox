@@ -1,0 +1,14 @@
+<p>Here are 'custom email' validator examples</p>
+
+<form fxLayout="column" class="mt-1" autocomplete="off">
+  <mat-form-field appearance="outline" class="mt-1">
+    <input type="number" matInput [placeholder]="'Scale'" [formControl]="scaleFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="mt-1">
+    <input type="text" matInput [placeholder]="'Email'" [formControl]="emailFormControl">
+    <mat-error *ngIf="emailFormControl.invalid">
+      {{getErrorMessage(emailFormControl)}}
+    </mat-error>
+  </mat-form-field>
+</form>
