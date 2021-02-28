@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {Component} from '@angular/core';
+import {AbstractControl, FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMRequiredValidator} from 'angular-validators';
 import {ErrorResolverService} from '../../../services/error-resolver.service';
 
@@ -9,20 +9,40 @@ import {ErrorResolverService} from '../../../services/error-resolver.service';
   styleUrls: ['./custom-required-examples.component.scss']
 })
 
-export class CustomRequiredExamplesComponent implements OnInit {
-  public diffTypesFormGroup: FormGroup = new FormGroup({
-    text: new FormControl(null, IMRequiredValidator()),
-    number: new FormControl(null, IMRequiredValidator()),
-    time: new FormControl(null, IMRequiredValidator()),
-    date: new FormControl(null, IMRequiredValidator()),
-    select: new FormControl(null, IMRequiredValidator())
+export class CustomRequiredExamplesComponent {
+  // Controls with custom required validator
+  public customText = new FormControl(null, IMRequiredValidator({isTrimValueRequired: true}));
+  public customNumber = new FormControl(null, IMRequiredValidator({isZeroAllowed: false}));
+  public customTime = new FormControl(null, IMRequiredValidator());
+  public customDate = new FormControl(null, IMRequiredValidator());
+  public customSelect = new FormControl(null, IMRequiredValidator());
+  public customFromArrayGroup = new FormGroup({
+    array: new FormArray([
+      new FormControl(),
+      new FormControl(),
+      new FormControl(),
+      new FormControl()
+    ], IMRequiredValidator())
+  });
+
+  // Controls with native required validator
+  public nativeText = new FormControl(null, Validators.required);
+  public nativeNumber = new FormControl(null, Validators.required);
+  public nativeTime = new FormControl(null, Validators.required);
+  public nativeDate = new FormControl(null, Validators.required);
+  public nativeSelect = new FormControl(null, Validators.required);
+  public nativeFromArrayGroup = new FormGroup({
+    array: new FormArray([
+      new FormControl(),
+      new FormControl(),
+      new FormControl(),
+      new FormControl()
+    ], Validators.required)
   });
 
   constructor(
     private errorResolverService: ErrorResolverService
   ) {}
-
-  ngOnInit(): void {}
 
   public getErrorMessage(control: AbstractControl): string {
     return this.errorResolverService.getErrorMessage(control);

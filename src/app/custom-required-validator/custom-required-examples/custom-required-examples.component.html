@@ -1,53 +1,119 @@
-<p>Here are 'custom required' validator examples</p>
+<div fxLayoutGap="36px">
+  <div fxFlex="50">
+    <h3>Here are <strong>'custom required'</strong> validator examples</h3>
 
-<form [formGroup]="diffTypesFormGroup" autocomplete="off" fxLayout="column" class="mt-1">
-  <span>Input with type text</span>
-  <mat-form-field appearance="outline">
-    <input type="text" matInput [placeholder]="'Text form control'" formControlName="text">
-    <mat-error *ngIf="diffTypesFormGroup.get('text').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('text'))}}
-    </mat-error>
-  </mat-form-field>
+    <div autocomplete="off" fxLayout="column" class="mt-1">
+      <span>Input with type text</span>
+      <mat-form-field appearance="outline">
+        <input type="text" matInput [placeholder]="'Text form control'" [formControl]="customText">
+        <mat-error *ngIf="customText.invalid">{{getErrorMessage(customText)}}</mat-error>
+      </mat-form-field>
 
-  <span>Input with type number</span>
-  <mat-form-field appearance="outline">
-    <input type="text" matInput [placeholder]="'Number form control'" formControlName="number">
-    <mat-error *ngIf="diffTypesFormGroup.get('number').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('number'))}}
-    </mat-error>
-  </mat-form-field>
+      <span>Input with type number</span>
+      <mat-form-field appearance="outline">
+        <input type="number" matInput [placeholder]="'Number form control'" [formControl]="customNumber">
+        <mat-error *ngIf="customNumber.invalid">{{getErrorMessage(customNumber)}}</mat-error>
+      </mat-form-field>
 
-  <span>Input with type time</span>
-  <mat-form-field appearance="outline">
-    <input type="time" matInput [placeholder]="'Time form control'" formControlName="time">
-    <mat-error *ngIf="diffTypesFormGroup.get('time').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('time'))}}
-    </mat-error>
-  </mat-form-field>
+      <span>Input with type time</span>
+      <mat-form-field appearance="outline">
+        <input type="time" matInput [placeholder]="'Time form control'" [formControl]="customTime">
+        <mat-error *ngIf="customTime.invalid">{{getErrorMessage(customTime)}}</mat-error>
+      </mat-form-field>
 
-  <span>Input with type date</span>
-  <mat-form-field appearance="outline">
-    <mat-datepicker-toggle matPrefix [for]="datePicker"></mat-datepicker-toggle>
-    <mat-label>Date form control *</mat-label>
-    <input matInput formControlName="date" [matDatepicker]="datePicker">
-    <mat-datepicker #datePicker></mat-datepicker>
-    <mat-error *ngIf="diffTypesFormGroup.get('date').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('date'))}}
-    </mat-error>
-  </mat-form-field>
+      <span>Input with type date</span>
+      <mat-form-field appearance="outline">
+        <mat-datepicker-toggle matPrefix [for]="customDatePicker"></mat-datepicker-toggle>
+        <mat-label>Date form control *</mat-label>
+        <input matInput [formControl]="customDate" [matDatepicker]="customDatePicker">
+        <mat-datepicker #customDatePicker></mat-datepicker>
+        <mat-error *ngIf="customDate.invalid">{{getErrorMessage(customDate)}}</mat-error>
+      </mat-form-field>
 
-  <span>Input with type select</span>
-  <mat-form-field appearance="outline">
-    <mat-label>Select gender *</mat-label>
-    <mat-select formControlName="select">
-      <mat-option [value]="'male'">Male</mat-option>
-      <mat-option [value]="'female'">Female</mat-option>
-      <mat-option [value]="'other'">Other</mat-option>
-    </mat-select>
-    <mat-error *ngIf="diffTypesFormGroup.get('select').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('select'))}}
-    </mat-error>
-  </mat-form-field>
+      <span>Input with type select</span>
+      <mat-form-field appearance="outline">
+        <mat-label>Select gender *</mat-label>
+        <mat-select [formControl]="customSelect">
+          <mat-option [value]="'male'">Male</mat-option>
+          <mat-option [value]="'female'">Female</mat-option>
+          <mat-option [value]="'other'">Other</mat-option>
+        </mat-select>
+        <mat-error *ngIf="customSelect.invalid">{{getErrorMessage(customSelect)}}</mat-error>
+      </mat-form-field>
 
-  <!--        <mat-slide-toggle formControlName="toggleRequired">Toggle Required *</mat-slide-toggle>-->
-</form>
+      <span>Input with type of array</span>
+      <form [formGroup]="customFromArrayGroup">
+        <div formArrayName="array" fxLayout="row true" fxLayoutAlign="space-between">
+          <mat-form-field
+            *ngFor="let control of customFromArrayGroup.get('array')['controls']; let i = index"
+            fxFlex="48"
+            appearance="outline">
+            <input type="text" matInput [placeholder]="'Array Text ' + (i+1)" [formControl]="control">
+          </mat-form-field>
+        </div>
+        <mat-error *ngIf="customFromArrayGroup.get('array').invalid">
+          {{getErrorMessage(customFromArrayGroup.get('array'))}}
+        </mat-error>
+      </form>
+    </div>
+  </div>
+
+  <div fxFlex="50">
+    <h3>Here are <strong>'native required'</strong> validator examples</h3>
+
+    <div autocomplete="off" fxLayout="column" class="mt-1">
+      <span>Input with type text</span>
+      <mat-form-field appearance="outline">
+        <input type="text" matInput [placeholder]="'Text form control'" [formControl]="nativeText">
+        <mat-error *ngIf="nativeText.invalid">{{getErrorMessage(nativeText)}}</mat-error>
+      </mat-form-field>
+
+      <span>Input with type number</span>
+      <mat-form-field appearance="outline">
+        <input type="number" matInput [placeholder]="'Number form control'" [formControl]="nativeNumber">
+        <mat-error *ngIf="nativeNumber.invalid">{{getErrorMessage(nativeNumber)}}</mat-error>
+      </mat-form-field>
+
+      <span>Input with type time</span>
+      <mat-form-field appearance="outline">
+        <input type="time" matInput [placeholder]="'Time form control'" [formControl]="nativeTime">
+        <mat-error *ngIf="nativeTime.invalid">{{getErrorMessage(nativeTime)}}</mat-error>
+      </mat-form-field>
+
+      <span>Input with type date</span>
+      <mat-form-field appearance="outline">
+        <mat-datepicker-toggle matPrefix [for]="nativeDatePicker"></mat-datepicker-toggle>
+        <mat-label>Date form control *</mat-label>
+        <input matInput [formControl]="nativeDate" [matDatepicker]="nativeDatePicker">
+        <mat-datepicker #nativeDatePicker></mat-datepicker>
+        <mat-error *ngIf="nativeDate.invalid">{{getErrorMessage(nativeDate)}}</mat-error>
+      </mat-form-field>
+
+      <span>Input with type select</span>
+      <mat-form-field appearance="outline">
+        <mat-label>Select gender *</mat-label>
+        <mat-select [formControl]="nativeSelect">
+          <mat-option [value]="'male'">Male</mat-option>
+          <mat-option [value]="'female'">Female</mat-option>
+          <mat-option [value]="'other'">Other</mat-option>
+        </mat-select>
+        <mat-error *ngIf="nativeSelect.invalid">{{getErrorMessage(nativeSelect)}}</mat-error>
+      </mat-form-field>
+
+      <span>Input with type of array</span>
+      <form [formGroup]="nativeFromArrayGroup">
+          <div formArrayName="array" fxLayout="row true" fxLayoutAlign="space-between">
+            <mat-form-field
+              *ngFor="let control of nativeFromArrayGroup.get('array')['controls']; let i = index"
+              fxFlex="48"
+              appearance="outline">
+              <input type="text" matInput [placeholder]="'Array Text ' + (i+1)" [formControl]="control">
+            </mat-form-field>
+        </div>
+        <mat-error *ngIf="nativeFromArrayGroup.get('array').invalid">
+          {{getErrorMessage(nativeFromArrayGroup.get('array'))}}
+        </mat-error>
+      </form>
+    </div>
+  </div>
+</div>
