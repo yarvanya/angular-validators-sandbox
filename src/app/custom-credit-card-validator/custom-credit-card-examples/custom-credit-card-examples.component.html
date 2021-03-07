@@ -1,0 +1,57 @@
+<div class="wrapper">
+<div class="credit-card-container">
+  <div class="mt-5" fxFlex="100" fxLayoutAlign="center center">
+    <mat-card class="card">
+      <mat-form-field class="card-number">
+        <input matInput type="text" placeholder="Credit card number" [formControl]="creditCardNumber">
+        <mat-error *ngIf="creditCardNumber.invalid">{{getErrorMessage(creditCardNumber)}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="card-holder-name">
+        <input matInput type="text" placeholder="Holder Name">
+      </mat-form-field>
+      <p><strong>Expiration Date</strong></p>
+      <div class="card-container" fxLayoutAlign="space-between">
+        <div class="card-expiration-date" fxLayoutAlign="space-between center" fxLayoutGap="12px">
+          <mat-form-field fxFlex="30">
+            <input matInput type="number" placeholder="MM">
+          </mat-form-field>
+          <div>/</div>
+          <mat-form-field fxFlex="30">
+            <input matInput type="number" placeholder="YY">
+          </mat-form-field>
+        </div>
+        <div class="card-types-container">
+          <mat-button-toggle-group
+            [formControl]="cardType"
+            (change)="onCardTypeChange($event.value)"
+            aria-label="Card Type"
+            fxFlex="100"
+            fxLayoutAlign="space-between center">
+            <mat-button-toggle [value]="IMCreditCardTypeValidatorEnum.MasterCard" class="type">
+              <img src="assets/images/credit-card-validator/master-card.png" alt="master-card-logo">
+            </mat-button-toggle>
+            <mat-button-toggle [value]="IMCreditCardTypeValidatorEnum.Visa" class="type">
+              <img src="assets/images/credit-card-validator/visa.png" alt="visa-logo">
+            </mat-button-toggle>
+            <mat-button-toggle [value]="IMCreditCardTypeValidatorEnum.AmericanExpress" class="type">
+              <img src="assets/images/credit-card-validator/american-express.png" alt="america-express-logo">
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="card-behind">
+    <mat-card class="card-behind-background">
+      <div class="mt-1 card-strip"></div>
+      <div fxLayoutAlign="end">
+        <mat-form-field class="card-cvc">
+          <input matInput type="number" placeholder="CVC">
+        </mat-form-field>
+      </div>
+    </mat-card>
+  </div>
+</div>
+</div>
+

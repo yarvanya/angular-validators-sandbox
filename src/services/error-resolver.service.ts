@@ -8,7 +8,8 @@ export class ErrorResolverService {
   private errorResolver = {
     isEmailInvalid: () => 'Email is not valid',
     phoneNumberError: (error: IMPhoneNumberErrorInterface) => `Phone number is not valid (${error.countryName}).`,
-    fieldRequiredError: () => 'This field is required.'
+    fieldRequiredError: () => 'This field is required.',
+    creditCardValidatorError: () => 'Invalid credit card number'
   };
 
   public getErrorMessage(control: AbstractControl): string {
