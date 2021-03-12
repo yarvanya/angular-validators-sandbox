@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
 import {IMPhoneNumberErrorInterface} from 'angular-validators';
+import {IMGreaterThanNumberErrorInterface} from 'angular-validators';
 
 @Injectable()
 
@@ -8,6 +9,7 @@ export class ErrorResolverService {
   private errorResolver = {
     isEmailInvalid: () => 'Email is not valid',
     phoneNumberError: (error: IMPhoneNumberErrorInterface) => `Phone number is not valid (${error.countryName}).`,
+    greaterThanNumberError: (error: IMGreaterThanNumberErrorInterface) => `Value must be greater than ${error.greaterThanValue}.`,
     fieldRequiredError: () => 'This field is required.'
   };
 
