@@ -28,10 +28,10 @@ import {CustomEmailValidatorComponent} from './custom-email-validator/custom-ema
 import {CustomEmailOverviewComponent} from './custom-email-validator/custom-email-overview/custom-email-overview.component';
 import {CustomEmailApiComponent} from './custom-email-validator/custom-email-api/custom-email-api.component';
 import {CustomEmailExamplesComponent} from './custom-email-validator/custom-email-examples/custom-email-examples.component';
-import {GreaterThanNumberValidatorComponent} from './greater-than-number-validator/greater-than-number-validator.component';
-import {GreaterThanNumberOverviewComponent} from './greater-than-number-validator/greater-than-number-overview/greater-than-number-overview.component';
-import {GreaterThanNumberApiComponent} from './greater-than-number-validator/greater-than-number-api/greater-than-number-api.component';
-import {GreaterThanNumberExamplesComponent} from './greater-than-number-validator/greater-than-number-examples/greater-than-number-examples.component';
+import {NumberComparatorValidatorComponent} from './number-comparator-validator/number-comparator-validator.component';
+import {NumberComparatorOverviewComponent} from './number-comparator-validator/number-comparator-overview/number-comparator-overview.component';
+import {NumberComparatorApiComponent} from './number-comparator-validator/number-comparator-api/number-comparator-api.component';
+import {NumberComparatorExamplesComponent} from './number-comparator-validator/number-comparator-examples/number-comparator-examples.component';
 
 // Services
 import {ErrorResolverService} from '../services/error-resolver.service';
@@ -52,10 +52,10 @@ import {ErrorResolverService} from '../services/error-resolver.service';
     CustomEmailOverviewComponent,
     CustomEmailApiComponent,
     CustomEmailExamplesComponent,
-    GreaterThanNumberValidatorComponent,
-    GreaterThanNumberOverviewComponent,
-    GreaterThanNumberApiComponent,
-    GreaterThanNumberExamplesComponent
+    NumberComparatorValidatorComponent,
+    NumberComparatorOverviewComponent,
+    NumberComparatorApiComponent,
+    NumberComparatorExamplesComponent
   ],
   imports: [
     AppRoutingModule,

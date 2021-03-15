@@ -4,7 +4,7 @@ import {HomeComponent} from './home/home.component';
 import {CustomRequiredValidatorComponent} from './custom-required-validator/custom-required-validator.component';
 import {PhoneNumberValidatorComponent} from './phone-number-validator/phone-number-validator.component';
 import {CustomEmailValidatorComponent} from './custom-email-validator/custom-email-validator.component';
-import {GreaterThanNumberValidatorComponent} from './greater-than-number-validator/greater-than-number-validator.component';
+import {NumberComparatorValidatorComponent} from './number-comparator-validator/number-comparator-validator.component';
 
 const routes: Routes = [
   {
@@ -24,8 +24,8 @@ const routes: Routes = [
     component: CustomEmailValidatorComponent
   },
   {
-    path: 'greater-than-number-validator-overview',
-    component: GreaterThanNumberValidatorComponent
+    path: 'number-comparator-validator-overview',
+    component: NumberComparatorValidatorComponent
   }
 ];
 
