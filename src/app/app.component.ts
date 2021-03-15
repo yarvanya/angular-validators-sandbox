@@ -1,13 +1,9 @@
 import {Component} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
-import {
-  IMEmailValidator,
-  IMPhoneNumberValidator,
-  IMRequiredValidator,
-  IMCountryCodeEnum
-} from 'angular-validators';
-import {ErrorResolverService} from '../services/error-resolver.service';
-import {RequiredCheckboxData} from '../constants/required-checkbox-data.constant';
+
+export interface SidebarRouterInterface {
+  routerLink: string;
+  linkText: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -16,15 +12,11 @@ import {RequiredCheckboxData} from '../constants/required-checkbox-data.constant
 })
 
 export class AppComponent {
-  public requiredCheckboxData = RequiredCheckboxData;
-
-  public sandboxFormGroup = new FormGroup({
-    text: new FormControl(null, IMEmailValidator({scale: 2})),
-    number: new FormControl(null, IMPhoneNumberValidator(IMCountryCodeEnum.fr)),
-    textRequired: new FormControl(null, IMRequiredValidator({isTrimValueRequired: true})),
-    numberRequired: new FormControl(null, IMRequiredValidator({isZeroAllowed: true})),
-    toggleRequired: new FormControl(null, IMRequiredValidator())
-  });
-
-  constructor() {}
+  public sidebarLinks: SidebarRouterInterface[] = [
+    {routerLink: '', linkText: 'Home'},
+    {routerLink: 'custom-required-validator-overview', linkText: 'Custom Required Validator'},
+    {routerLink: 'custom-email-validator-overview', linkText: 'Custom Email Validator'},
+    {routerLink: 'phone-number-validator-overview', linkText: 'Phone Number Validator'},
+    {routerLink: 'custom-credit-card-overview', linkText: 'Credit Card Validator'}
+  ];
 }
