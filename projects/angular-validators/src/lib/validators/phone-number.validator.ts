@@ -1,7 +1,7 @@
 import {AbstractControl, ValidatorFn} from '@angular/forms';
 import {IMPhoneNumberCountryConfigurations} from '../constants/phone-number-country-configurations.constant';
-import {IMPhoneNumberConfigurationInterface} from '../interfaces/phone-number/phone-number-configuration.interface';
-import {IMPhoneNumberErrorInterface} from '../interfaces/phone-number/phone-number-error.interface';
+import {IMPhoneNumberConfigurationInterface} from '../interfaces/phone-number-configuration.interface';
+import {IMPhoneNumberErrorInterface} from '../interfaces/phone-number-error.interface';
 import {IMCountryCodeEnum} from '../enums/country-code.enum';
 
 export const IMPhoneNumberValidator = (country_code: IMCountryCodeEnum = IMCountryCodeEnum.ua): ValidatorFn => {
