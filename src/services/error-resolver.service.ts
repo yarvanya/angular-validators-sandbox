@@ -9,7 +9,9 @@ export class ErrorResolverService {
     isEmailInvalid: () => 'Email is not valid',
     phoneNumberError: (error: IMPhoneNumberErrorInterface) => `Phone number is not valid (${error.countryName}).`,
     fieldRequiredError: () => 'This field is required.',
-    creditCardValidatorError: () => 'Invalid credit card number'
+    creditCardNumberLengthValidatorError: () => 'Invalid credit card number',
+    creditCardTypeValidationError: () => 'Your credit card type is invalid',
+    creditCardInvalid: () => 'Sorry, but such card does not exist'
   };
 
   public getErrorMessage(control: AbstractControl): string {
