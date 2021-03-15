@@ -10,6 +10,10 @@ export {IMCountryCodeEnum} from './lib/enums/country-code.enum';
 // Required validator exports
 export {IMRequiredValidator} from './lib/validators/required.validator';
 
+// Credit card validator exports
+export {IMCreditCardValidator} from './lib/validators/credit-card.validator';
+export {IMCreditCardTypeValidatorEnum} from './lib/enums/credit-card-type.enum';
+
 // Number-comparator validator exports
 export {IMNumberComparatorValidator} from './lib/validators/number-comparator.validator';
 export {IMComparatorOperatorEnum} from './lib/enums/comparator-operator.enum';

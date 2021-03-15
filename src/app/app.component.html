@@ -1,27 +1,12 @@
 <mat-drawer-container class="application-container">
   <mat-drawer mode="side" opened>
-    <ul fxLayout="column">
-      <li>
-        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-      </li>
-      <li>
-        <a routerLink="custom-required-validator-overview" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          Custom Required Validator
-        </a>
-      </li>
-      <li>
-        <a routerLink="custom-email-validator-overview" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          Custom Email Validator
-        </a>
-      </li>
-      <li>
-        <a routerLink="phone-number-validator-overview" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          Phone Number Validator
-        </a>
-      </li>
-      <li>
-        <a routerLink="number-comparator-validator-overview" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          Number Comparator Validator
+    <ul>
+      <li *ngFor="let sidebar_link of sidebarLinks">
+        <a
+          [routerLink]="sidebar_link.routerLink"
+          [routerLinkActiveOptions]="{exact: true}"
+          routerLinkActive="active">
+          {{sidebar_link.linkText}}
         </a>
       </li>
     </ul>

@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
 
 // Components
 import {AppComponent} from './app.component';
@@ -32,6 +33,10 @@ import {NumberComparatorValidatorComponent} from './number-comparator-validator/
 import {NumberComparatorOverviewComponent} from './number-comparator-validator/number-comparator-overview/number-comparator-overview.component';
 import {NumberComparatorApiComponent} from './number-comparator-validator/number-comparator-api/number-comparator-api.component';
 import {NumberComparatorExamplesComponent} from './number-comparator-validator/number-comparator-examples/number-comparator-examples.component';
+import {CustomCreditCardApiComponent} from './custom-credit-card-validator/custom-credit-card-api/custom-credit-card-api.component';
+import {CustomCreditCardExamplesComponent} from './custom-credit-card-validator/custom-credit-card-examples/custom-credit-card-examples.component';
+import {CustomCreditCardOverviewComponent} from './custom-credit-card-validator/custom-credit-card-overview/custom-credit-card-overview.component';
+import {CustomCreditCardValidatorComponent} from './custom-credit-card-validator/custom-credit-card-validator.component';
 
 // Services
 import {ErrorResolverService} from '../services/error-resolver.service';
@@ -55,7 +60,11 @@ import {ErrorResolverService} from '../services/error-resolver.service';
     NumberComparatorValidatorComponent,
     NumberComparatorOverviewComponent,
     NumberComparatorApiComponent,
-    NumberComparatorExamplesComponent
+    NumberComparatorExamplesComponent,
+    CustomCreditCardValidatorComponent,
+    CustomCreditCardApiComponent,
+    CustomCreditCardExamplesComponent,
+    CustomCreditCardOverviewComponent
   ],
   imports: [
     AppRoutingModule,
@@ -70,7 +79,8 @@ import {ErrorResolverService} from '../services/error-resolver.service';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   bootstrap: [AppComponent],
   providers: [

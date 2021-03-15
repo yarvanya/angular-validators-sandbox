@@ -18,7 +18,8 @@ export class ErrorResolverService {
       }
     },
     fieldRequiredError: () => 'This field is required.',
-    required: () => 'This field is required.'
+    required: () => 'This field is required.',
+    creditCardValidatorError: () => 'Invalid credit card number'
   };
 
   public getErrorMessage(control: AbstractControl): string {
