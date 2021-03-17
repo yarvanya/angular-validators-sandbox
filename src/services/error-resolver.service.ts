@@ -19,7 +19,9 @@ export class ErrorResolverService {
     },
     fieldRequiredError: () => 'This field is required.',
     required: () => 'This field is required.',
-    creditCardValidatorError: () => 'Invalid credit card number'
+    creditCardNumberLengthValidatorError: () => 'Invalid credit card number',
+    creditCardTypeValidationError: () => 'Your credit card type is invalid',
+    creditCardInvalid: () => 'Sorry, but such card does not exist'
   };
 
   public getErrorMessage(control: AbstractControl): string {
