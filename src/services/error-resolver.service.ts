@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMPhoneNumberErrorInterface, IMNumberComparatorErrorInterface} from 'angular-validators';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 
 export class ErrorResolverService {
   private errorResolver = {

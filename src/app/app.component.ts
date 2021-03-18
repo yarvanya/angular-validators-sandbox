@@ -20,6 +20,7 @@ export class AppComponent {
     {routerLink: 'custom-email-validator-overview', linkText: 'Custom Email Validator'},
     {routerLink: 'phone-number-validator-overview', linkText: 'Phone Number Validator'},
     {routerLink: 'custom-credit-card-overview', linkText: 'Credit Card Validator'},
-    {routerLink: 'number-comparator-validator-overview', linkText: 'Number Comparator Validator'}
+    {routerLink: 'number-comparator-validator-overview', linkText: 'Number Comparator Validator'},
+    {routerLink: 'password-validator-overview', linkText: 'Password Validator'}
   ];
 }

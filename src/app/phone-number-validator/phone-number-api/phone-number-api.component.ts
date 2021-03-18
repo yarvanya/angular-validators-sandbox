@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-phone-number-api',
@@ -6,8 +6,4 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./phone-number-api.component.scss']
 })
 
-export class PhoneNumberApiComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class PhoneNumberApiComponent {}

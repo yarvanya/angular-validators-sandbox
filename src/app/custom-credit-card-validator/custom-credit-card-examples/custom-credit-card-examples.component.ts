@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AbstractControl, FormControl} from '@angular/forms';
 import {IMCreditCardValidator, IMCreditCardTypeValidatorEnum} from 'angular-validators';
-import {ErrorResolverService} from '../../../services/error-resolver.service';
+import {ErrorResolverService} from '@services/error-resolver.service';
 import {Subscription} from 'rxjs';
 
 @Component({
