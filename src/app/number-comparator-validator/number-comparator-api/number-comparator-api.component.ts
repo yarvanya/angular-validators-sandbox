@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-number-comparator-api',
@@ -6,8 +6,4 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./number-comparator-api.component.scss']
 })
 
-export class NumberComparatorApiComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class NumberComparatorApiComponent {}

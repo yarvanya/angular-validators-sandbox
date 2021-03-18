@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-number-comparator-validator',
@@ -6,8 +6,4 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./number-comparator-validator.component.scss']
 })
 
-export class NumberComparatorValidatorComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class NumberComparatorValidatorComponent {}

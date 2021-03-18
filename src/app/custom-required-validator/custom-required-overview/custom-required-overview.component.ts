@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-custom-required-overview',
@@ -6,8 +6,4 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./custom-required-overview.component.scss']
 })
 
-export class CustomRequiredOverviewComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class CustomRequiredOverviewComponent {}

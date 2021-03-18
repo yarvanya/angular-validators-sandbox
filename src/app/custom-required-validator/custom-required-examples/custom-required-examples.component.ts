@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
 import {IMRequiredValidator} from 'angular-validators';
-import {ErrorResolverService} from '../../../services/error-resolver.service';
+import {ErrorResolverService} from '@services/error-resolver.service';
 
 @Component({
   selector: 'app-custom-required-examples',
@@ -9,7 +9,7 @@ import {ErrorResolverService} from '../../../services/error-resolver.service';
   styleUrls: ['./custom-required-examples.component.scss']
 })
 
-export class CustomRequiredExamplesComponent implements OnInit {
+export class CustomRequiredExamplesComponent {
   public diffTypesFormGroup: FormGroup = new FormGroup({
     text: new FormControl(null, IMRequiredValidator()),
     number: new FormControl(null, IMRequiredValidator()),
@@ -21,8 +21,6 @@ export class CustomRequiredExamplesComponent implements OnInit {
   constructor(
     private errorResolverService: ErrorResolverService
   ) {}
-
-  ngOnInit(): void {}
 
   public getErrorMessage(control: AbstractControl): string {
     return this.errorResolverService.getErrorMessage(control);

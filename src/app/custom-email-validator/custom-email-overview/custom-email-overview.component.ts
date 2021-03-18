@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-custom-email-overview',
@@ -6,8 +6,4 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./custom-email-overview.component.scss']
 })
 
-export class CustomEmailOverviewComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class CustomEmailOverviewComponent {}
