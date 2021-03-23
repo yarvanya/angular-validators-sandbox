@@ -19,3 +19,8 @@ export {IMNumberComparatorValidator} from './lib/validators/number-comparator.va
 export {IMComparatorOperatorEnum} from './lib/enums/comparator-operator.enum';
 export {IMNumberComparatorValidatorConfigInterface} from './lib/interfaces/number-comparator-configuration.interface';
 export {IMNumberComparatorErrorInterface} from './lib/interfaces/number-comparator-error.interface';
+
+// Date-comparator validator exports
+export {IMDateComparatorValidator} from './lib/validators/date-comparator.validator';
+export {IMDateComparatorValidatorConfigInterface} from './lib/interfaces/date-comparator-configuration.interface';
+export {IMDateComparatorErrorInterface} from './lib/interfaces/date-comparator-error.interface';

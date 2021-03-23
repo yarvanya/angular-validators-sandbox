@@ -1,6 +1,11 @@
 import {Injectable} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
-import {IMComparatorOperatorEnum, IMPhoneNumberErrorInterface, IMNumberComparatorErrorInterface} from 'angular-validators';
+import {
+  IMComparatorOperatorEnum,
+  IMPhoneNumberErrorInterface,
+  IMNumberComparatorErrorInterface,
+  IMDateComparatorErrorInterface
+} from 'angular-validators';
 
 @Injectable()
 
@@ -9,6 +14,15 @@ export class ErrorResolverService {
     isEmailInvalid: () => 'Email is not valid',
     phoneNumberError: (error: IMPhoneNumberErrorInterface) => `Phone number is not valid (${error.countryName}).`,
     numberComparatorError: (error: IMNumberComparatorErrorInterface) => {
+      switch (error.operator) {
+        case IMComparatorOperatorEnum.equal: return `Must be equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greater: return `Must be greater than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greaterEqual: return `Must be greater than or equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.less: return `Must be less than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.lessEqual: return `Must be less than or equal to ${error.comparingValue}`;
+      }
+    },
+    dateComparatorError: (error: IMDateComparatorErrorInterface) => {
       switch (error.operator) {
         case IMComparatorOperatorEnum.equal: return `Must be equal to ${error.comparingValue}`;
         case IMComparatorOperatorEnum.greater: return `Must be greater than ${error.comparingValue}`;

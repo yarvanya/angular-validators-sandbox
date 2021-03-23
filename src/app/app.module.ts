@@ -10,7 +10,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 
@@ -40,6 +40,23 @@ import {CustomCreditCardValidatorComponent} from './custom-credit-card-validator
 
 // Services
 import {ErrorResolverService} from '../services/error-resolver.service';
+import { DateComparatorValidatorComponent } from './date-comparator-validator/date-comparator-validator.component';
+import { DateComparatorOverviewComponent } from './date-comparator-validator/date-comparator-overview/date-comparator-overview.component';
+import { DateComparatorApiComponent } from './date-comparator-validator/date-comparator-api/date-comparator-api.component';
+import { DateComparatorExamplesComponent } from './date-comparator-validator/date-comparator-examples/date-comparator-examples.component';
+import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter} from '@angular/material-moment-adapter';
+
+export const CUSTOM_MAT_DATE_FORMATS = {
+  parse: {
+    dateInput: 'DD.MM.yyyy'
+  },
+  display: {
+    dateInput: 'DD.MM.yyyy',
+    monthYearLabel: 'YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'YYYY'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -64,7 +81,11 @@ import {ErrorResolverService} from '../services/error-resolver.service';
     CustomCreditCardValidatorComponent,
     CustomCreditCardApiComponent,
     CustomCreditCardExamplesComponent,
-    CustomCreditCardOverviewComponent
+    CustomCreditCardOverviewComponent,
+    DateComparatorValidatorComponent,
+    DateComparatorOverviewComponent,
+    DateComparatorApiComponent,
+    DateComparatorExamplesComponent
   ],
   imports: [
     AppRoutingModule,
@@ -84,7 +105,9 @@ import {ErrorResolverService} from '../services/error-resolver.service';
   ],
   bootstrap: [AppComponent],
   providers: [
-    ErrorResolverService
+    ErrorResolverService,
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]},
+    {provide: MAT_DATE_FORMATS, useValue: CUSTOM_MAT_DATE_FORMATS}
   ]
 })
 
