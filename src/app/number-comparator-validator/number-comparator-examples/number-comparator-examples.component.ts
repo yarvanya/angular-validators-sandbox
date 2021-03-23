@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMNumberComparatorValidator} from 'angular-validators';
-import {ErrorResolverService} from '../../../services/error-resolver.service';
+import {ErrorResolverService} from '@services/error-resolver.service';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-number-comparator-examples',
@@ -9,7 +11,7 @@ import {ErrorResolverService} from '../../../services/error-resolver.service';
   styleUrls: ['./number-comparator-examples.component.scss']
 })
 
-export class NumberComparatorExamplesComponent implements OnInit {
+export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
   public defaultAge = 18;
   public equalFormControl: FormControl = new FormControl(
     null,
@@ -83,19 +85,36 @@ export class NumberComparatorExamplesComponent implements OnInit {
     )
   });
 
+  private subscriptions = new Subject();
+
   constructor(
     private errorResolverService: ErrorResolverService
   ) {}
 
   public ngOnInit(): void {
-    this.equalForm.get('firstAge').valueChanges.subscribe(() => this.equalForm.get('secondAge').updateValueAndValidity());
-    this.greaterForm.get('firstAge').valueChanges.subscribe(() => this.greaterForm.get('secondAge').updateValueAndValidity());
-    this.greaterEqualForm.get('firstAge').valueChanges.subscribe(() => this.greaterEqualForm.get('secondAge').updateValueAndValidity());
-    this.lessForm.get('firstAge').valueChanges.subscribe(() => this.lessForm.get('secondAge').updateValueAndValidity());
-    this.lessEqualForm.get('firstAge').valueChanges.subscribe(() => this.lessEqualForm.get('secondAge').updateValueAndValidity());
+    this.equalForm.get('firstAge').valueChanges
+      .pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.equalForm.get('secondAge').updateValueAndValidity());
+    this.greaterForm.get('firstAge').valueChanges
+      .pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.greaterForm.get('secondAge').updateValueAndValidity());
+    this.greaterEqualForm.get('firstAge').valueChanges
+      .pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.greaterEqualForm.get('secondAge').updateValueAndValidity());
+    this.lessForm.get('firstAge').valueChanges
+      .pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.lessForm.get('secondAge').updateValueAndValidity());
+    this.lessEqualForm.get('firstAge').valueChanges
+      .pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.lessEqualForm.get('secondAge').updateValueAndValidity());
   }
 
   public getErrorMessage(control: AbstractControl): string {
     return this.errorResolverService.getErrorMessage(control);
+  }
+
+  public ngOnDestroy(): void {
+    this.subscriptions.next();
+    this.subscriptions.complete();
   }
 }

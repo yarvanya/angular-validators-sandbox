@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMDateComparatorValidator} from 'angular-validators';
-import {ErrorResolverService} from '../../../services/error-resolver.service';
+import {ErrorResolverService} from '@services/error-resolver.service';
 import * as moment from 'moment';
 
 @Component({
