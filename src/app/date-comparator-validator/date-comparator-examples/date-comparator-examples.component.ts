@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMDateComparatorValidator} from 'angular-validators';
 import {ErrorResolverService} from '@services/error-resolver.service';
 import * as moment from 'moment';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-date-comparator-examples',
@@ -10,7 +12,7 @@ import * as moment from 'moment';
   styleUrls: ['./date-comparator-examples.component.scss']
 })
 
-export class DateComparatorExamplesComponent implements OnInit {
+export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
   public today = moment().startOf('day');
   public equalFormControl: FormControl = new FormControl(
     null,
@@ -84,19 +86,31 @@ export class DateComparatorExamplesComponent implements OnInit {
     )
   });
 
+  private subscriptions = new Subject();
+
   constructor(
     private errorResolverService: ErrorResolverService
   ) {}
 
   public ngOnInit(): void {
-    this.equalForm.get('startDate').valueChanges.subscribe(() => this.equalForm.get('endDate').updateValueAndValidity());
-    this.greaterForm.get('startDate').valueChanges.subscribe(() => this.greaterForm.get('endDate').updateValueAndValidity());
-    this.greaterEqualForm.get('startDate').valueChanges.subscribe(() => this.greaterEqualForm.get('endDate').updateValueAndValidity());
-    this.lessForm.get('startDate').valueChanges.subscribe(() => this.lessForm.get('endDate').updateValueAndValidity());
-    this.lessEqualForm.get('startDate').valueChanges.subscribe(() => this.lessEqualForm.get('endDate').updateValueAndValidity());
+    this.equalForm.get('startDate').valueChanges.pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.equalForm.get('endDate').updateValueAndValidity());
+    this.greaterForm.get('startDate').valueChanges.pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.greaterForm.get('endDate').updateValueAndValidity());
+    this.greaterEqualForm.get('startDate').valueChanges.pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.greaterEqualForm.get('endDate').updateValueAndValidity());
+    this.lessForm.get('startDate').valueChanges.pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.lessForm.get('endDate').updateValueAndValidity());
+    this.lessEqualForm.get('startDate').valueChanges.pipe(takeUntil(this.subscriptions))
+      .subscribe(() => this.lessEqualForm.get('endDate').updateValueAndValidity());
   }
 
   public getErrorMessage(control: AbstractControl): string {
     return this.errorResolverService.getErrorMessage(control);
+  }
+
+  public ngOnDestroy(): void {
+    this.subscriptions.next();
+    this.subscriptions.complete();
   }
 }
