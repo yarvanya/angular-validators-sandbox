@@ -27,6 +27,11 @@ const routes: Routes = [
       .then(m => m.NumberComparatorValidatorModule)
   },
   {
+    path: 'date-comparator-validator-overview',
+    loadChildren: () => import('./date-comparator-validator/date-comparator-validator.module')
+      .then(m => m.DateComparatorValidatorModule)
+  },
+  {
     path: 'custom-credit-card-overview',
     loadChildren: () => import('./custom-credit-card-validator/custom-credit-card-validator.module')
       .then(m => m.CustomCreditCardValidatorModule)

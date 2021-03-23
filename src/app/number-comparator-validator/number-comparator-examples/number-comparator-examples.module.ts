@@ -11,4 +11,5 @@ import {NumberComparatorExamplesComponent} from './number-comparator-examples.co
     SharedModule
   ]
 })
+
 export class NumberComparatorExamplesModule {}

@@ -15,23 +15,24 @@ export const IMCreditCardValidator = (config: IMCreditCardValidatorConfigModel =
 
     if (creditCardNumber?.length) {
       const creditCardNumberLength = creditCardNumber.length;
-      const requiredCreditCardLength: number | CreditCardLengthFromToInterface = CreditCardValidatorResolver.NumberLength[config.creditCardType];
+      const requiredCreditCardLength: number | CreditCardLengthFromToInterface =
+        CreditCardValidatorResolver.NumberLength[config.creditCardType];
 
       const isNumberInINNRange = (): boolean => CreditCardValidatorResolver.IINRange[config.creditCardType].some(
         (IINRange: number | CreditCardLengthFromToInterface) => {
           for (let i = (IINRange as CreditCardLengthFromToInterface).from; i <= (IINRange as CreditCardLengthFromToInterface).to; i++) {
             if (new RegExp('^' + i, 'i').test(creditCardNumber)) {
-              return true
+              return true;
             }
           }
           return new RegExp('^' + IINRange, 'i').test(creditCardNumber);
         }
-      )
+      );
 
       const isNumberFitToLength = (): boolean => creditCardNumberLength < requiredCreditCardLength
         || creditCardNumberLength > requiredCreditCardLength
         || (creditCardNumberLength < (requiredCreditCardLength as CreditCardLengthFromToInterface).from
-        || creditCardNumberLength > (requiredCreditCardLength as CreditCardLengthFromToInterface).to)
+        || creditCardNumberLength > (requiredCreditCardLength as CreditCardLengthFromToInterface).to);
 
       const isLuhnCheckPassed = (): boolean => {
         const arr = (creditCardNumber + '').split('').reverse().map(x => parseInt(x));
@@ -42,12 +43,12 @@ export const IMCreditCardValidator = (config: IMCreditCardValidatorConfigModel =
       };
 
       if (!isNumberInINNRange()) {
-        return {creditCardTypeValidationError: true}
+        return {creditCardTypeValidationError: true};
       } else {
         if (isNumberFitToLength()) {
           return {creditCardNumberLengthValidatorError: true};
         } else if (!isLuhnCheckPassed()) {
-          return {creditCardInvalid: true}
+          return {creditCardInvalid: true};
         }
       }
     }

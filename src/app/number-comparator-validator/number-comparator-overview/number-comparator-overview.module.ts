@@ -11,4 +11,5 @@ import {NumberComparatorOverviewComponent} from './number-comparator-overview.co
     SharedModule
   ]
 })
+
 export class NumberComparatorOverviewModule {}
