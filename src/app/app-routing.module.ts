@@ -27,6 +27,11 @@ const routes: Routes = [
       .then(m => m.NumberComparatorValidatorModule)
   },
   {
+    path: 'number-in-range-validator-overview',
+    loadChildren: () => import('./number-in-range-validator/number-in-range-validator.module')
+      .then(m => m.NumberInRangeValidatorModule)
+  },
+  {
     path: 'date-comparator-validator-overview',
     loadChildren: () => import('./date-comparator-validator/date-comparator-validator.module')
       .then(m => m.DateComparatorValidatorModule)
