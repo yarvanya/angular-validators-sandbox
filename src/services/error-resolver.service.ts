@@ -4,7 +4,8 @@ import {
   IMComparatorOperatorEnum,
   IMPhoneNumberErrorInterface,
   IMNumberComparatorErrorInterface,
-  IMDateComparatorErrorInterface
+  IMDateComparatorErrorInterface,
+  IMNumberInRangeErrorInterface
 } from 'angular-validators';
 
 @Injectable({providedIn: 'root'})
@@ -35,7 +36,8 @@ export class ErrorResolverService {
     required: () => 'This field is required.',
     creditCardNumberLengthValidatorError: () => 'Invalid credit card number',
     creditCardTypeValidationError: () => 'Your credit card type is invalid',
-    creditCardInvalid: () => 'Sorry, but such card does not exist'
+    creditCardInvalid: () => 'Sorry, but such card does not exist',
+    numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`
   };
 
   public getErrorMessage(control: AbstractControl): string {

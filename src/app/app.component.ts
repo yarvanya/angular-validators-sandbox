@@ -21,6 +21,7 @@ export class AppComponent {
     {routerLink: 'phone-number-validator-overview', linkText: 'Phone Number Validator'},
     {routerLink: 'custom-credit-card-overview', linkText: 'Credit Card Validator'},
     {routerLink: 'number-comparator-validator-overview', linkText: 'Number Comparator Validator'},
+    {routerLink: 'number-in-range-validator-overview', linkText: 'Number In Range Validator'},
     {routerLink: 'date-comparator-validator-overview', linkText: 'Date Comparator Validator'},
     {routerLink: 'password-validator-overview', linkText: 'Password Validator'}
   ];

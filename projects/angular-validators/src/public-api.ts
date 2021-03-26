@@ -24,3 +24,7 @@ export {IMNumberComparatorErrorInterface} from './lib/interfaces/number-comparat
 export {IMDateComparatorValidator} from './lib/validators/date-comparator.validator';
 export {IMDateComparatorValidatorConfigInterface} from './lib/interfaces/date-comparator-configuration.interface';
 export {IMDateComparatorErrorInterface} from './lib/interfaces/date-comparator-error.interface';
+
+// Number-in-range validator exports
+export {IMNumberInRangeValidator} from './lib/validators/number-in-range.validator';
+export {IMNumberInRangeErrorInterface} from './lib/interfaces/number-in-range-error.interface';
