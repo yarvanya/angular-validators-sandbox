@@ -3,8 +3,7 @@ import {IMComparatorOperatorEnum} from '../enums/comparator-operator.enum';
 import {IMDateComparatorValidatorConfigInterface} from '../interfaces/date-comparator-configuration.interface';
 import {IMDateComparatorErrorInterface} from '../interfaces/date-comparator-error.interface';
 import {Moment} from 'moment';
-
-const workingDateFormat = 'DD.MM.YYYY';
+import {IMWorkingDateFormat} from '../constants/general.constant';
 
 export const IMDateComparatorValidator = (config: IMDateComparatorValidatorConfigInterface): ValidatorFn => {
   return (control: AbstractControl): ValidationErrors => {
@@ -25,7 +24,7 @@ const getDateComparatorValidationError =
           dateComparatorError: {
             isInvalid: true,
             operator,
-            comparingValue: comparing_control_value.format(workingDateFormat)
+            comparingValue: comparing_control_value.format(IMWorkingDateFormat)
           } as IMDateComparatorErrorInterface
         };
       }

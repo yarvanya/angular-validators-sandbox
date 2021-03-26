@@ -37,6 +37,11 @@ const routes: Routes = [
       .then(m => m.DateComparatorValidatorModule)
   },
   {
+    path: 'date-in-range-validator-overview',
+    loadChildren: () => import('./date-in-range-validator/date-in-range-validator.module')
+      .then(m => m.DateInRangeValidatorModule)
+  },
+  {
     path: 'custom-credit-card-overview',
     loadChildren: () => import('./custom-credit-card-validator/custom-credit-card-validator.module')
       .then(m => m.CustomCreditCardValidatorModule)

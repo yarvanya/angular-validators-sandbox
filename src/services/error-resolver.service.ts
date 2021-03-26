@@ -5,7 +5,8 @@ import {
   IMPhoneNumberErrorInterface,
   IMNumberComparatorErrorInterface,
   IMDateComparatorErrorInterface,
-  IMNumberInRangeErrorInterface
+  IMNumberInRangeErrorInterface,
+  IMDateInRangeErrorInterface
 } from 'angular-validators';
 
 @Injectable({providedIn: 'root'})
@@ -37,7 +38,8 @@ export class ErrorResolverService {
     creditCardNumberLengthValidatorError: () => 'Invalid credit card number',
     creditCardTypeValidationError: () => 'Your credit card type is invalid',
     creditCardInvalid: () => 'Sorry, but such card does not exist',
-    numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`
+    numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
+    dateInRange: (error: IMDateInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
   };
 
   public getErrorMessage(control: AbstractControl): string {

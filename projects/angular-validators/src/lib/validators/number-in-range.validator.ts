@@ -7,7 +7,7 @@ export const IMNumberInRangeValidator = (from: number, to: number): ValidatorFn 
     const error: IMNumberInRangeErrorInterface = {isInvalid: true, from, to};
 
     if (isNumber(from) && isNumber(to) && isNumber(control.value)) {
-      if (from > control.value ||  to < control.value) {
+      if (from > control.value || to < control.value) {
         return {numberInRange: error};
       }
     }
