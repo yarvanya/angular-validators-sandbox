@@ -1,4 +1,4 @@
-import {IMPhoneNumberConfigurationInterface} from '../interfaces/phone-number/phone-number-configuration.interface';
+import {IMPhoneNumberConfigurationInterface} from '../interfaces/phone-number-configuration.interface';
 import {IMCountryCodeEnum} from '../enums/country-code.enum';
 
 // List of European countries by area: https://en.wikipedia.org/wiki/List_of_European_countries_by_area

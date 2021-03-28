@@ -6,7 +6,9 @@
       "angular-validators": [
         "dist/angular-validators/angular-validators",
         "dist/angular-validators"
-      ]
+      ],
+      "@shared": ["src/app/shared/shared.module"],
+      "@services/*": ["src/services/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -23,6 +25,9 @@
       "dom"
     ]
   },
+  "include": [
+    "src/**/*"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
   }

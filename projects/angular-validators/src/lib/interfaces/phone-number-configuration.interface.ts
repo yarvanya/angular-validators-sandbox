@@ -1,4 +1,4 @@
-import {IMCountryCodeEnum} from '../../enums/country-code.enum';
+import {IMCountryCodeEnum} from '../enums/country-code.enum';
 
 export interface IMPhoneNumberConfigurationInterface {
   country: string;
