@@ -1,3 +1,9 @@
+// General exports
+export {IMCountryConfigurations} from './lib/constants/country-configurations.constant';
+export {IMCountryEnum} from './lib/enums/country.enum';
+export {IMCountryConfigInterface} from './lib/interfaces/country-config.interface';
+export {IMCountryPhoneNumberConfigInterface} from './lib/interfaces/country-config.interface';
+
 // Email validator exports
 export {IMEmailValidator} from './lib/validators/email.validator';
 export {IMEmailValidatorConfigModel} from './lib/validators/email.validator';
@@ -5,7 +11,6 @@ export {IMEmailValidatorConfigModel} from './lib/validators/email.validator';
 // Phone number validator exports
 export {IMPhoneNumberValidator} from './lib/validators/phone-number.validator';
 export {IMPhoneNumberErrorInterface} from './lib/interfaces/phone-number-error.interface';
-export {IMCountryCodeEnum} from './lib/enums/country-code.enum';
 
 // Required validator exports
 export {IMRequiredValidator} from './lib/validators/required.validator';
@@ -32,3 +37,7 @@ export {IMNumberInRangeErrorInterface} from './lib/interfaces/number-in-range-er
 // Date-in-range validator exports
 export {IMDateInRangeValidator} from './lib/validators/date-in-range.validator';
 export {IMDateInRangeErrorInterface} from './lib/interfaces/date-in-range-error.interface';
+
+// Phone number validator exports
+export {IMPostCodeValidator} from './lib/validators/post-code.validator';
+export {IMPostCodeErrorInterface} from './lib/interfaces/post-code-error.interface';

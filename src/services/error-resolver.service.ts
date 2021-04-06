@@ -6,7 +6,8 @@ import {
   IMNumberComparatorErrorInterface,
   IMDateComparatorErrorInterface,
   IMNumberInRangeErrorInterface,
-  IMDateInRangeErrorInterface
+  IMDateInRangeErrorInterface,
+  IMPostCodeErrorInterface
 } from 'angular-validators';
 
 @Injectable({providedIn: 'root'})
@@ -40,6 +41,7 @@ export class ErrorResolverService {
     creditCardInvalid: () => 'Sorry, but such card does not exist',
     numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
     dateInRange: (error: IMDateInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
+    postCodeError: (error: IMPostCodeErrorInterface) => `Post code is not valid (${error.countryName}).`,
   };
 
   public getErrorMessage(control: AbstractControl): string {
