@@ -50,6 +50,11 @@ const routes: Routes = [
     path: 'password-validator-overview',
     loadChildren: () => import('./custom-password-validator/custom-password-validator.module')
       .then(m => m.CustomPasswordValidatorModule)
+  },
+  {
+    path: 'post-code-validator-overview',
+    loadChildren: () => import('./post-code-validator/post-code-validator.module')
+      .then(m => m.PostCodeValidatorModule)
   }
 ];
 
