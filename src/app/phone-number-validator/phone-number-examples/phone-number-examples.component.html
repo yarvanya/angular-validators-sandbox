@@ -4,8 +4,8 @@
 
 <div fxLayout="column" class="mt-1">
   <mat-button-toggle-group [formControl]="countryFormControl">
-    <ng-container *ngFor="let country of availableCountries">
-      <mat-button-toggle [value]="country.value">{{country.label}}</mat-button-toggle>
+    <ng-container *ngFor="let country_item of availableCountries">
+      <mat-button-toggle [value]="country_item.country">{{country_item.countryName}}</mat-button-toggle>
     </ng-container>
   </mat-button-toggle-group>
 

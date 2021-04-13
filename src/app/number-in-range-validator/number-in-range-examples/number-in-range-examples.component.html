@@ -1,0 +1,12 @@
+<p>Here are 'number-in-range' validator examples.</p>
+<p>We have to pass 'FROM' and 'TO' values that must be numbers. 'FROM' value must be less than 'TO' value</p>
+
+<p><b>Next control must have value from 1-100:</b></p>
+
+<form fxLayout="column" class="mt-1" autocomplete="off">
+  <mat-form-field appearance="outline" class="mt-1">
+    <mat-label>What percentage? (Must be in range 1-100)</mat-label>
+    <input type="number" matInput [placeholder]="'What percentage?'" [formControl]="percentageControl">
+    <mat-error *ngIf="percentageControl.invalid">{{getErrorMessage(percentageControl)}}</mat-error>
+  </mat-form-field>
+</form>

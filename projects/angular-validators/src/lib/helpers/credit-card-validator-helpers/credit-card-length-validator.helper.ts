@@ -38,4 +38,4 @@ export const CreditCardValidatorResolver = {
     [IMCreditCardTypeValidatorEnum.Dankort]: [5019, 4571],
     [IMCreditCardTypeValidatorEnum.InterPayment]: [636]
   }
-}
+};

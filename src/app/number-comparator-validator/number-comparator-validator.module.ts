@@ -26,4 +26,5 @@ const routes: Routes = [
     NumberComparatorOverviewModule
   ]
 })
+
 export class NumberComparatorValidatorModule {}

@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AbstractControl, FormControl} from '@angular/forms';
-import {IMCountryCodeEnum, IMPhoneNumberValidator} from 'angular-validators';
+import {IMCountryConfigurations, IMPhoneNumberValidator, IMCountryConfigInterface, IMCountryEnum} from 'angular-validators';
 import {ErrorResolverService} from '@services/error-resolver.service';
 import {Subscription} from 'rxjs';
 
@@ -11,13 +11,9 @@ import {Subscription} from 'rxjs';
 })
 
 export class PhoneNumberExamplesComponent implements OnInit, OnDestroy {
-  public availableCountries = [
-    {label: 'Ukraine', value: IMCountryCodeEnum.ua},
-    {label: 'Russia', value: IMCountryCodeEnum.ru},
-    {label: 'France', value: IMCountryCodeEnum.fr}
-  ];
+  public availableCountries: IMCountryConfigInterface[] = IMCountryConfigurations;
 
-  public countryFormControl: FormControl = new FormControl(IMCountryCodeEnum.ua);
+  public countryFormControl: FormControl = new FormControl(IMCountryEnum.Albania);
   public phoneNumberFormControl: FormControl = new FormControl(null, IMPhoneNumberValidator(this.countryFormControl?.value));
   private countrySubscription: Subscription;
 

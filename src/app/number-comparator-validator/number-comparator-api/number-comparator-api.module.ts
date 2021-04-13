@@ -11,4 +11,5 @@ import {NumberComparatorApiComponent} from './number-comparator-api.component';
     SharedModule
   ]
 })
+
 export class NumberComparatorApiModule {}

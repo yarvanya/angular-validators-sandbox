@@ -27,6 +27,21 @@ const routes: Routes = [
       .then(m => m.NumberComparatorValidatorModule)
   },
   {
+    path: 'number-in-range-validator-overview',
+    loadChildren: () => import('./number-in-range-validator/number-in-range-validator.module')
+      .then(m => m.NumberInRangeValidatorModule)
+  },
+  {
+    path: 'date-comparator-validator-overview',
+    loadChildren: () => import('./date-comparator-validator/date-comparator-validator.module')
+      .then(m => m.DateComparatorValidatorModule)
+  },
+  {
+    path: 'date-in-range-validator-overview',
+    loadChildren: () => import('./date-in-range-validator/date-in-range-validator.module')
+      .then(m => m.DateInRangeValidatorModule)
+  },
+  {
     path: 'custom-credit-card-overview',
     loadChildren: () => import('./custom-credit-card-validator/custom-credit-card-validator.module')
       .then(m => m.CustomCreditCardValidatorModule)
@@ -35,6 +50,11 @@ const routes: Routes = [
     path: 'password-validator-overview',
     loadChildren: () => import('./custom-password-validator/custom-password-validator.module')
       .then(m => m.CustomPasswordValidatorModule)
+  },
+  {
+    path: 'post-code-validator-overview',
+    loadChildren: () => import('./post-code-validator/post-code-validator.module')
+      .then(m => m.PostCodeValidatorModule)
   }
 ];
 

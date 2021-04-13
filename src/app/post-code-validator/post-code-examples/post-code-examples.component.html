@@ -1,0 +1,18 @@
+<p>Here are 'post code' validator examples</p>
+
+<p>Here are all available countries</p>
+
+<div fxLayout="column" class="mt-1">
+  <mat-button-toggle-group [formControl]="countryFormControl">
+    <ng-container *ngFor="let country_item of availableCountries">
+      <mat-button-toggle [value]="country_item.country">{{country_item.countryName}}</mat-button-toggle>
+    </ng-container>
+  </mat-button-toggle-group>
+
+  <mat-form-field appearance="outline" class="mt-1">
+    <input matInput [placeholder]="'Post code'" [formControl]="postCodeFormControl" autocomplete="off">
+    <mat-error *ngIf="postCodeFormControl.invalid">
+      {{getErrorMessage(postCodeFormControl)}}
+    </mat-error>
+  </mat-form-field>
+</div>

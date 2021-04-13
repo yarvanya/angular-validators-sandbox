@@ -4,6 +4,10 @@ import {
   IMComparatorOperatorEnum,
   IMPhoneNumberErrorInterface,
   IMNumberComparatorErrorInterface,
+  IMDateComparatorErrorInterface,
+  IMNumberInRangeErrorInterface,
+  IMDateInRangeErrorInterface,
+  IMPostCodeErrorInterface,
   PasswordErrorInterface,
   PasswordOperatorEnum
 } from 'angular-validators';
@@ -23,11 +27,23 @@ export class ErrorResolverService {
         case IMComparatorOperatorEnum.lessEqual: return `Must be less than or equal to ${error.comparingValue}`;
       }
     },
+    dateComparatorError: (error: IMDateComparatorErrorInterface) => {
+      switch (error.operator) {
+        case IMComparatorOperatorEnum.equal: return `Must be equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greater: return `Must be greater than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greaterEqual: return `Must be greater than or equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.less: return `Must be less than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.lessEqual: return `Must be less than or equal to ${error.comparingValue}`;
+      }
+    },
     fieldRequiredError: () => 'This field is required.',
     required: () => 'This field is required.',
     creditCardNumberLengthValidatorError: () => 'Invalid credit card number',
     creditCardTypeValidationError: () => 'Your credit card type is invalid',
     creditCardInvalid: () => 'Sorry, but such card does not exist',
+    numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
+    dateInRange: (error: IMDateInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
+    postCodeError: (error: IMPostCodeErrorInterface) => `Post code is not valid (${error.countryName}).`,
     passwordValidatorError: (error: PasswordErrorInterface) => {
       switch (error.operator) {
         case PasswordOperatorEnum.minLength: return 'Length';
