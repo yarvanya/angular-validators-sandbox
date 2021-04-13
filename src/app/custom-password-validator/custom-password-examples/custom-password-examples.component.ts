@@ -1,9 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ErrorResolverService} from '@services/error-resolver.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {IMPasswordValidator} from 'angular-validators';
+import {IMPasswordValidator, IMPasswordValidatorConfigModel} from 'angular-validators';
 import {Subscription} from 'rxjs';
-import {IMPasswordValidatorConfigModel} from '../../../../projects/angular-validators/src/lib/validators/password.validator';
 
 @Component({
   selector: 'app-custom-password-examples',

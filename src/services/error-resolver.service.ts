@@ -49,7 +49,7 @@ export class ErrorResolverService {
         case PasswordOperatorEnum.minLength:
           return `Password should be more than ${error.comparingValue} symbols`;
         case PasswordOperatorEnum.minNumberQuantity:
-          return `In password should be at least ${error.comparingValue} numbers`;
+          return `In password should be at least ${error.comparingValue} number(s)`;
         case PasswordOperatorEnum.minCapitalLettersQuantity:
           return `In password should be at least ${error.comparingValue} capital letter(s)`;
         case PasswordOperatorEnum.minSmallLettersQuantity:
