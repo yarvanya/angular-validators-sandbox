@@ -1,6 +1,12 @@
 import {Injectable} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
-import {IMComparatorOperatorEnum, IMPhoneNumberErrorInterface, IMNumberComparatorErrorInterface} from 'angular-validators';
+import {
+  IMComparatorOperatorEnum,
+  IMPhoneNumberErrorInterface,
+  IMNumberComparatorErrorInterface,
+  PasswordErrorInterface,
+  PasswordOperatorEnum
+} from 'angular-validators';
 
 @Injectable({providedIn: 'root'})
 
@@ -21,7 +27,13 @@ export class ErrorResolverService {
     required: () => 'This field is required.',
     creditCardNumberLengthValidatorError: () => 'Invalid credit card number',
     creditCardTypeValidationError: () => 'Your credit card type is invalid',
-    creditCardInvalid: () => 'Sorry, but such card does not exist'
+    creditCardInvalid: () => 'Sorry, but such card does not exist',
+    passwordValidatorError: (error: PasswordErrorInterface) => {
+      switch (error.operator) {
+        case PasswordOperatorEnum.minLength: return 'Length';
+        case PasswordOperatorEnum.minNumberQuantity: return 'Must be number';
+      }
+    }
   };
 
   public getErrorMessage(control: AbstractControl): string {

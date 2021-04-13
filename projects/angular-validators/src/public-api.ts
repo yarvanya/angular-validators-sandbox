@@ -19,3 +19,9 @@ export {IMNumberComparatorValidator} from './lib/validators/number-comparator.va
 export {IMComparatorOperatorEnum} from './lib/enums/comparator-operator.enum';
 export {IMNumberComparatorValidatorConfigInterface} from './lib/interfaces/number-comparator-configuration.interface';
 export {IMNumberComparatorErrorInterface} from './lib/interfaces/number-comparator-error.interface';
+
+// Password validator exports
+export {IMPasswordValidator} from './lib/validators/password.validator';
+export {IMPasswordValidatorConfigModel} from './lib/validators/password.validator';
+export {PasswordErrorInterface} from './lib/interfaces/password-error.interface';
+export {PasswordOperatorEnum} from './lib/enums/password-operator.enum';
