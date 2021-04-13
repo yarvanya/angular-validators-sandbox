@@ -6,9 +6,10 @@ import {SharedModule} from '@shared';
 @NgModule({
   declarations: [CustomPasswordExamplesComponent],
   exports: [CustomPasswordExamplesComponent],
-  imports: [
+  imports: [${error.comparingValue} numbers
     CommonModule,
     SharedModule
   ]
 })
-export class CustomPasswordExamplesModule {}
+export class CustomPasswordExamplesModule {
+}
