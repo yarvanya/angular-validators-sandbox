@@ -46,8 +46,16 @@ export class ErrorResolverService {
     postCodeError: (error: IMPostCodeErrorInterface) => `Post code is not valid (${error.countryName}).`,
     passwordValidatorError: (error: PasswordErrorInterface) => {
       switch (error.operator) {
-        case PasswordOperatorEnum.minLength: return 'Length';
-        case PasswordOperatorEnum.minNumberQuantity: return 'Must be number';
+        case PasswordOperatorEnum.minLength:
+          return `Password should be more than ${error.comparingValue} symbols`;
+        case PasswordOperatorEnum.minNumberQuantity:
+          return `In password should be at least ${error.comparingValue} numbers`;
+        case PasswordOperatorEnum.minCapitalLettersQuantity:
+          return `In password should be at least ${error.comparingValue} capital letter(s)`;
+        case PasswordOperatorEnum.minSmallLettersQuantity:
+          return `In password should be at least ${error.comparingValue} small letter(s)`;
+        case PasswordOperatorEnum.minSpecialCharactersQuantity:
+          return `In password should be at least ${error.comparingValue} special character(s)`;
       }
     }
   };

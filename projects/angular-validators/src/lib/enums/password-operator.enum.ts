@@ -1,4 +1,7 @@
 export enum PasswordOperatorEnum {
   minLength,
-  minNumberQuantity
+  minNumberQuantity,
+  minCapitalLettersQuantity,
+  minSmallLettersQuantity,
+  minSpecialCharactersQuantity
 }

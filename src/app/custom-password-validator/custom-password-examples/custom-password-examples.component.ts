@@ -3,22 +3,25 @@ import {ErrorResolverService} from '@services/error-resolver.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMPasswordValidator} from 'angular-validators';
 import {Subscription} from 'rxjs';
+import {IMPasswordValidatorConfigModel} from '../../../../projects/angular-validators/src/lib/validators/password.validator';
 
 @Component({
-  selector: 'im-custom-password-examples',
+  selector: 'app-custom-password-examples',
   templateUrl: './custom-password-examples.component.html',
   styleUrls: ['./custom-password-examples.component.scss']
 })
 export class CustomPasswordExamplesComponent implements OnInit, OnDestroy {
   public passwordFormGroup = new FormGroup({
-    minLength: new FormControl(null, Validators.min(1)),
+    minLength: new FormControl(6, Validators.min(1)),
     minNumberQuantity: new FormControl(null, Validators.min(0)),
-    passwordMinCapitalLength: new FormControl(null, Validators.min(0)),
-    passwordMinSmallLength: new FormControl(null, Validators.min(0)),
-    passwordMinSpecialCharacterLength: new FormControl(null, Validators.min(0))
+    minCapitalLettersQuantity: new FormControl(null, Validators.min(0)),
+    minSmallLettersQuantity: new FormControl(null, Validators.min(0)),
+    minSpecialCharactersQuantity: new FormControl(null, Validators.min(0))
   });
 
-  public password = new FormControl(null, IMPasswordValidator());
+  public password = new FormControl(null, IMPasswordValidator({
+    minLength: this.passwordFormGroup.get('minLength').value
+  }));
   public hidePassword = true;
   private passwordSubscription: Subscription;
 
@@ -31,9 +34,10 @@ export class CustomPasswordExamplesComponent implements OnInit, OnDestroy {
   }
 
   private subscribeToPasswordValueChanges(): void {
-    this.passwordSubscription = this.passwordFormGroup.valueChanges.subscribe(
-      value => this.password.setValidators(IMPasswordValidator(value))
-    );
+    this.passwordSubscription = this.passwordFormGroup.valueChanges.subscribe((config: IMPasswordValidatorConfigModel) => {
+      this.password.setValidators(IMPasswordValidator(config));
+      this.password.updateValueAndValidity();
+    });
   }
 
   public getErrorMessage(control: AbstractControl): string {
