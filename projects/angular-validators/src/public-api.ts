@@ -41,3 +41,13 @@ export {IMDateInRangeErrorInterface} from './lib/interfaces/date-in-range-error.
 // Phone number validator exports
 export {IMPostCodeValidator} from './lib/validators/post-code.validator';
 export {IMPostCodeErrorInterface} from './lib/interfaces/post-code-error.interface';
+
+// Password validator exports
+export {IMPasswordValidator} from './lib/validators/password.validator';
+export {IMPasswordValidatorConfigModel} from './lib/validators/password.validator';
+export {PasswordErrorInterface} from './lib/interfaces/password-error.interface';
+export {PasswordOperatorEnum} from './lib/enums/password-operator.enum';
+
+// Decimal places validator exports
+export {IMNumberDecimalPlacesValidator} from './lib/validators/number-decimal-places.validator';
+export {IMNumberDecimalPlacesErrorInterface} from './lib/interfaces/number-decimal-places-error.interface';

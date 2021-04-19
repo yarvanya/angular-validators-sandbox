@@ -7,7 +7,10 @@ import {
   IMDateComparatorErrorInterface,
   IMNumberInRangeErrorInterface,
   IMDateInRangeErrorInterface,
-  IMPostCodeErrorInterface
+  IMPostCodeErrorInterface,
+  PasswordErrorInterface,
+  IMNumberDecimalPlacesErrorInterface,
+  PasswordOperatorEnum
 } from 'angular-validators';
 
 @Injectable({providedIn: 'root'})
@@ -42,6 +45,27 @@ export class ErrorResolverService {
     numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
     dateInRange: (error: IMDateInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
     postCodeError: (error: IMPostCodeErrorInterface) => `Post code is not valid (${error.countryName}).`,
+    passwordValidatorError: (error: PasswordErrorInterface) => {
+      switch (error.operator) {
+        case PasswordOperatorEnum.minLength:
+          return `Password should be more than ${error.comparingValue} symbols`;
+        case PasswordOperatorEnum.minNumberQuantity:
+          return `In password should be at least ${error.comparingValue} number(s)`;
+        case PasswordOperatorEnum.minCapitalLettersQuantity:
+          return `In password should be at least ${error.comparingValue} capital letter(s)`;
+        case PasswordOperatorEnum.minSmallLettersQuantity:
+          return `In password should be at least ${error.comparingValue} small letter(s)`;
+        case PasswordOperatorEnum.minSpecialCharactersQuantity:
+          return `In password should be at least ${error.comparingValue} special character(s)`;
+      }
+    },
+    areDecimalPlacesInvalid: (error: IMNumberDecimalPlacesErrorInterface) => {
+      if (error.fixed) {
+        return `Must have ${error.scale} decimal places after comma.`;
+      } else {
+        return `Maximum ${error.scale} decimal place(s) after comma allowed.`;
+      }
+    }
   };
 
   public getErrorMessage(control: AbstractControl): string {

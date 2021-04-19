@@ -11,4 +11,5 @@ import {SharedModule} from '@shared';
     SharedModule
   ]
 })
-export class CustomPasswordExamplesModule {}
+export class CustomPasswordExamplesModule {
+}
