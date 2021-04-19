@@ -55,6 +55,11 @@ const routes: Routes = [
     path: 'post-code-validator-overview',
     loadChildren: () => import('./post-code-validator/post-code-validator.module')
       .then(m => m.PostCodeValidatorModule)
+  },
+  {
+    path: 'number-decimal-places-validator-overview',
+    loadChildren: () => import('./number-decimal-places-validator/number-decimal-places-validator.module')
+      .then(m => m.NumberDecimalPlacesValidatorModule)
   }
 ];
 

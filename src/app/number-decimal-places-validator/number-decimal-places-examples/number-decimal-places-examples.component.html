@@ -1,0 +1,24 @@
+<p>Here are 'number-decimal-places' validator examples.</p>
+<p>We can pass two parameters here:</p>
+<p>1) Scale (how many decimal places after comma are allowed - default value is 0)</p>
+<p>2) Fixed (is it fixed or not - default value is false)</p>
+
+<form fxLayout="column" class="mt-1" autocomplete="off">
+  <h3>Select needed scale for number decimal places here:</h3>
+  <mat-button-toggle-group [formControl]="scaleControl">
+    <ng-container *ngFor="let scale_item of scales">
+      <mat-button-toggle fxFlex="100%" [value]="scale_item">{{scale_item}}</mat-button-toggle>
+    </ng-container>
+  </mat-button-toggle-group>
+
+  <div class="mt-1">
+    <h3>Toggle scale fix ability for number decimal places here:</h3>
+    <mat-slide-toggle color="primary" [formControl]="fixScaleControl">Is fixed?</mat-slide-toggle>
+  </div>
+
+  <mat-form-field appearance="outline" class="mt-1">
+    <mat-label>Decimal places</mat-label>
+    <input type="number" matInput [placeholder]="'Decimal places'" [formControl]="decimalPlacesControl">
+    <mat-error *ngIf="decimalPlacesControl.invalid">{{getErrorMessage(decimalPlacesControl)}}</mat-error>
+  </mat-form-field>
+</form>

@@ -25,6 +25,7 @@ export class AppComponent {
     {routerLink: 'date-comparator-validator-overview', linkText: 'Date Comparator Validator'},
     {routerLink: 'date-in-range-validator-overview', linkText: 'Date In Range Validator'},
     {routerLink: 'post-code-validator-overview', linkText: 'Post Code Validator'},
-    {routerLink: 'password-validator-overview', linkText: 'Password Validator'}
+    {routerLink: 'password-validator-overview', linkText: 'Password Validator'},
+    {routerLink: 'number-decimal-places-validator-overview', linkText: 'Number Decimal Places Validator'}
   ];
 }
