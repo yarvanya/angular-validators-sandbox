@@ -9,6 +9,7 @@ import {
   IMDateInRangeErrorInterface,
   IMPostCodeErrorInterface,
   PasswordErrorInterface,
+  IMNumberDecimalPlacesErrorInterface,
   PasswordOperatorEnum
 } from 'angular-validators';
 
@@ -56,6 +57,13 @@ export class ErrorResolverService {
           return `In password should be at least ${error.comparingValue} small letter(s)`;
         case PasswordOperatorEnum.minSpecialCharactersQuantity:
           return `In password should be at least ${error.comparingValue} special character(s)`;
+      }
+    },
+    areDecimalPlacesInvalid: (error: IMNumberDecimalPlacesErrorInterface) => {
+      if (error.fixed) {
+        return `Must have ${error.scale} decimal places after comma.`;
+      } else {
+        return `Maximum ${error.scale} decimal place(s) after comma allowed.`;
       }
     }
   };
