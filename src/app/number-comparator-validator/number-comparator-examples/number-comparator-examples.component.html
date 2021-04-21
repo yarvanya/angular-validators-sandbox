@@ -13,7 +13,9 @@
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be equal to 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="equalFormControl">
-          <mat-error *ngIf="equalFormControl.invalid">{{getErrorMessage(equalFormControl)}}</mat-error>
+          <mat-error *ngIf="equalFormControl.invalid">
+            {{equalFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
@@ -24,7 +26,7 @@
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="equalForm.get('firstAge').invalid">
-            {{getErrorMessage(equalForm.get('firstAge'))}}
+            {{equalForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -32,7 +34,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="equalForm.get('secondAge').invalid">
-            {{getErrorMessage(equalForm.get('secondAge'))}}
+            {{equalForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -48,7 +50,9 @@
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be greater than 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="greaterFormControl">
-          <mat-error *ngIf="greaterFormControl.invalid">{{getErrorMessage(greaterFormControl)}}</mat-error>
+          <mat-error *ngIf="greaterFormControl.invalid">
+            {{greaterFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
@@ -59,7 +63,7 @@
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="greaterForm.get('firstAge').invalid">
-            {{getErrorMessage(greaterForm.get('firstAge'))}}
+            {{greaterForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -67,7 +71,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="greaterForm.get('secondAge').invalid">
-            {{getErrorMessage(greaterForm.get('secondAge'))}}
+            {{greaterForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -83,7 +87,9 @@
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be greater than or equal to 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="greaterEqualFormControl">
-          <mat-error *ngIf="greaterEqualFormControl.invalid">{{getErrorMessage(greaterEqualFormControl)}}</mat-error>
+          <mat-error *ngIf="greaterEqualFormControl.invalid">
+            {{greaterEqualFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
@@ -94,7 +100,7 @@
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="greaterEqualForm.get('firstAge').invalid">
-            {{getErrorMessage(greaterEqualForm.get('firstAge'))}}
+            {{greaterEqualForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -102,7 +108,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="greaterEqualForm.get('secondAge').invalid">
-            {{getErrorMessage(greaterEqualForm.get('secondAge'))}}
+            {{greaterEqualForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -118,7 +124,9 @@
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be less than 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="lessFormControl">
-          <mat-error *ngIf="lessFormControl.invalid">{{getErrorMessage(lessFormControl)}}</mat-error>
+          <mat-error *ngIf="lessFormControl.invalid">
+            {{lessFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
@@ -129,7 +137,7 @@
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="lessForm.get('firstAge').invalid">
-            {{getErrorMessage(lessForm.get('firstAge'))}}
+            {{lessForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -137,7 +145,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="lessForm.get('secondAge').invalid">
-            {{getErrorMessage(lessForm.get('secondAge'))}}
+            {{lessForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -153,7 +161,9 @@
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be less than or equal to 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="lessEqualFormControl">
-          <mat-error *ngIf="lessEqualFormControl.invalid">{{getErrorMessage(lessEqualFormControl)}}</mat-error>
+          <mat-error *ngIf="lessEqualFormControl.invalid">
+            {{lessEqualFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
@@ -164,7 +174,7 @@
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="lessEqualForm.get('firstAge').invalid">
-            {{getErrorMessage(lessEqualForm.get('firstAge'))}}
+            {{lessEqualForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -172,7 +182,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="lessEqualForm.get('secondAge').invalid">
-            {{getErrorMessage(lessEqualForm.get('secondAge'))}}
+            {{lessEqualForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 

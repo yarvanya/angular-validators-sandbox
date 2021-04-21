@@ -7,6 +7,8 @@
   <mat-form-field appearance="outline" class="mt-1">
     <mat-label>What percentage? (Must be in range 1-100)</mat-label>
     <input type="number" matInput [placeholder]="'What percentage?'" [formControl]="percentageControl">
-    <mat-error *ngIf="percentageControl.invalid">{{getErrorMessage(percentageControl)}}</mat-error>
+    <mat-error *ngIf="percentageControl.invalid">
+      {{percentageControl.errors | controlErrorResolver}}
+    </mat-error>
   </mat-form-field>
 </form>

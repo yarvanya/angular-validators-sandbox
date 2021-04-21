@@ -8,7 +8,7 @@
   <mat-form-field appearance="outline" class="mt-1">
     <input type="text" matInput [placeholder]="'Email'" [formControl]="emailFormControl">
     <mat-error *ngIf="emailFormControl.invalid">
-      {{getErrorMessage(emailFormControl)}}
+      {{emailFormControl.errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
 </form>

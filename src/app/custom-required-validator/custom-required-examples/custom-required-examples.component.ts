@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import {IMRequiredValidator} from 'angular-validators';
-import {ErrorResolverService} from '@services/error-resolver.service';
 
 @Component({
   selector: 'app-custom-required-examples',
@@ -17,12 +16,4 @@ export class CustomRequiredExamplesComponent {
     date: new FormControl(null, IMRequiredValidator()),
     select: new FormControl(null, IMRequiredValidator())
   });
-
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
-  }
 }

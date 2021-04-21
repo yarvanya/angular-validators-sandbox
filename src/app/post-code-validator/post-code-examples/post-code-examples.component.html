@@ -12,7 +12,7 @@
   <mat-form-field appearance="outline" class="mt-1">
     <input matInput [placeholder]="'Post code'" [formControl]="postCodeFormControl" autocomplete="off">
     <mat-error *ngIf="postCodeFormControl.invalid">
-      {{getErrorMessage(postCodeFormControl)}}
+      {{postCodeFormControl.errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
 </div>

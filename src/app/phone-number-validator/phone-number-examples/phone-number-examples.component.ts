@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AbstractControl, FormControl} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import {IMCountryConfigurations, IMPhoneNumberValidator, IMCountryConfigInterface, IMCountryEnum} from 'angular-validators';
-import {ErrorResolverService} from '@services/error-resolver.service';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -17,10 +16,6 @@ export class PhoneNumberExamplesComponent implements OnInit, OnDestroy {
   public phoneNumberFormControl: FormControl = new FormControl(null, IMPhoneNumberValidator(this.countryFormControl?.value));
   private countrySubscription: Subscription;
 
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
   public ngOnInit(): void {
     this.subscribeToCountrySelectionValueChanges();
   }
@@ -33,10 +28,6 @@ export class PhoneNumberExamplesComponent implements OnInit, OnDestroy {
       );
       this.phoneNumberFormControl.markAsTouched();
     });
-  }
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
   }
 
   public ngOnDestroy(): void {

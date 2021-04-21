@@ -1,40 +1,51 @@
-import {Injectable} from '@angular/core';
-import {AbstractControl} from '@angular/forms';
+import {Pipe, PipeTransform} from '@angular/core';
 import {
   IMComparatorOperatorEnum,
-  IMPhoneNumberErrorInterface,
-  IMNumberComparatorErrorInterface,
   IMDateComparatorErrorInterface,
-  IMNumberInRangeErrorInterface,
   IMDateInRangeErrorInterface,
+  IMNumberComparatorErrorInterface,
+  IMNumberDecimalPlacesErrorInterface,
+  IMNumberInRangeErrorInterface,
+  IMPhoneNumberErrorInterface,
   IMPostCodeErrorInterface,
   PasswordErrorInterface,
-  IMNumberDecimalPlacesErrorInterface,
   PasswordOperatorEnum
 } from 'angular-validators';
+import {ValidationErrors} from '@angular/forms';
 
-@Injectable({providedIn: 'root'})
-
-export class ErrorResolverService {
+@Pipe({
+  name: 'controlErrorResolver'
+})
+export class ControlErrorResolverPipe implements PipeTransform {
   private errorResolver = {
     isEmailInvalid: () => 'Email is not valid',
     phoneNumberError: (error: IMPhoneNumberErrorInterface) => `Phone number is not valid (${error.countryName}).`,
     numberComparatorError: (error: IMNumberComparatorErrorInterface) => {
       switch (error.operator) {
-        case IMComparatorOperatorEnum.equal: return `Must be equal to ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.greater: return `Must be greater than ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.greaterEqual: return `Must be greater than or equal to ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.less: return `Must be less than ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.lessEqual: return `Must be less than or equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.equal:
+          return `Must be equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greater:
+          return `Must be greater than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greaterEqual:
+          return `Must be greater than or equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.less:
+          return `Must be less than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.lessEqual:
+          return `Must be less than or equal to ${error.comparingValue}`;
       }
     },
     dateComparatorError: (error: IMDateComparatorErrorInterface) => {
       switch (error.operator) {
-        case IMComparatorOperatorEnum.equal: return `Must be equal to ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.greater: return `Must be greater than ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.greaterEqual: return `Must be greater than or equal to ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.less: return `Must be less than ${error.comparingValue}`;
-        case IMComparatorOperatorEnum.lessEqual: return `Must be less than or equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.equal:
+          return `Must be equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greater:
+          return `Must be greater than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.greaterEqual:
+          return `Must be greater than or equal to ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.less:
+          return `Must be less than ${error.comparingValue}`;
+        case IMComparatorOperatorEnum.lessEqual:
+          return `Must be less than or equal to ${error.comparingValue}`;
       }
     },
     fieldRequiredError: () => 'This field is required.',
@@ -68,13 +79,11 @@ export class ErrorResolverService {
     }
   };
 
-  public getErrorMessage(control: AbstractControl): string {
-    if (control.invalid) {
-      const errorKeys = Object.keys(control.errors);
+  public transform(error_keys: ValidationErrors): string {
+    const validator_error = Object.keys(error_keys)[0];
 
-      if (this.errorResolver[errorKeys[0]]) {
-        return this.errorResolver[errorKeys[0]](control.errors[errorKeys[0]]);
-      }
+    if (this.errorResolver[validator_error]) {
+      return this.errorResolver[validator_error](error_keys[validator_error]);
     }
   }
 }

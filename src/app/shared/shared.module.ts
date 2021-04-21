@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter} from '@angular/material-moment-adapter';
+import {ControlErrorResolverPipe} from '../pipes/control-error-resolver.pipe';
 
 export const CUSTOM_MAT_DATE_FORMATS = {
   parse: {
@@ -28,6 +29,7 @@ export const CUSTOM_MAT_DATE_FORMATS = {
 };
 
 @NgModule({
+  declarations: [ControlErrorResolverPipe],
   exports: [
     CommonModule,
     ReactiveFormsModule,
@@ -42,7 +44,8 @@ export const CUSTOM_MAT_DATE_FORMATS = {
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ControlErrorResolverPipe
   ],
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]},
