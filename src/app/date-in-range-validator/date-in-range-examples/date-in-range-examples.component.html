@@ -9,6 +9,8 @@
     <mat-label>Select date</mat-label>
     <input matInput [formControl]="dateControl" [matDatepicker]="datePicker">
     <mat-datepicker #datePicker></mat-datepicker>
-    <mat-error *ngIf="dateControl.invalid">{{getErrorMessage(dateControl)}}</mat-error>
+    <mat-error *ngIf="dateControl.invalid">
+      {{dateControl.errors | controlErrorResolver}}
+    </mat-error>
   </mat-form-field>
 </form>

@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AbstractControl, FormControl} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import {IMNumberDecimalPlacesValidator} from 'angular-validators';
-import {ErrorResolverService} from '@services/error-resolver.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
@@ -20,10 +19,6 @@ export class NumberDecimalPlacesExamplesComponent implements OnInit, OnDestroy {
     IMNumberDecimalPlacesValidator(this.scaleControl.value, this.fixScaleControl.value)
   );
   private subscriptions: Subject<boolean> = new Subject<boolean>();
-
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
 
   public ngOnInit(): void {
     this.subscribeToScaleControlValueChanges();
@@ -52,10 +47,6 @@ export class NumberDecimalPlacesExamplesComponent implements OnInit, OnDestroy {
       IMNumberDecimalPlacesValidator(scale, fixed)
     );
     this.decimalPlacesControl.markAsTouched();
-  }
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
   }
 
   public ngOnDestroy(): void {

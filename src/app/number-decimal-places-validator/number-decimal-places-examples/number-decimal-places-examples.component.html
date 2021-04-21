@@ -19,6 +19,8 @@
   <mat-form-field appearance="outline" class="mt-1">
     <mat-label>Decimal places</mat-label>
     <input type="number" matInput [placeholder]="'Decimal places'" [formControl]="decimalPlacesControl">
-    <mat-error *ngIf="decimalPlacesControl.invalid">{{getErrorMessage(decimalPlacesControl)}}</mat-error>
+    <mat-error *ngIf="decimalPlacesControl.invalid">
+      {{decimalPlacesControl.errors | controlErrorResolver}}
+    </mat-error>
   </mat-form-field>
 </form>

@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMDateComparatorValidator} from 'angular-validators';
-import {ErrorResolverService} from '@services/error-resolver.service';
 import * as moment from 'moment';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -88,10 +87,6 @@ export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
 
   private subscriptions = new Subject();
 
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
   public ngOnInit(): void {
     this.equalForm.get('startDate').valueChanges.pipe(takeUntil(this.subscriptions))
       .subscribe(() => this.equalForm.get('endDate').updateValueAndValidity());
@@ -103,10 +98,6 @@ export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
       .subscribe(() => this.lessForm.get('endDate').updateValueAndValidity());
     this.lessEqualForm.get('startDate').valueChanges.pipe(takeUntil(this.subscriptions))
       .subscribe(() => this.lessEqualForm.get('endDate').updateValueAndValidity());
-  }
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
   }
 
   public ngOnDestroy(): void {

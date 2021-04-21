@@ -1,38 +1,36 @@
-<p>Here are 'custom required' validator examples</p>
-
-<form [formGroup]="diffTypesFormGroup" autocomplete="off" fxLayout="column" class="mt-1">
+<form [formGroup]="diffTypesFormGroup" autocomplete="off" class="mt-1" fxLayout="column">
   <span>Input with type text</span>
   <mat-form-field appearance="outline">
-    <input type="text" matInput [placeholder]="'Text form control'" formControlName="text">
+    <input [placeholder]="'Text form control'" formControlName="text" matInput type="text">
     <mat-error *ngIf="diffTypesFormGroup.get('text').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('text'))}}
+      {{diffTypesFormGroup.get('text').errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
 
   <span>Input with type number</span>
   <mat-form-field appearance="outline">
-    <input type="text" matInput [placeholder]="'Number form control'" formControlName="number">
+    <input [placeholder]="'Number form control'" formControlName="number" matInput type="text">
     <mat-error *ngIf="diffTypesFormGroup.get('number').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('number'))}}
+      {{diffTypesFormGroup.get('number').errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
 
   <span>Input with type time</span>
   <mat-form-field appearance="outline">
-    <input type="time" matInput [placeholder]="'Time form control'" formControlName="time">
+    <input [placeholder]="'Time form control'" formControlName="time" matInput type="time">
     <mat-error *ngIf="diffTypesFormGroup.get('time').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('time'))}}
+      {{diffTypesFormGroup.get('time').errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
 
   <span>Input with type date</span>
   <mat-form-field appearance="outline">
-    <mat-datepicker-toggle matPrefix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-datepicker-toggle [for]="datePicker" matPrefix></mat-datepicker-toggle>
     <mat-label>Date form control *</mat-label>
-    <input matInput formControlName="date" [matDatepicker]="datePicker">
+    <input [matDatepicker]="datePicker" formControlName="date" matInput>
     <mat-datepicker #datePicker></mat-datepicker>
     <mat-error *ngIf="diffTypesFormGroup.get('date').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('date'))}}
+      {{diffTypesFormGroup.get('date').errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
 
@@ -45,9 +43,7 @@
       <mat-option [value]="'other'">Other</mat-option>
     </mat-select>
     <mat-error *ngIf="diffTypesFormGroup.get('select').invalid">
-      {{getErrorMessage(diffTypesFormGroup.get('select'))}}
+      {{diffTypesFormGroup.get('select').errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
-
-  <!--        <mat-slide-toggle formControlName="toggleRequired">Toggle Required *</mat-slide-toggle>-->
 </form>

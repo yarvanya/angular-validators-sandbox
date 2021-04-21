@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AbstractControl, FormControl} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import {IMCreditCardValidator, IMCreditCardTypeValidatorEnum} from 'angular-validators';
-import {ErrorResolverService} from '@services/error-resolver.service';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -14,10 +13,6 @@ export class CustomCreditCardExamplesComponent implements OnInit, OnDestroy {
   public cardType = new FormControl(IMCreditCardTypeValidatorEnum.MasterCard);
   public IMCreditCardTypeValidatorEnum = IMCreditCardTypeValidatorEnum;
   private creditCardNumberSubscription: Subscription;
-
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
 
   public ngOnInit(): void {
     this.subscribeToCreditCardNumberValueEnter();
@@ -38,10 +33,6 @@ export class CustomCreditCardExamplesComponent implements OnInit, OnDestroy {
   public onCardTypeChange(card_type: IMCreditCardTypeValidatorEnum): void {
     this.creditCardNumber.setValidators(IMCreditCardValidator({creditCardType: card_type}));
     this.creditCardNumber.updateValueAndValidity({onlySelf: true});
-  }
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
   }
 
   public ngOnDestroy(): void {
