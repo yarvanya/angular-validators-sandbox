@@ -1,13 +1,12 @@
-<p>Here are 'date-comparator' validator examples.</p>
-<p>We have two possibilities to use this validator.</p>
-<p><b>1. Pass comparing value directly via validator configuration</b></p>
-<p><b>2. Pass control key directly via validator configuration</b></p>
-<p>It has to be a brother form control on the same form group with moment model.</p>
+<h2>Here is example player:</h2>
 
-<mat-tab-group>
+<mat-tab-group animationDuration="0ms">
   <mat-tab label="Equal To (===)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be to current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be equal to current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -21,7 +20,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date has to be the same as start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date has to be the same as start date.</span>
+      </p>
 
       <form [formGroup]="equalForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -50,7 +52,10 @@
   </mat-tab>
   <mat-tab label="Greater Than (>)">
     <div class="mt-2">
-      <p><b>1.</b> In next example selected date must be strictly greater than current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example selected date must be strictly greater than current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -64,7 +69,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be strictly greater than start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be strictly greater than start date.</span>
+      </p>
 
       <form [formGroup]="greaterForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -93,7 +101,10 @@
   </mat-tab>
   <mat-tab label="Greater Than Or Equal To (>=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be greater than or equal to current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be greater than or equal to current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -107,7 +118,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be greater than or equal to start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be greater than or equal to start date.</span>
+      </p>
 
       <form [formGroup]="greaterEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -136,7 +150,10 @@
   </mat-tab>
   <mat-tab label="Less Than (<)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be strictly less than current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be strictly less than current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -150,7 +167,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be strictly less than start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be strictly less than start date.</span>
+      </p>
 
       <form [formGroup]="lessForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -179,7 +199,10 @@
   </mat-tab>
   <mat-tab label="Less Than Or Equal To (<=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be less than or equal to current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be less than or equal to current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -193,7 +216,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be less than or equal to start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be less than or equal to start date.</span>
+      </p>
 
       <form [formGroup]="lessEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">

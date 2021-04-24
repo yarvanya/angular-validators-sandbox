@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {IMComparatorOperatorEnum} from 'angular-validators';
 
 @Component({
   selector: 'app-date-comparator-api',
@@ -6,8 +7,6 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./date-comparator-api.component.scss']
 })
 
-export class DateComparatorApiComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class DateComparatorApiComponent {
+  public comparatorOperatorEnum = IMComparatorOperatorEnum;
 }
