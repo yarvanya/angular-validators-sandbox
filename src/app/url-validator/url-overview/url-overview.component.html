@@ -1,0 +1,23 @@
+<h2>IMUrlValidator</h2>
+
+<h2><strong>This is URL validator.</strong></h2>
+<p>Configuration parameter by default is set to "Any". What means that any URL with or without protocols will be valid</p>
+<p>Available URL protocols to validate:</p>
+<ul>
+  <li *ngFor="let config of urlValidatorConfigurations">{{config.label}}</li>
+</ul>
+
+<hr>
+
+<p fxLayout="column">
+  <span>This validator can be imported in the next way:</span>
+  <strong class="pt-1">import {{'{'}}IMUrlValidator{{'}'}} from 'angular-validators';</strong>
+  <span class="pt-1">To pass url parameter, you have to import enum from library:</span>
+  <strong class="pt-1">import {{'{'}}IMUrlProtocolTypeEnum{{'}'}} from 'angular-validators';</strong>
+  <span class="pt-1">Also, error interface that validator returns can be imported as well:</span>
+  <strong class="pt-1">import {{'{'}}IMUrlErrorInterface{{'}'}} from 'angular-validators';</strong>
+</p>
+
+<hr>
+
+<p class="mt-2">Please, take a look at the validator APIs for more detailed information.</p>

@@ -1,7 +1,7 @@
-import {PasswordOperatorEnum} from '../enums/password-operator.enum';
+import {IMPasswordOperatorEnum} from '../enums/password-operator.enum';
 
-export interface PasswordErrorInterface {
+export interface IMPasswordErrorInterface {
   isInvalid: boolean;
-  operator: PasswordOperatorEnum;
+  operator: IMPasswordOperatorEnum;
   comparingValue: number;
 }

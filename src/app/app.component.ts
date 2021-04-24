@@ -12,8 +12,6 @@ export interface SidebarRouterInterface {
 })
 
 export class AppComponent {
-  constructor() {}
-
   public sidebarLinks: SidebarRouterInterface[] = [
     {routerLink: '', linkText: 'Home'},
     {routerLink: 'custom-required-validator-overview', linkText: 'Custom Required Validator'},
@@ -26,6 +24,7 @@ export class AppComponent {
     {routerLink: 'date-in-range-validator-overview', linkText: 'Date In Range Validator'},
     {routerLink: 'post-code-validator-overview', linkText: 'Post Code Validator'},
     {routerLink: 'password-validator-overview', linkText: 'Password Validator'},
-    {routerLink: 'number-decimal-places-validator-overview', linkText: 'Number Decimal Places Validator'}
+    {routerLink: 'number-decimal-places-validator-overview', linkText: 'Number Decimal Places Validator'},
+    {routerLink: 'url-validator-overview', linkText: 'URL Validator'}
   ];
 }

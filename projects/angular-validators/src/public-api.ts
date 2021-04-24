@@ -1,4 +1,6 @@
 // General exports
+import {IMUrlValidatorConfigModel} from './lib/validators/url.validator';
+
 export {IMCountryConfigurations} from './lib/constants/country-configurations.constant';
 export {IMCountryEnum} from './lib/enums/country.enum';
 export {IMCountryConfigInterface} from './lib/interfaces/country-config.interface';
@@ -44,9 +46,16 @@ export {IMPostCodeErrorInterface} from './lib/interfaces/post-code-error.interfa
 // Password validator exports
 export {IMPasswordValidator} from './lib/validators/password.validator';
 export {IMPasswordValidatorConfigModel} from './lib/validators/password.validator';
-export {PasswordErrorInterface} from './lib/interfaces/password-error.interface';
-export {PasswordOperatorEnum} from './lib/enums/password-operator.enum';
+export {IMPasswordErrorInterface} from './lib/interfaces/password-error.interface';
+export {IMPasswordOperatorEnum} from './lib/enums/password-operator.enum';
 
 // Decimal places validator exports
 export {IMNumberDecimalPlacesValidator} from './lib/validators/number-decimal-places.validator';
 export {IMNumberDecimalPlacesErrorInterface} from './lib/interfaces/number-decimal-places-error.interface';
+
+// Url validator exports
+export {IMUrlValidator} from './lib/validators/url.validator';
+export {IMUrlValidatorConfigModel} from './lib/validators/url.validator';
+export {IMUrlErrorInterface} from './lib/interfaces/url-error.interface';
+export {IMUrlProtocolTypeEnum} from './lib/enums/url-protocol.enum';
+

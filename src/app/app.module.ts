@@ -11,6 +11,7 @@ import {NumberComparatorValidatorModule} from './number-comparator-validator/num
 import {CustomEmailValidatorModule} from './custom-email-validator/custom-email-validator.module';
 import {CustomCreditCardValidatorModule} from './custom-credit-card-validator/custom-credit-card-validator.module';
 import {AppComponent} from './app.component';
+import {UrlValidatorModule} from './url-validator/url-validator.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {AppComponent} from './app.component';
     PhoneNumberValidatorModule,
     CustomEmailValidatorModule,
     NumberComparatorValidatorModule,
-    CustomCreditCardValidatorModule
+    CustomCreditCardValidatorModule,
+    UrlValidatorModule
   ],
   bootstrap: [AppComponent]
 })

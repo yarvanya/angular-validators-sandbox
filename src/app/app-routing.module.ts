@@ -60,6 +60,10 @@ const routes: Routes = [
     path: 'number-decimal-places-validator-overview',
     loadChildren: () => import('./number-decimal-places-validator/number-decimal-places-validator.module')
       .then(m => m.NumberDecimalPlacesValidatorModule)
+  },
+  {
+    path: 'url-validator-overview',
+    loadChildren: () => import('./url-validator/url-validator.module').then(m => m.UrlValidatorModule)
   }
 ];
 
