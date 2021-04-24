@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {IMCountryConfigurations} from 'angular-validators';
 
 @Component({
   selector: 'app-post-code-overview',
@@ -6,8 +7,6 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./post-code-overview.component.scss']
 })
 
-export class PostCodeOverviewComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class PostCodeOverviewComponent {
+  public countryConfigurations = IMCountryConfigurations;
 }
