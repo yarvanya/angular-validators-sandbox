@@ -1,9 +1,15 @@
-<p>Here are 'custom email' validator examples</p>
+<h2>Here is example player:</h2>
 
 <form fxLayout="column" class="mt-1" autocomplete="off">
+  <h3>Select needed scale for email domain suffix:</h3>
   <mat-form-field appearance="outline" class="mt-1">
     <input type="number" matInput [placeholder]="'Scale'" [formControl]="scaleFormControl">
   </mat-form-field>
+
+  <div class="mt-1">
+    <h3>Toggle scale fix ability for email domain suffix:</h3>
+    <mat-slide-toggle color="primary" [formControl]="fixScaleControl">Is fixed?</mat-slide-toggle>
+  </div>
 
   <mat-form-field appearance="outline" class="mt-1">
     <input type="text" matInput [placeholder]="'Email'" [formControl]="emailFormControl">

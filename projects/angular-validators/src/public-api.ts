@@ -6,7 +6,6 @@ export {IMCountryPhoneNumberConfigInterface} from './lib/interfaces/country-conf
 
 // Email validator exports
 export {IMEmailValidator} from './lib/validators/email.validator';
-export {IMEmailValidatorConfigModel} from './lib/validators/email.validator';
 
 // Phone number validator exports
 export {IMPhoneNumberValidator} from './lib/validators/phone-number.validator';
