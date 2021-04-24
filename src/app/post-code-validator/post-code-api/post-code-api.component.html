@@ -1,1 +1,38 @@
-<p>Here are 'post code' validator APIs</p>
+<table class="api">
+  <tr>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Default value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>country</strong></td>
+    <td>IMCountryEnum</td>
+    <td>Yes</td>
+    <td>No default value</td>
+    <td>This parameter defines country where post code rules will be taken</td>
+  </tr>
+</table>
+
+<p class="mt-1"><strong>Next countries are available:</strong></p>
+
+<table class="api">
+  <tr>
+    <th>Country</th>
+    <th>Enum value</th>
+    <th>Example</th>
+  </tr>
+  <tr *ngFor="let config of countryConfigurations">
+    <td><strong>{{config.countryName}}</strong></td>
+    <td>{{config.country}}</td>
+    <td>{{config.postCodeExample}}</td>
+  </tr>
+</table>
+
+<p class="mt-2">
+  <span class="mr-1">Post code rules for specific country can be found here:</span>
+  <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_postal_codes">https://en.wikipedia.org/wiki/List_of_postal_codes</a>
+</p>
+
+<p class="mt-2">Please, take a look at the validator examples and play with different defined validator parameters.</p>

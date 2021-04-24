@@ -8,7 +8,7 @@ export const IMPhoneNumberValidator = (country: IMCountryEnum): ValidatorFn => {
   const config: IMCountryConfigInterface = IMCountryConfigurations.find(item => item.country === country);
   const regexp: RegExp = new RegExp(`^(?:${config.phoneNumber.callingCode})[0-9]{${config.phoneNumber.afterCodeNumbersLength}}$`);
 
-  return (control: AbstractControl): {[key: string]: IMPhoneNumberErrorInterface} => {
+  return (control: AbstractControl): {phoneNumberError: IMPhoneNumberErrorInterface} => {
     if (control.value && !regexp.test(control.value)) {
       return {
         phoneNumberError: {

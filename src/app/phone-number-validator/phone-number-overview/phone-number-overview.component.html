@@ -1,1 +1,25 @@
-<p>It is 'phone number' validator</p>
+<h2>IMPhoneNumberValidator</h2>
+
+<h2><strong>This is phone number validator.</strong></h2>
+<p>It has only one required parameter - country.</p>
+<p>It is an enum that library imports.</p>
+<p>Right now, next list of countries are available for the validator:</p>
+
+<ul>
+  <li *ngFor="let config of countryConfigurations">{{config.countryName}}</li>
+</ul>
+
+<hr>
+
+<p fxLayout="column">
+  <span>It can be imported in next way:</span>
+  <strong class="pt-1">import {{'{'}}IMPhoneNumberValidator{{'}'}} from 'angular-validators';</strong>
+  <span class="pt-1">To pass country parameter, you have to import enum from library:</span>
+  <strong class="pt-1">import {{'{'}}IMCountryEnum{{'}'}} from 'angular-validators';</strong>
+  <span class="pt-1">Also, error interface that validator returns can be imported as well:</span>
+  <strong class="pt-1">import {{'{'}}IMPhoneNumberErrorInterface{{'}'}} from 'angular-validators';</strong>
+</p>
+
+<hr>
+
+<p class="mt-2">Please, take a look at the validator APIs for more detailed information.</p>

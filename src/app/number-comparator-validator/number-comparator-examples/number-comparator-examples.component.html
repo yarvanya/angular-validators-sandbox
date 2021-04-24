@@ -1,13 +1,12 @@
-<p>Here are 'number-comparator' validator examples.</p>
-<p>We have two possibilities to use this validator.</p>
-<p><b>1. Pass comparing value directly via validator configuration</b></p>
-<p><b>2. Pass control key directly via validator configuration</b></p>
-<p>It has to be a brother form control on the same form group with model type number.</p>
+<h2>Here is example player:</h2>
 
-<mat-tab-group>
+<mat-tab-group animationDuration="0ms">
   <mat-tab label="Equal To (===)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be equal to 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be equal to 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -19,7 +18,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value equal to first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value equal to first one.</span>
+      </p>
 
       <form [formGroup]="equalForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -44,7 +46,10 @@
   </mat-tab>
   <mat-tab label="Greater Than (>)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be strictly greater than 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be strictly greater than 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -56,7 +61,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value greater than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value greater than first one.</span>
+      </p>
 
       <form [formGroup]="greaterForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -81,7 +89,10 @@
   </mat-tab>
   <mat-tab label="Greater Than Or Equal To (>=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be greater than or equal to 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be greater than or equal to 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -93,7 +104,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value greater than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value greater than or equal to first one.</span>
+      </p>
 
       <form [formGroup]="greaterEqualForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -118,7 +132,10 @@
   </mat-tab>
   <mat-tab label="Less Than (<)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be strictly less than 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be strictly less than 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -130,7 +147,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value less than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value less than first one.</span>
+      </p>
 
       <form [formGroup]="lessForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -155,7 +175,10 @@
   </mat-tab>
   <mat-tab label="Less Than Or Equal To (<=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be less than or equal to 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be less than or equal to 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
@@ -167,7 +190,10 @@
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value greater than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value less than or equal to first one.</span>
+      </p>
 
       <form [formGroup]="lessEqualForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
