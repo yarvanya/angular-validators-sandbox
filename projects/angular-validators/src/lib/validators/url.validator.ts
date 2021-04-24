@@ -3,7 +3,7 @@ import {IMUrlProtocolTypeEnum} from '../enums/url-protocol.enum';
 import {IMUrlErrorInterface} from '../interfaces/url-error.interface';
 
 export class IMUrlValidatorConfigModel {
-  public protocolType: IMUrlProtocolTypeEnum = IMUrlProtocolTypeEnum.NoProtocol;
+  public protocolType: IMUrlProtocolTypeEnum = IMUrlProtocolTypeEnum.Any;
 }
 
 export const IMUrlValidator = (config: IMUrlValidatorConfigModel = new IMUrlValidatorConfigModel()): ValidatorFn => {
