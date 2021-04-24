@@ -8,7 +8,7 @@ export const IMPostCodeValidator = (country: IMCountryEnum): ValidatorFn => {
   const config: IMCountryConfigInterface = IMCountryConfigurations.find(item => item.country === country);
   const regexp: RegExp = new RegExp(config.postCodePattern);
 
-  return (control: AbstractControl): {[key: string]: IMPostCodeErrorInterface} => {
+  return (control: AbstractControl): {postCodeError: IMPostCodeErrorInterface} => {
     if (control.value && !regexp.test(control.value)) {
       return {
         postCodeError: {

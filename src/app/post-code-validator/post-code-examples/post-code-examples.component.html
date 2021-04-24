@@ -1,8 +1,7 @@
-<p>Here are 'post code' validator examples</p>
-
-<p>Here are all available countries</p>
+<h2>Here is example player:</h2>
 
 <div fxLayout="column" class="mt-1">
+  <p>Select country:</p>
   <mat-button-toggle-group [formControl]="countryFormControl">
     <ng-container *ngFor="let country_item of availableCountries">
       <mat-button-toggle [value]="country_item.country">{{country_item.countryName}}</mat-button-toggle>
