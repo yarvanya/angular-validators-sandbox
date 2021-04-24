@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {IMComparatorOperatorEnum} from 'angular-validators';
 
 @Component({
   selector: 'app-number-comparator-api',
@@ -6,4 +7,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./number-comparator-api.component.scss']
 })
 
-export class NumberComparatorApiComponent {}
+export class NumberComparatorApiComponent {
+  public comparatorOperatorEnum = IMComparatorOperatorEnum;
+}
