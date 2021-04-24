@@ -1,4 +1,4 @@
-export enum PasswordOperatorEnum {
+export enum IMPasswordOperatorEnum {
   minLength,
   minNumberQuantity,
   minCapitalLettersQuantity,

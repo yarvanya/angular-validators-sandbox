@@ -1,6 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {
-  IMComparatorOperatorEnum,
   IMDateComparatorErrorInterface,
   IMDateInRangeErrorInterface,
   IMNumberComparatorErrorInterface,
@@ -8,8 +7,11 @@ import {
   IMNumberInRangeErrorInterface,
   IMPhoneNumberErrorInterface,
   IMPostCodeErrorInterface,
-  PasswordErrorInterface,
-  PasswordOperatorEnum
+  IMUrlErrorInterface,
+  IMPasswordErrorInterface,
+  IMComparatorOperatorEnum,
+  IMUrlProtocolTypeEnum,
+  IMPasswordOperatorEnum
 } from 'angular-validators';
 import {ValidationErrors} from '@angular/forms';
 
@@ -56,17 +58,17 @@ export class ControlErrorResolverPipe implements PipeTransform {
     numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
     dateInRange: (error: IMDateInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
     postCodeError: (error: IMPostCodeErrorInterface) => `Post code is not valid (${error.countryName}).`,
-    passwordValidatorError: (error: PasswordErrorInterface) => {
+    passwordValidatorError: (error: IMPasswordErrorInterface) => {
       switch (error.operator) {
-        case PasswordOperatorEnum.minLength:
+        case IMPasswordOperatorEnum.minLength:
           return `Password should be more than ${error.comparingValue} symbols`;
-        case PasswordOperatorEnum.minNumberQuantity:
+        case IMPasswordOperatorEnum.minNumberQuantity:
           return `In password should be at least ${error.comparingValue} number(s)`;
-        case PasswordOperatorEnum.minCapitalLettersQuantity:
+        case IMPasswordOperatorEnum.minCapitalLettersQuantity:
           return `In password should be at least ${error.comparingValue} capital letter(s)`;
-        case PasswordOperatorEnum.minSmallLettersQuantity:
+        case IMPasswordOperatorEnum.minSmallLettersQuantity:
           return `In password should be at least ${error.comparingValue} small letter(s)`;
-        case PasswordOperatorEnum.minSpecialCharactersQuantity:
+        case IMPasswordOperatorEnum.minSpecialCharactersQuantity:
           return `In password should be at least ${error.comparingValue} special character(s)`;
       }
     },
@@ -75,6 +77,15 @@ export class ControlErrorResolverPipe implements PipeTransform {
         return `Must have ${error.scale} decimal places after comma.`;
       } else {
         return `Maximum ${error.scale} decimal place(s) after comma allowed.`;
+      }
+    },
+    urlValidationError: (error: IMUrlErrorInterface) => {
+      switch (error.protocolType) {
+        case IMUrlProtocolTypeEnum.Any: return `Invalid link`;
+        case IMUrlProtocolTypeEnum.NoProtocol: return `Link should start with 'www.'`;
+        case IMUrlProtocolTypeEnum.Http: return `Link should start with 'http://'`;
+        case IMUrlProtocolTypeEnum.Https: return `Link should start with 'https://'`;
+        case IMUrlProtocolTypeEnum.Ftp: return `Link should start with 'ftp://'`;
       }
     }
   };

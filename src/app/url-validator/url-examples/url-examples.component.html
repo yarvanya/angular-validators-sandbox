@@ -1,0 +1,4 @@
+<mat-form-field>
+  <input matInput type="text" [formControl]="urlControl" placeholder="Enter your link">
+  <mat-error *ngIf="urlControl.invalid">{{urlControl.errors | controlErrorResolver}}</mat-error>
+</mat-form-field>
