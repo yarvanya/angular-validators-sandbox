@@ -1,24 +1,28 @@
-# AngularValidators
+# Angular Reactive Forms Validators
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+This library will help you with lots of already written mostly used validators for Angular 2+ applications.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project angular-validators` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-validators`.
-> Note: Don't forget to add `--project angular-validators` or else it will be added to the default project in your `angular.json` file. 
+`npm i im-angular-validators --save`
 
-## Build
+## Demo
 
-Run `ng build angular-validators` to build the project. The build artifacts will be stored in the `dist/` directory.
+> You can read whole documentation and play with different examples of validators usages here:
+> 
+> <a href="https://yarvanya.github.io/angular-validators-sandbox/" target="_blank">Angular Validators Sandbox</a>
 
-## Publishing
+## Here is a list of implemented validators
 
-After building your library with `ng build angular-validators`, go to the dist folder `cd dist/angular-validators` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test angular-validators` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **`Custom required validator`**
+- **`Custom email validator`**
+- **`Phone number validator`**
+- **`Credit card validator`**
+- **`Number comparator validator`**
+- **`Number in range validator`**
+- **`Date comparator validator`**
+- **`Date in range validator`**
+- **`Post code validator`**
+- **`Password validator`**
+- **`Number decimal places validator`**
+- **`Url validator`**
