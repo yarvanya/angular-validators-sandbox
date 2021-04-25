@@ -54,7 +54,7 @@ export class ControlErrorResolverPipe implements PipeTransform {
     required: () => 'This field is required.',
     creditCardNumberLengthValidatorError: () => 'Invalid credit card number',
     creditCardTypeValidationError: () => 'Your credit card type is invalid',
-    creditCardInvalid: () => 'Sorry, but such card does not exist',
+    creditCardDoesNotExist: () => 'Sorry, but such card does not exist',
     numberInRange: (error: IMNumberInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
     dateInRange: (error: IMDateInRangeErrorInterface) => `Must be in range: from ${error.from} to ${error.to}`,
     postCodeError: (error: IMPostCodeErrorInterface) => `Post code is not valid (${error.countryName}).`,
