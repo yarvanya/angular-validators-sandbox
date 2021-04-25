@@ -1,30 +1,34 @@
-<p>Here are 'number-comparator' validator examples.</p>
-<p>We have two possibilities to use this validator.</p>
-<p><b>1. Pass comparing value directly via validator configuration</b></p>
-<p><b>2. Pass control key directly via validator configuration</b></p>
-<p>It has to be a brother form control on the same form group with model type number.</p>
+<h2>Here is example player:</h2>
 
-<mat-tab-group>
+<mat-tab-group animationDuration="0ms">
   <mat-tab label="Equal To (===)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be equal to 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be equal to 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be equal to 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="equalFormControl">
-          <mat-error *ngIf="equalFormControl.invalid">{{getErrorMessage(equalFormControl)}}</mat-error>
+          <mat-error *ngIf="equalFormControl.invalid">
+            {{equalFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value equal to first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value equal to first one.</span>
+      </p>
 
       <form [formGroup]="equalForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="equalForm.get('firstAge').invalid">
-            {{getErrorMessage(equalForm.get('firstAge'))}}
+            {{equalForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -32,7 +36,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="equalForm.get('secondAge').invalid">
-            {{getErrorMessage(equalForm.get('secondAge'))}}
+            {{equalForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -42,24 +46,32 @@
   </mat-tab>
   <mat-tab label="Greater Than (>)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be strictly greater than 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be strictly greater than 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be greater than 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="greaterFormControl">
-          <mat-error *ngIf="greaterFormControl.invalid">{{getErrorMessage(greaterFormControl)}}</mat-error>
+          <mat-error *ngIf="greaterFormControl.invalid">
+            {{greaterFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value greater than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value greater than first one.</span>
+      </p>
 
       <form [formGroup]="greaterForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="greaterForm.get('firstAge').invalid">
-            {{getErrorMessage(greaterForm.get('firstAge'))}}
+            {{greaterForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -67,7 +79,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="greaterForm.get('secondAge').invalid">
-            {{getErrorMessage(greaterForm.get('secondAge'))}}
+            {{greaterForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -77,24 +89,32 @@
   </mat-tab>
   <mat-tab label="Greater Than Or Equal To (>=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be greater than or equal to 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be greater than or equal to 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be greater than or equal to 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="greaterEqualFormControl">
-          <mat-error *ngIf="greaterEqualFormControl.invalid">{{getErrorMessage(greaterEqualFormControl)}}</mat-error>
+          <mat-error *ngIf="greaterEqualFormControl.invalid">
+            {{greaterEqualFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value greater than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value greater than or equal to first one.</span>
+      </p>
 
       <form [formGroup]="greaterEqualForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="greaterEqualForm.get('firstAge').invalid">
-            {{getErrorMessage(greaterEqualForm.get('firstAge'))}}
+            {{greaterEqualForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -102,7 +122,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="greaterEqualForm.get('secondAge').invalid">
-            {{getErrorMessage(greaterEqualForm.get('secondAge'))}}
+            {{greaterEqualForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -112,24 +132,32 @@
   </mat-tab>
   <mat-tab label="Less Than (<)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be strictly less than 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be strictly less than 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be less than 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="lessFormControl">
-          <mat-error *ngIf="lessFormControl.invalid">{{getErrorMessage(lessFormControl)}}</mat-error>
+          <mat-error *ngIf="lessFormControl.invalid">
+            {{lessFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value less than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value less than first one.</span>
+      </p>
 
       <form [formGroup]="lessForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="lessForm.get('firstAge').invalid">
-            {{getErrorMessage(lessForm.get('firstAge'))}}
+            {{lessForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -137,7 +165,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="lessForm.get('secondAge').invalid">
-            {{getErrorMessage(lessForm.get('secondAge'))}}
+            {{lessForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -147,24 +175,32 @@
   </mat-tab>
   <mat-tab label="Less Than Or Equal To (<=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be less than or equal to 18.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be less than or equal to 18.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>What is your age? (Must be less than or equal to 18)</mat-label>
           <input type="number" matInput [placeholder]="'What is your age?'" [formControl]="lessEqualFormControl">
-          <mat-error *ngIf="lessEqualFormControl.invalid">{{getErrorMessage(lessEqualFormControl)}}</mat-error>
+          <mat-error *ngIf="lessEqualFormControl.invalid">
+            {{lessEqualFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and second one must have value greater than first one.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and second one must have value less than or equal to first one.</span>
+      </p>
 
       <form [formGroup]="lessEqualForm" fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field appearance="outline" class="mt-1">
           <mat-label>First Age *</mat-label>
           <input type="number" matInput [placeholder]="'First Age *'" formControlName="firstAge">
           <mat-error *ngIf="lessEqualForm.get('firstAge').invalid">
-            {{getErrorMessage(lessEqualForm.get('firstAge'))}}
+            {{lessEqualForm.get('firstAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -172,7 +208,7 @@
           <mat-label>Second Age *</mat-label>
           <input type="number" matInput [placeholder]="'Second Age *'" formControlName="secondAge">
           <mat-error *ngIf="lessEqualForm.get('secondAge').invalid">
-            {{getErrorMessage(lessEqualForm.get('secondAge'))}}
+            {{lessEqualForm.get('secondAge').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 

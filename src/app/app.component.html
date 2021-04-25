@@ -1,15 +1,35 @@
 <mat-drawer-container class="application-container">
   <mat-drawer mode="side" opened>
-    <ul>
-      <li *ngFor="let sidebar_link of sidebarLinks">
-        <a
-          [routerLink]="sidebar_link.routerLink"
-          [routerLinkActiveOptions]="{exact: true}"
-          routerLinkActive="active">
-          {{sidebar_link.linkText}}
-        </a>
-      </li>
-    </ul>
+    <div class="menu-container" fxLayout="column" fxLayoutAlign="space-between">
+      <ul>
+        <li>
+          <a
+            [routerLink]="''"
+            [routerLinkActiveOptions]="{exact: true}"
+            routerLinkActive="active">
+            Home
+          </a>
+        </li>
+        <li *ngFor="let sidebar_link of sidebarLinks">
+          <a
+            [routerLink]="sidebar_link.routerLink"
+            [routerLinkActiveOptions]="{exact: true}"
+            routerLinkActive="active">
+            {{sidebar_link.linkText}}
+          </a>
+        </li>
+      </ul>
+
+      <ul fxLayout="column" fxLayoutAlign="end" fxFlex="100%">
+        <li>
+          <b>
+            <a [routerLink]="'release-notes'" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">
+              Release Notes
+            </a>
+          </b>
+        </li>
+      </ul>
+    </div>
   </mat-drawer>
   <mat-drawer-content>
     <div class="router-outlet-container p-2">

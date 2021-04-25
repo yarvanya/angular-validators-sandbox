@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import {IMRequiredValidator} from 'angular-validators';
-import {ErrorResolverService} from '@services/error-resolver.service';
 
 @Component({
   selector: 'app-custom-required-examples',
@@ -11,18 +10,10 @@ import {ErrorResolverService} from '@services/error-resolver.service';
 
 export class CustomRequiredExamplesComponent {
   public diffTypesFormGroup: FormGroup = new FormGroup({
-    text: new FormControl(null, IMRequiredValidator()),
-    number: new FormControl(null, IMRequiredValidator()),
+    text: new FormControl(null, IMRequiredValidator({isTrimValueRequired: true})),
+    number: new FormControl(null, IMRequiredValidator({isZeroAllowed: true})),
     time: new FormControl(null, IMRequiredValidator()),
     date: new FormControl(null, IMRequiredValidator()),
     select: new FormControl(null, IMRequiredValidator())
   });
-
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
-  }
 }

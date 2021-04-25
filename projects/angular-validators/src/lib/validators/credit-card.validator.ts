@@ -4,6 +4,7 @@ import {
   CreditCardLengthFromToInterface,
   CreditCardValidatorResolver
 } from '../helpers/credit-card-validator-helpers/credit-card-length-validator.helper';
+import {IMCreditCardErrorInterface} from '../interfaces/credit-card-error.interface';
 
 export class IMCreditCardValidatorConfigModel {
   creditCardType: IMCreditCardTypeValidatorEnum = IMCreditCardTypeValidatorEnum.MasterCard;
@@ -43,12 +44,12 @@ export const IMCreditCardValidator = (config: IMCreditCardValidatorConfigModel =
       };
 
       if (!isNumberInINNRange()) {
-        return {creditCardTypeValidationError: true};
+        return {creditCardTypeValidationError: true} as IMCreditCardErrorInterface;
       } else {
         if (isNumberFitToLength()) {
-          return {creditCardNumberLengthValidatorError: true};
+          return {creditCardNumberLengthValidatorError: true} as IMCreditCardErrorInterface;
         } else if (!isLuhnCheckPassed()) {
-          return {creditCardInvalid: true};
+          return {creditCardDoesNotExist: true} as IMCreditCardErrorInterface;
         }
       }
     }

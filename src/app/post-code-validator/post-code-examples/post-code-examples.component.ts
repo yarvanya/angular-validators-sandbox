@@ -7,7 +7,6 @@ import {
 } from 'angular-validators';
 import {AbstractControl, FormControl} from '@angular/forms';
 import {Subscription} from 'rxjs';
-import {ErrorResolverService} from '@services/error-resolver.service';
 
 @Component({
   selector: 'app-post-code-examples',
@@ -22,10 +21,6 @@ export class PostCodeExamplesComponent implements OnInit, OnDestroy {
   public postCodeFormControl: FormControl = new FormControl(null, IMPostCodeValidator(this.countryFormControl?.value));
   private postCodeSubscription: Subscription;
 
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
   public ngOnInit(): void {
     this.subscribeToCountrySelectionValueChanges();
   }
@@ -38,10 +33,6 @@ export class PostCodeExamplesComponent implements OnInit, OnDestroy {
       );
       this.postCodeFormControl.markAsTouched();
     });
-  }
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
   }
 
   public ngOnDestroy(): void {

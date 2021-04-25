@@ -8,7 +8,8 @@ import {CustomEmailOverviewComponent} from './custom-email-overview.component';
   exports: [CustomEmailOverviewComponent],
   imports: [
     CommonModule,
-    SharedModule,
+    SharedModule
   ]
 })
+
 export class CustomEmailOverviewModule {}

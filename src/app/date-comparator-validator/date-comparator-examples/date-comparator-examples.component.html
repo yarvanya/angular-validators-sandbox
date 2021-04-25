@@ -1,13 +1,12 @@
-<p>Here are 'date-comparator' validator examples.</p>
-<p>We have two possibilities to use this validator.</p>
-<p><b>1. Pass comparing value directly via validator configuration</b></p>
-<p><b>2. Pass control key directly via validator configuration</b></p>
-<p>It has to be a brother form control on the same form group with moment model.</p>
+<h2>Here is example player:</h2>
 
-<mat-tab-group>
+<mat-tab-group animationDuration="0ms">
   <mat-tab label="Equal To (===)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be to current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be equal to current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -15,11 +14,16 @@
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="equalFormControl" [matDatepicker]="equalDatePicker">
           <mat-datepicker #equalDatePicker></mat-datepicker>
-          <mat-error *ngIf="equalFormControl.invalid">{{getErrorMessage(equalFormControl)}}</mat-error>
+          <mat-error *ngIf="equalFormControl.invalid">
+            {{equalFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date has to be the same as start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date has to be the same as start date.</span>
+      </p>
 
       <form [formGroup]="equalForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -28,7 +32,7 @@
           <input matInput formControlName="startDate" [matDatepicker]="equalStartDatePicker">
           <mat-datepicker #equalStartDatePicker></mat-datepicker>
           <mat-error *ngIf="equalForm.get('startDate').invalid">
-            {{getErrorMessage(equalForm.get('startDate'))}}
+            {{equalForm.get('startDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -38,7 +42,7 @@
           <input matInput formControlName="endDate" [matDatepicker]="equalEndDatePicker">
           <mat-datepicker #equalEndDatePicker></mat-datepicker>
           <mat-error *ngIf="equalForm.get('endDate').invalid">
-            {{getErrorMessage(equalForm.get('endDate'))}}
+            {{equalForm.get('endDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -48,7 +52,10 @@
   </mat-tab>
   <mat-tab label="Greater Than (>)">
     <div class="mt-2">
-      <p><b>1.</b> In next example selected date must be strictly greater than current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example selected date must be strictly greater than current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -56,11 +63,16 @@
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="greaterFormControl" [matDatepicker]="greaterDatePicker">
           <mat-datepicker #greaterDatePicker></mat-datepicker>
-          <mat-error *ngIf="greaterFormControl.invalid">{{getErrorMessage(greaterFormControl)}}</mat-error>
+          <mat-error *ngIf="greaterFormControl.invalid">
+            {{greaterFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be strictly greater than start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be strictly greater than start date.</span>
+      </p>
 
       <form [formGroup]="greaterForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -69,7 +81,7 @@
           <input matInput formControlName="startDate" [matDatepicker]="greaterStartDatePicker">
           <mat-datepicker #greaterStartDatePicker></mat-datepicker>
           <mat-error *ngIf="greaterForm.get('startDate').invalid">
-            {{getErrorMessage(greaterForm.get('startDate'))}}
+            {{greaterForm.get('startDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -79,7 +91,7 @@
           <input matInput formControlName="endDate" [matDatepicker]="greaterEndDatePicker">
           <mat-datepicker #greaterEndDatePicker></mat-datepicker>
           <mat-error *ngIf="greaterForm.get('endDate').invalid">
-            {{getErrorMessage(greaterForm.get('endDate'))}}
+            {{greaterForm.get('endDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -89,7 +101,10 @@
   </mat-tab>
   <mat-tab label="Greater Than Or Equal To (>=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be greater than or equal to current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be greater than or equal to current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -97,11 +112,16 @@
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="greaterEqualFormControl" [matDatepicker]="greaterEqualDatePicker">
           <mat-datepicker #greaterEqualDatePicker></mat-datepicker>
-          <mat-error *ngIf="greaterEqualFormControl.invalid">{{getErrorMessage(greaterEqualFormControl)}}</mat-error>
+          <mat-error *ngIf="greaterEqualFormControl.invalid">
+            {{greaterEqualFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be greater than or equal to start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be greater than or equal to start date.</span>
+      </p>
 
       <form [formGroup]="greaterEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -110,7 +130,7 @@
           <input matInput formControlName="startDate" [matDatepicker]="greaterEqualStartDatePicker">
           <mat-datepicker #greaterEqualStartDatePicker></mat-datepicker>
           <mat-error *ngIf="greaterEqualForm.get('startDate').invalid">
-            {{getErrorMessage(greaterEqualForm.get('startDate'))}}
+            {{greaterEqualForm.get('startDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -120,7 +140,7 @@
           <input matInput formControlName="endDate" [matDatepicker]="greaterEqualEndDatePicker">
           <mat-datepicker #greaterEqualEndDatePicker></mat-datepicker>
           <mat-error *ngIf="greaterEqualForm.get('endDate').invalid">
-            {{getErrorMessage(greaterEqualForm.get('endDate'))}}
+            {{greaterEqualForm.get('endDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -130,7 +150,10 @@
   </mat-tab>
   <mat-tab label="Less Than (<)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be strictly less than current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be strictly less than current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -138,11 +161,16 @@
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="lessFormControl" [matDatepicker]="lessDatePicker">
           <mat-datepicker #lessDatePicker></mat-datepicker>
-          <mat-error *ngIf="lessFormControl.invalid">{{getErrorMessage(lessFormControl)}}</mat-error>
+          <mat-error *ngIf="lessFormControl.invalid">
+            {{lessFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be strictly less than start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be strictly less than start date.</span>
+      </p>
 
       <form [formGroup]="lessForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -151,7 +179,7 @@
           <input matInput formControlName="startDate" [matDatepicker]="lessStartDatePicker">
           <mat-datepicker #lessStartDatePicker></mat-datepicker>
           <mat-error *ngIf="lessForm.get('startDate').invalid">
-            {{getErrorMessage(lessForm.get('startDate'))}}
+            {{lessForm.get('startDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -161,7 +189,7 @@
           <input matInput formControlName="endDate" [matDatepicker]="lessEndDatePicker">
           <mat-datepicker #lessEndDatePicker></mat-datepicker>
           <mat-error *ngIf="lessForm.get('endDate').invalid">
-            {{getErrorMessage(lessForm.get('endDate'))}}
+            {{lessForm.get('endDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -171,7 +199,10 @@
   </mat-tab>
   <mat-tab label="Less Than Or Equal To (<=)">
     <div class="mt-2">
-      <p><b>1.</b> In next example value of the form control must be less than or equal to current today date.</p>
+      <p fxLayout="column">
+        <b>1. Comparing value is passed</b>
+        <span>In next example value of the form control must be less than or equal to current today date.</span>
+      </p>
 
       <form fxLayout="column" class="mt-1" autocomplete="off">
         <mat-form-field fxFlex="100%">
@@ -179,11 +210,16 @@
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="lessEqualFormControl" [matDatepicker]="lessEqualDatePicker">
           <mat-datepicker #lessEqualDatePicker></mat-datepicker>
-          <mat-error *ngIf="lessEqualFormControl.invalid">{{getErrorMessage(lessEqualFormControl)}}</mat-error>
+          <mat-error *ngIf="lessEqualFormControl.invalid">
+            {{lessEqualFormControl.errors | controlErrorResolver}}
+          </mat-error>
         </mat-form-field>
       </form>
 
-      <p><b>2.</b> Here are two form controls that are required and end date must be less than or equal to start date.</p>
+      <p fxLayout="column">
+        <b>2. Comparing control value is passed</b>
+        <span>Here are two form controls that are required and end date must be less than or equal to start date.</span>
+      </p>
 
       <form [formGroup]="lessEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
         <mat-form-field fxFlex="100%">
@@ -192,7 +228,7 @@
           <input matInput formControlName="startDate" [matDatepicker]="lessEqualStartDatePicker">
           <mat-datepicker #lessEqualStartDatePicker></mat-datepicker>
           <mat-error *ngIf="lessEqualForm.get('startDate').invalid">
-            {{getErrorMessage(lessEqualForm.get('startDate'))}}
+            {{lessEqualForm.get('startDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 
@@ -202,7 +238,7 @@
           <input matInput formControlName="endDate" [matDatepicker]="lessEqualEndDatePicker">
           <mat-datepicker #lessEqualEndDatePicker></mat-datepicker>
           <mat-error *ngIf="lessEqualForm.get('endDate').invalid">
-            {{getErrorMessage(lessEqualForm.get('endDate'))}}
+            {{lessEqualForm.get('endDate').errors | controlErrorResolver}}
           </mat-error>
         </mat-form-field>
 

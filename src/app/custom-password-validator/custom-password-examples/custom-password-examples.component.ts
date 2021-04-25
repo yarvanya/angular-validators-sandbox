@@ -1,6 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ErrorResolverService} from '@services/error-resolver.service';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMPasswordValidator, IMPasswordValidatorConfigModel} from 'angular-validators';
 import {Subscription} from 'rxjs';
 
@@ -24,10 +23,6 @@ export class CustomPasswordExamplesComponent implements OnInit, OnDestroy {
   public hidePassword = true;
   private passwordSubscription: Subscription;
 
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
   public ngOnInit(): void {
     this.subscribeToPasswordValueChanges();
   }
@@ -37,10 +32,6 @@ export class CustomPasswordExamplesComponent implements OnInit, OnDestroy {
       this.password.setValidators(IMPasswordValidator(config));
       this.password.updateValueAndValidity();
     });
-  }
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
   }
 
   public ngOnDestroy(): void {

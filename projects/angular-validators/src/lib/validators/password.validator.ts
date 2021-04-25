@@ -1,6 +1,6 @@
 import {AbstractControl, ValidationErrors, ValidatorFn} from '@angular/forms';
-import {PasswordOperatorEnum} from '../enums/password-operator.enum';
-import {PasswordErrorInterface} from '../interfaces/password-error.interface';
+import {IMPasswordOperatorEnum} from '../enums/password-operator.enum';
+import {IMPasswordErrorInterface} from '../interfaces/password-error.interface';
 
 export class IMPasswordValidatorConfigModel {
   public minLength: number;
@@ -19,9 +19,9 @@ export const IMPasswordValidator = (config: IMPasswordValidatorConfigModel = new
         return {
           passwordValidatorError: {
             isInvalid: true,
-            operator: PasswordOperatorEnum[operator],
+            operator: IMPasswordOperatorEnum[operator],
             comparingValue: config[operator]
-          } as PasswordErrorInterface
+          } as IMPasswordErrorInterface
         };
       }
     }
@@ -29,18 +29,18 @@ export const IMPasswordValidator = (config: IMPasswordValidatorConfigModel = new
 };
 
 const passwordValidatorErrorResolver = (control_value: string, configs: IMPasswordValidatorConfigModel): string => {
-  return Object.keys(configs).find(key => configs[key] && operatorCheckResolver[PasswordOperatorEnum[key]](control_value, configs[key]));
+  return Object.keys(configs).find(key => configs[key] && operatorCheckResolver[IMPasswordOperatorEnum[key]](control_value, configs[key]));
 };
 
 const operatorCheckResolver = {
-  [PasswordOperatorEnum.minLength]: (value: string, required_password_length: number) =>
+  [IMPasswordOperatorEnum.minLength]: (value: string, required_password_length: number) =>
     value.length < required_password_length,
-  [PasswordOperatorEnum.minNumberQuantity]: (value: string, required_numbers_quantity: number) =>
+  [IMPasswordOperatorEnum.minNumberQuantity]: (value: string, required_numbers_quantity: number) =>
     value.replaceAll(/\D/g, '').length < required_numbers_quantity,
-  [PasswordOperatorEnum.minCapitalLettersQuantity]: (value: string, required_cap_letters_quantity) =>
+  [IMPasswordOperatorEnum.minCapitalLettersQuantity]: (value: string, required_cap_letters_quantity) =>
     (value.match(/[A-Z]/g)?.length || 0) < required_cap_letters_quantity,
-  [PasswordOperatorEnum.minSmallLettersQuantity]: (value: string, required_small_letters_quantity) =>
+  [IMPasswordOperatorEnum.minSmallLettersQuantity]: (value: string, required_small_letters_quantity) =>
     (value.match(/[a-z]/g)?.length || 0) < required_small_letters_quantity,
-  [PasswordOperatorEnum.minSpecialCharactersQuantity]: (value: string, required_special_char_quantity) =>
+  [IMPasswordOperatorEnum.minSpecialCharactersQuantity]: (value: string, required_special_char_quantity) =>
     (value.match(/[@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g)?.length || 0) < required_special_char_quantity
 };

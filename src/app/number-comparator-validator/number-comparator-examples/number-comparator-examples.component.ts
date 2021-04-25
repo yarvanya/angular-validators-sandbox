@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMNumberComparatorValidator} from 'angular-validators';
-import {ErrorResolverService} from '@services/error-resolver.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
@@ -87,10 +86,6 @@ export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
 
   private subscriptions = new Subject();
 
-  constructor(
-    private errorResolverService: ErrorResolverService
-  ) {}
-
   public ngOnInit(): void {
     this.equalForm.get('firstAge').valueChanges
       .pipe(takeUntil(this.subscriptions))
@@ -107,10 +102,6 @@ export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
     this.lessEqualForm.get('firstAge').valueChanges
       .pipe(takeUntil(this.subscriptions))
       .subscribe(() => this.lessEqualForm.get('secondAge').updateValueAndValidity());
-  }
-
-  public getErrorMessage(control: AbstractControl): string {
-    return this.errorResolverService.getErrorMessage(control);
   }
 
   public ngOnDestroy(): void {

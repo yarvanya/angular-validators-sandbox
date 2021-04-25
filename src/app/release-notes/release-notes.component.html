@@ -1,0 +1,12 @@
+<mat-form-field>
+  <mat-label>Version</mat-label>
+  <mat-select [formControl]="versionFormControl" (selectionChange)="onVersionChange($event)">
+    <mat-option *ngFor="let release_note of releaseNotes" [value]="release_note.version">
+      {{release_note.version}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<ul class="mt-2">
+  <li *ngFor="let note of notes">{{note}}</li>
+</ul>

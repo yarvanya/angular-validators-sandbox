@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {IMCountryConfigurations} from 'angular-validators';
 
 @Component({
   selector: 'app-phone-number-overview',
@@ -6,4 +7,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./phone-number-overview.component.scss']
 })
 
-export class PhoneNumberOverviewComponent {}
+export class PhoneNumberOverviewComponent {
+  public countryConfigurations = IMCountryConfigurations;
+}
