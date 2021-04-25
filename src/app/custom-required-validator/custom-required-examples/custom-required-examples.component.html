@@ -9,7 +9,7 @@
 
   <span>Input with type number</span>
   <mat-form-field appearance="outline">
-    <input [placeholder]="'Number form control'" formControlName="number" matInput type="text">
+    <input [placeholder]="'Number form control'" formControlName="number" matInput type="number">
     <mat-error *ngIf="diffTypesFormGroup.get('number').invalid">
       {{diffTypesFormGroup.get('number').errors | controlErrorResolver}}
     </mat-error>

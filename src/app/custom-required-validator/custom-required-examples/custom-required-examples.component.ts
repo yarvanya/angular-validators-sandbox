@@ -10,8 +10,8 @@ import {IMRequiredValidator} from 'angular-validators';
 
 export class CustomRequiredExamplesComponent {
   public diffTypesFormGroup: FormGroup = new FormGroup({
-    text: new FormControl(null, IMRequiredValidator()),
-    number: new FormControl(null, IMRequiredValidator()),
+    text: new FormControl(null, IMRequiredValidator({isTrimValueRequired: true})),
+    number: new FormControl(null, IMRequiredValidator({isZeroAllowed: true})),
     time: new FormControl(null, IMRequiredValidator()),
     date: new FormControl(null, IMRequiredValidator()),
     select: new FormControl(null, IMRequiredValidator())

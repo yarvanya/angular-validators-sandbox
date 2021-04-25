@@ -1,4 +1,5 @@
 import {AbstractControl, ValidationErrors, ValidatorFn} from '@angular/forms';
+import {IMRequiredErrorInterface} from '../interfaces/required-error.interface';
 
 export class IMRequiredValidatorConfigModel {
   public isTrimValueRequired?: boolean;
@@ -11,13 +12,13 @@ export const IMRequiredValidator = (config: IMRequiredValidatorConfigModel = new
       switch (typeof control.value) {
         case 'string':
           return config.isTrimValueRequired
-            ? control.value.trim() ? null : {fieldRequiredError: true} : null;
+            ? control.value.trim() ? null : {fieldRequiredError: true} as IMRequiredErrorInterface : null;
         case 'number':
-          return config.isZeroAllowed ? null : {fieldRequiredError: true};
+          return config.isZeroAllowed ? null : {fieldRequiredError: true} as IMRequiredErrorInterface;
         default: return null;
       }
     } else {
-      return {fieldRequiredError: true};
+      return {fieldRequiredError: true} as IMRequiredErrorInterface;
     }
   };
 };
