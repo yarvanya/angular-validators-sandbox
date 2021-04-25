@@ -13,6 +13,7 @@ export {IMPhoneNumberErrorInterface} from './lib/interfaces/phone-number-error.i
 
 // Required validator exports
 export {IMRequiredValidator} from './lib/validators/required.validator';
+export {IMRequiredErrorInterface} from './lib/interfaces/required-error.interface';
 
 // Credit card validator exports
 export {IMCreditCardValidator} from './lib/validators/credit-card.validator';

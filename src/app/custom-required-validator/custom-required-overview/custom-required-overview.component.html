@@ -1,1 +1,22 @@
-<p>It is 'custom required' validator</p>
+<h2>IMRequiredValidator</h2>
+
+<h2><strong>This is custom required validator.</strong></h2>
+<p>
+  The difference between native 'required' validator is that our custom validator manages space trailing and
+  can handle 0 validation (if such param was passed)
+</p>
+
+<p>For this it has additional two parameters: 'isTrimValueRequired' and 'isZeroAllowed'.</p>
+
+<hr>
+
+<p fxLayout="column">
+  <span>This validator can be imported in the next way:</span>
+  <strong class="pt-1">import {{'{'}}IMRequiredValidator{{'}'}} from 'im-angular-validators';</strong>
+  <span class="pt-1">Error interface that validator returns can be imported as well:</span>
+  <strong class="pt-1">import {{'{'}}IMRequiredErrorInterface{{'}'}} from 'im-angular-validators';</strong>
+</p>
+
+<hr>
+
+<p class="mt-2">Please, take a look at the validator APIs for more detailed information.</p>
