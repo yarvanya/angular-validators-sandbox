@@ -1,6 +1,4 @@
 // General exports
-import {IMUrlValidatorConfigModel} from './lib/validators/url.validator';
-
 export {IMCountryConfigurations} from './lib/constants/country-configurations.constant';
 export {IMCountryEnum} from './lib/enums/country.enum';
 export {IMCountryConfigInterface} from './lib/interfaces/country-config.interface';
@@ -19,6 +17,8 @@ export {IMRequiredValidator} from './lib/validators/required.validator';
 // Credit card validator exports
 export {IMCreditCardValidator} from './lib/validators/credit-card.validator';
 export {IMCreditCardTypeValidatorEnum} from './lib/enums/credit-card-type.enum';
+export {IMCreditCardErrorInterface} from './lib/interfaces/credit-card-error.interface';
+export {CreditCardValidatorResolver} from './lib/helpers/credit-card-validator-helpers/credit-card-length-validator.helper';
 
 // Number-comparator validator exports
 export {IMNumberComparatorValidator} from './lib/validators/number-comparator.validator';

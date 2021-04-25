@@ -15,11 +15,11 @@
         <div class="card-container" fxLayoutAlign="space-between">
           <div class="card-expiration-date" fxLayoutAlign="space-between center" fxLayoutGap="12px">
             <mat-form-field fxFlex="30">
-              <input matInput placeholder="MM" type="number">
+              <input matInput placeholder="MM" type="number" value="06">
             </mat-form-field>
             <div>/</div>
             <mat-form-field fxFlex="30">
-              <input matInput placeholder="YY" type="number">
+              <input matInput placeholder="YY" type="number" value="26">
             </mat-form-field>
           </div>
           <div class="card-types-container">
@@ -49,7 +49,7 @@
         <div class="mt-1 card-strip"></div>
         <div fxLayoutAlign="end">
           <mat-form-field class="card-cvc">
-            <input matInput placeholder="CVC" type="number">
+            <input matInput placeholder="CVC" type="text" maxlength="3" value="000">
           </mat-form-field>
         </div>
       </mat-card>
