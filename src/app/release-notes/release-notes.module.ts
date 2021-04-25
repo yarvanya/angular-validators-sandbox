@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SharedModule} from '@shared';
-import {HomeComponent} from './home.component';
 import {RouterModule, Routes} from '@angular/router';
+import {ReleaseNotesComponent} from './release-notes.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: ReleaseNotesComponent
   }
 ];
 
 @NgModule({
-  declarations: [HomeComponent],
-  exports: [HomeComponent],
+  declarations: [ReleaseNotesComponent],
+  exports: [ReleaseNotesComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -21,4 +21,4 @@ const routes: Routes = [
   ]
 })
 
-export class HomeModule {}
+export class ReleaseNotesModule {}

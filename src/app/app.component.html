@@ -1,7 +1,7 @@
 <mat-drawer-container class="application-container">
   <mat-drawer mode="side" opened>
     <ul>
-      <li *ngFor="let sidebar_link of sidebarLinks">
+      <li [class.mb-5]="sidebar_link.routerLink === 'release-notes'" *ngFor="let sidebar_link of sidebarLinks">
         <a
           [routerLink]="sidebar_link.routerLink"
           [routerLinkActiveOptions]="{exact: true}"

@@ -14,6 +14,7 @@ export interface SidebarRouterInterface {
 export class AppComponent {
   public sidebarLinks: SidebarRouterInterface[] = [
     {routerLink: '', linkText: 'Home'},
+    {routerLink: 'release-notes', linkText: 'Release Notes'},
     {routerLink: 'custom-required-validator-overview', linkText: 'Custom Required Validator'},
     {routerLink: 'custom-email-validator-overview', linkText: 'Custom Email Validator'},
     {routerLink: 'phone-number-validator-overview', linkText: 'Phone Number Validator'},

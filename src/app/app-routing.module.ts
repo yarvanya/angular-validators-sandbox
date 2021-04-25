@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'release-notes',
+    loadChildren: () => import('./release-notes/release-notes.module').then(m => m.ReleaseNotesModule)
+  },
+  {
     path: 'custom-required-validator-overview',
     loadChildren: () => import('./custom-required-validator/custom-required-validator.module')
       .then(m => m.CustomRequiredValidatorModule)
