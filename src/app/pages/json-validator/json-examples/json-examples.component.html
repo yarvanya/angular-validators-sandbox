@@ -1,0 +1,17 @@
+<h2>Here is example player:</h2>
+<p><b>Next control must have value of JSON value:</b></p>
+
+<div fxLayout="column" class="mt-1">
+  <mat-form-field appearance="outline" fxFlex="100%">
+    <mat-label>Put JSON here</mat-label>
+    <textarea matInput [formControl]="jsonFormControl" rows="8" [matTextareaAutosize]="true"></textarea>
+    <mat-error *ngIf="jsonFormControl.invalid">
+      {{jsonFormControl.errors | controlErrorResolver}}
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<ng-container *ngIf="jsonExample">
+  <p><b>Here is some json example. Try it.</b></p>
+  <pre>{{jsonExample | json}}</pre>
+</ng-container>

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {SidebarRouterInterface} from '../interfaces/sidebar-router.interface';
-import {SidebarLinks} from '../constants/sidebar-links.constant';
+import {SidebarRouterInterface} from '../../interfaces/sidebar-router.interface';
+import {SidebarLinks} from '../../constants/sidebar-links.constant';
 
 @Component({
   selector: 'app-home',

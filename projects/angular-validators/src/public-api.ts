@@ -60,3 +60,5 @@ export {IMUrlValidatorConfigModel} from './lib/validators/url.validator';
 export {IMUrlErrorInterface} from './lib/interfaces/url-error.interface';
 export {IMUrlProtocolTypeEnum} from './lib/enums/url-protocol.enum';
 
+// JSON validator exports
+export {IMJSONValidator} from './lib/validators/json.validator';
