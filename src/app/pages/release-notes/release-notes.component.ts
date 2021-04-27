@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatSelectChange} from '@angular/material/select';
-import {ReleaseNotes} from '../constants/release-notes.constant';
-import {ReleaseNoteInterface} from '../interfaces/release-note.interface';
+import {ReleaseNotes} from '../../constants/release-notes.constant';
+import {ReleaseNoteInterface} from '../../interfaces/release-note.interface';
 
 @Component({
   selector: 'app-release-notes',

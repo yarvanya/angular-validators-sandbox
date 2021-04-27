@@ -15,9 +15,8 @@ import {
 } from 'angular-validators';
 import {ValidationErrors} from '@angular/forms';
 
-@Pipe({
-  name: 'controlErrorResolver'
-})
+@Pipe({name: 'controlErrorResolver'})
+
 export class ControlErrorResolverPipe implements PipeTransform {
   private errorResolver = {
     isEmailInvalid: () => 'Email is not valid',
@@ -87,7 +86,8 @@ export class ControlErrorResolverPipe implements PipeTransform {
         case IMUrlProtocolTypeEnum.Https: return `Link should start with 'https://'`;
         case IMUrlProtocolTypeEnum.Ftp: return `Link should start with 'ftp://'`;
       }
-    }
+    },
+    isJSONInvalid: () => 'JSON is not valid.'
   };
 
   public transform(error_keys: ValidationErrors): string {

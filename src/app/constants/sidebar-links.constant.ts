@@ -12,5 +12,6 @@ export const SidebarLinks: SidebarRouterInterface[] = [
   {routerLink: 'post-code-validator-overview', linkText: 'Post Code Validator'},
   {routerLink: 'password-validator-overview', linkText: 'Password Validator'},
   {routerLink: 'number-decimal-places-validator-overview', linkText: 'Number Decimal Places Validator'},
-  {routerLink: 'url-validator-overview', linkText: 'URL Validator'}
+  {routerLink: 'url-validator-overview', linkText: 'URL Validator'},
+  {routerLink: 'json-validator-overview', linkText: 'JSON Validator'}
 ];

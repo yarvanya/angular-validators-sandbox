@@ -3,15 +3,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {SharedModule} from '@shared';
-import {HomeModule} from './home/home.module';
-import {CustomPasswordValidatorModule} from './custom-password-validator/custom-password-validator.module';
-import {CustomRequiredValidatorModule} from './custom-required-validator/custom-required-validator.module';
-import {PhoneNumberValidatorModule} from './phone-number-validator/phone-number-validator.module';
-import {NumberComparatorValidatorModule} from './number-comparator-validator/number-comparator-validator.module';
-import {CustomEmailValidatorModule} from './custom-email-validator/custom-email-validator.module';
-import {CustomCreditCardValidatorModule} from './custom-credit-card-validator/custom-credit-card-validator.module';
+import {HomeModule} from './pages/home/home.module';
+import {CustomPasswordValidatorModule} from './pages/custom-password-validator/custom-password-validator.module';
+import {CustomRequiredValidatorModule} from './pages/custom-required-validator/custom-required-validator.module';
+import {PhoneNumberValidatorModule} from './pages/phone-number-validator/phone-number-validator.module';
+import {NumberComparatorValidatorModule} from './pages/number-comparator-validator/number-comparator-validator.module';
+import {CustomEmailValidatorModule} from './pages/custom-email-validator/custom-email-validator.module';
+import {CustomCreditCardValidatorModule} from './pages/custom-credit-card-validator/custom-credit-card-validator.module';
 import {AppComponent} from './app.component';
-import {UrlValidatorModule} from './url-validator/url-validator.module';
+import {UrlValidatorModule} from './pages/url-validator/url-validator.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {UrlValidatorModule} from './url-validator/url-validator.module';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule,
     HomeModule,
     CustomPasswordValidatorModule,
