@@ -72,6 +72,10 @@ const routes: Routes = [
   {
     path: 'json-validator-overview',
     loadChildren: () => import('./pages/json-validator/json-validator.module').then(m => m.JsonValidatorModule)
+  },
+  {
+    path: 'uuid-validator-overview',
+    loadChildren: () => import('./pages/uuid-validator/uuid-validator.module').then(m => m.UuidValidatorModule)
   }
 ];
 

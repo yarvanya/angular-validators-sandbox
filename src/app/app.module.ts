@@ -13,6 +13,7 @@ import {CustomCreditCardValidatorModule} from './pages/custom-credit-card-valida
 import {AppComponent} from './app.component';
 import {UrlValidatorModule} from './pages/url-validator/url-validator.module';
 import {HttpClientModule} from '@angular/common/http';
+import {UuidValidatorModule} from './pages/uuid-validator/uuid-validator.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {HttpClientModule} from '@angular/common/http';
     CustomEmailValidatorModule,
     NumberComparatorValidatorModule,
     CustomCreditCardValidatorModule,
-    UrlValidatorModule
+    UrlValidatorModule,
+    UuidValidatorModule
   ],
   bootstrap: [AppComponent]
 })

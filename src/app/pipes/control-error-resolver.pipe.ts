@@ -87,7 +87,8 @@ export class ControlErrorResolverPipe implements PipeTransform {
         case IMUrlProtocolTypeEnum.Ftp: return `Link should start with 'ftp://'`;
       }
     },
-    isJSONInvalid: () => 'JSON is not valid.'
+    isJSONInvalid: () => 'JSON is not valid.',
+    isUUIdInvalid: () => 'UUID is not valid.'
   };
 
   public transform(error_keys: ValidationErrors): string {
