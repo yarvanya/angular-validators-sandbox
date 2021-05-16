@@ -62,3 +62,7 @@ export {IMUrlProtocolTypeEnum} from './lib/enums/url-protocol.enum';
 
 // JSON validator exports
 export {IMJSONValidator} from './lib/validators/json.validator';
+
+// UUId validator exports
+export {IMUUIdValidator} from './lib/validators/uuid.validator';
+export {IMUUIdErrorInterface} from './lib/interfaces/uuid-error.interface';
