@@ -14,7 +14,7 @@ export const IMRequiredValidator = (config: IMRequiredValidatorConfigModel = new
           return config.isTrimValueRequired
             ? control.value.trim() ? null : {fieldRequiredError: true} as IMRequiredErrorInterface : null;
         case 'number':
-          return config.isZeroAllowed ? null : {fieldRequiredError: true} as IMRequiredErrorInterface;
+          return control.value === 0 && !config.isZeroAllowed ? {fieldRequiredError: true} : null as IMRequiredErrorInterface;
         default: return null;
       }
     } else {
