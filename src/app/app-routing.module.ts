@@ -41,6 +41,11 @@ const routes: Routes = [
       .then(m => m.DateComparatorValidatorModule)
   },
   {
+    path: 'time-comparator-validator-overview',
+    loadChildren: () => import('./pages/time-comparator-validator/time-comparator-validator.module')
+      .then(m => m.TimeComparatorValidatorModule)
+  },
+  {
     path: 'date-in-range-validator-overview',
     loadChildren: () => import('./pages/date-in-range-validator/date-in-range-validator.module')
       .then(m => m.DateInRangeValidatorModule)

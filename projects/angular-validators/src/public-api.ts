@@ -32,6 +32,11 @@ export {IMDateComparatorValidator} from './lib/validators/date-comparator.valida
 export {IMDateComparatorValidatorConfigInterface} from './lib/interfaces/date-comparator-configuration.interface';
 export {IMDateComparatorErrorInterface} from './lib/interfaces/date-comparator-error.interface';
 
+// Time-comparator validator exports
+export {IMTimeComparatorValidator} from './lib/validators/time-comparator.validator';
+export {IMTimeComparatorValidatorConfigInterface} from './lib/interfaces/time-comparator-configuration.interface';
+export {IMTimeComparatorErrorInterface} from './lib/interfaces/time-comparator-error.interface';
+
 // Number-in-range validator exports
 export {IMNumberInRangeValidator} from './lib/validators/number-in-range.validator';
 export {IMNumberInRangeErrorInterface} from './lib/interfaces/number-in-range-error.interface';
