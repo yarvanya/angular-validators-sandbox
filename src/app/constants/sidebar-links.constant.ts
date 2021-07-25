@@ -8,6 +8,7 @@ export const SidebarLinks: SidebarRouterInterface[] = [
   {routerLink: 'number-comparator-validator-overview', linkText: 'Number Comparator Validator'},
   {routerLink: 'number-in-range-validator-overview', linkText: 'Number In Range Validator'},
   {routerLink: 'date-comparator-validator-overview', linkText: 'Date Comparator Validator'},
+  {routerLink: 'time-comparator-validator-overview', linkText: 'Time Comparator Validator'},
   {routerLink: 'date-in-range-validator-overview', linkText: 'Date In Range Validator'},
   {routerLink: 'post-code-validator-overview', linkText: 'Post Code Validator'},
   {routerLink: 'password-validator-overview', linkText: 'Password Validator'},
