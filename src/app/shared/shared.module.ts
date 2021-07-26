@@ -15,6 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter} from '@angular/material-moment-adapter';
 import {ControlErrorResolverPipe} from '../pipes/control-error-resolver.pipe';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 export const CUSTOM_MAT_DATE_FORMATS = {
   parse: {
@@ -45,7 +47,9 @@ export const CUSTOM_MAT_DATE_FORMATS = {
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    ControlErrorResolverPipe
+    ControlErrorResolverPipe,
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]},

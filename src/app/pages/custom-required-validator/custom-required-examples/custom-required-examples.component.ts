@@ -14,6 +14,8 @@ export class CustomRequiredExamplesComponent {
     number: new FormControl(null, IMRequiredValidator({isZeroAllowed: true})),
     time: new FormControl(null, IMRequiredValidator()),
     date: new FormControl(null, IMRequiredValidator()),
-    select: new FormControl(null, IMRequiredValidator())
+    select: new FormControl(null, IMRequiredValidator()),
+    checkbox: new FormControl(null, IMRequiredValidator({isCheckboxShouldBeChecked: true})),
+    radiobutton: new FormControl(null, IMRequiredValidator())
   });
 }
