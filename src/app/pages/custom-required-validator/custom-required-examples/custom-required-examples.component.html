@@ -46,4 +46,28 @@
       {{diffTypesFormGroup.get('select').errors | controlErrorResolver}}
     </mat-error>
   </mat-form-field>
+
+  <div class="mt-1 mb-1 column">
+    <span class="mb-05">Input with type checkbox</span>
+    <mat-checkbox labelPosition="before" formControlName="checkbox">Check Required</mat-checkbox>
+    <mat-error *ngIf="diffTypesFormGroup.get('checkbox').invalid">
+      {{diffTypesFormGroup.get('checkbox').errors | controlErrorResolver}}
+    </mat-error>
+  </div>
+
+  <div class="mt-1 mb-1 column">
+    <span class="mb-05">Input with type radio group</span>
+    <label id="required-radio-group">Radio group required</label>
+    <mat-radio-group
+      formControlName="radiobutton"
+      class="column column_radio-group ml-1"
+      aria-labelledby="required-radio-group"
+      aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="diffTypesFormGroup.get('radiobutton').invalid">
+      {{diffTypesFormGroup.get('radiobutton').errors | controlErrorResolver}}
+    </mat-error>
+  </div>
 </form>
