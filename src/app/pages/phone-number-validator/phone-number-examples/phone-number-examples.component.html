@@ -1,0 +1,17 @@
+<h2>Here is example player:</h2>
+
+<div fxLayout="column" class="mt-1">
+  <p>Select country:</p>
+  <mat-button-toggle-group [formControl]="countryFormControl">
+    <ng-container *ngFor="let country_item of availableCountries">
+      <mat-button-toggle [value]="country_item.country">{{country_item.countryName}}</mat-button-toggle>
+    </ng-container>
+  </mat-button-toggle-group>
+
+  <mat-form-field appearance="outline" class="mt-1">
+    <input type="number" matInput [placeholder]="'Phone number'" [formControl]="phoneNumberFormControl" autocomplete="off">
+    <mat-error *ngIf="phoneNumberFormControl.invalid">
+      {{phoneNumberFormControl.errors | controlErrorResolver}}
+    </mat-error>
+  </mat-form-field>
+</div>

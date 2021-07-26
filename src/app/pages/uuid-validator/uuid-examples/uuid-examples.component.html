@@ -1,0 +1,10 @@
+<div fxLayoutGap="24px">
+  <button (click)="onUUIdGenerate()" color="primary" mat-raised-button>Generate UUID</button>
+  <button (click)="onNILGenerate()" color="primary" mat-raised-button>Generate NIL</button>
+</div>
+
+<mat-form-field appearance="outline" class="mt-1" fxFill>
+  <mat-label>UUID</mat-label>
+  <input [formControl]="uuidControl" matInput type="text">
+  <mat-error *ngIf="uuidControl.invalid">{{uuidControl.errors | controlErrorResolver}}</mat-error>
+</mat-form-field>

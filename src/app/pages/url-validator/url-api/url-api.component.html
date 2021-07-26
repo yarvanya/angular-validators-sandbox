@@ -1,0 +1,33 @@
+<table class="api">
+  <tr>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Default value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>protocolType</strong></td>
+    <td>IMUrlProtocolTypeEnum</td>
+    <td>No</td>
+    <td>Any</td>
+    <td>This parameter defines URL protocol validation</td>
+  </tr>
+</table>
+
+<p class="mt-1"><strong>Next protocols checks are available:</strong></p>
+
+<table class="api">
+  <tr>
+    <th>Protocol Type</th>
+    <th>Enum value</th>
+    <th>Example</th>
+  </tr>
+  <tr *ngFor="let config of urlConfigurations">
+    <td><strong>{{config.label}}</strong></td>
+    <td>IMUrlProtocolTypeEnum.{{IMUrlProtocolTypeEnum[config.protocolType]}}</td>
+    <td>{{config.example}}</td>
+  </tr>
+</table>
+
+<p class="mt-2">Please, take a look at the validator examples and play with different defined validator parameters.</p>

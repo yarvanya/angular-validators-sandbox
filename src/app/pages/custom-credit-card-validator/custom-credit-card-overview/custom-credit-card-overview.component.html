@@ -1,0 +1,29 @@
+<h2>IMCreditCardValidator</h2>
+
+<h2><strong>This is payment card validator.</strong></h2>
+
+<p>Next list of payment card types are available for the validator:</p>
+
+<ul>
+  <li *ngFor="let credit_card of creditCardTypes">{{credit_card.label}}</li>
+</ul>
+
+<hr>
+
+<p fxLayout="column">
+  <span>It can be imported in next way:</span>
+  <strong class="pt-1">import {{'{'}}IMCreditCardValidator{{'}'}} from 'im-angular-validators';</strong>
+  <span class="pt-1">To pass parameters, you have to import enum from library:</span>
+  <strong class="pt-1">import {{'{'}}IMCreditCardTypeValidatorEnum{{'}'}} from 'im-angular-validators';</strong>
+  <span class="pt-1">Also, error interface that validator returns can be imported as well:</span>
+  <strong class="pt-1">import {{'{'}}IMCreditCardErrorInterface{{'}'}} from 'im-angular-validators';</strong>
+</p>
+
+<hr>
+
+<h4 class="mt-2">
+  <strong>* Pay attention, that all payment cards also checks with </strong>
+  <a target="_blank" href="https://en.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a>
+</h4>
+
+<p class="mt-2">Please, take a look at the validator APIs for more detailed information.</p>

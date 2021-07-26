@@ -1,0 +1,94 @@
+<table class="api">
+  <tr>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Default value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>config</strong></td>
+    <td>IMDateComparatorValidatorConfigInterface</td>
+    <td>Yes</td>
+    <td>No default value</td>
+    <td>It defines set of configurations for the validator</td>
+  </tr>
+</table>
+
+<p class="mt-2 mb-2"><b>Configuration has next parameter values:</b></p>
+
+<table class="api">
+  <tr>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Default value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>comparingOperator</strong></td>
+    <td>IMComparatorOperatorEnum</td>
+    <td>Yes</td>
+    <td>No default value</td>
+    <td>This is comparator operator</td>
+  </tr>
+  <tr>
+    <td><strong>comparingValue</strong></td>
+    <td>Moment</td>
+    <td>Yes, if 'comparingControlKey' is not provided</td>
+    <td>No default value</td>
+    <td>This is value for comparing</td>
+  </tr>
+  <tr>
+    <td><strong>comparingControlKey</strong></td>
+    <td>string</td>
+    <td>Yes, if 'comparingValue' is not provided</td>
+    <td>No default value</td>
+    <td>This is key of sibling form control (must have moment model)</td>
+  </tr>
+</table>
+
+<p class="mt-2 mb-2"><b>Next comparing operators are available:</b></p>
+
+<table class="api">
+  <tr>
+    <th>Operator</th>
+    <th>Enum key</th>
+    <th>Enum value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>=</td>
+    <td><strong>equal</strong></td>
+    <td>{{comparatorOperatorEnum.equal}}</td>
+    <td>Equal to</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td><strong>greater</strong></td>
+    <td>{{comparatorOperatorEnum.greater}}</td>
+    <td>Greater than</td>
+  </tr>
+  <tr>
+    <td>>=</td>
+    <td><strong>greaterEqual</strong></td>
+    <td>{{comparatorOperatorEnum.greaterEqual}}</td>
+    <td>Greater than or equal to</td>
+  </tr>
+  <tr>
+    <td><</td>
+    <td><strong>less</strong></td>
+    <td>{{comparatorOperatorEnum.less}}</td>
+    <td>Less than</td>
+  </tr>
+  <tr>
+    <td><=</td>
+    <td><strong>lessEqual</strong></td>
+    <td>{{comparatorOperatorEnum.lessEqual}}</td>
+    <td>Less than or equal to</td>
+  </tr>
+</table>
+
+<p class="mt-2">
+  Please, take a look at the validator examples and play with different defined validator parameters.
+</p>

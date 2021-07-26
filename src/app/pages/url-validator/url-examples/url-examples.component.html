@@ -1,0 +1,6 @@
+<h4><strong>Enter your link below to validate:</strong></h4>
+
+<mat-form-field appearance="outline" class="mt-1" fxFill>
+  <input matInput type="text" [formControl]="urlControl" placeholder="Link">
+  <mat-error *ngIf="urlControl.invalid">{{urlControl.errors | controlErrorResolver}}</mat-error>
+</mat-form-field>

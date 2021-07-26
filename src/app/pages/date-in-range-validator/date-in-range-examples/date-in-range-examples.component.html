@@ -1,0 +1,14 @@
+<h2>Here is example player:</h2>
+<p><b>Next control must have value from {{from}} - {{to}}</b></p>
+
+<form fxLayout="column" class="mt-1" autocomplete="off">
+  <mat-form-field fxFlex="100%">
+    <mat-datepicker-toggle matPrefix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-label>Select date</mat-label>
+    <input matInput [formControl]="dateControl" [matDatepicker]="datePicker">
+    <mat-datepicker #datePicker></mat-datepicker>
+    <mat-error *ngIf="dateControl.invalid">
+      {{dateControl.errors | controlErrorResolver}}
+    </mat-error>
+  </mat-form-field>
+</form>
