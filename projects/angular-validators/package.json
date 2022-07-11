@@ -1,6 +1,6 @@
 {
   "name": "angular-validators",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yarvanya/angular-validators-sandbox"
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/yarvanya/angular-validators-sandbox/blob/main/projects/angular-validators/README.md",
   "peerDependencies": {
-    "@angular/common": "^11.2.0",
-    "@angular/core": "^11.2.0"
+    "@angular/common": "~13.3.11",
+    "@angular/core": "~13.3.11"
   },
   "dependencies": {
     "tslib": "^2.0.0"

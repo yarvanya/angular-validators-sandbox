@@ -42,5 +42,5 @@ const operatorCheckResolver = {
   [IMPasswordOperatorEnum.minSmallLettersQuantity]: (value: string, required_small_letters_quantity) =>
     (value.match(/[a-z]/g)?.length || 0) < required_small_letters_quantity,
   [IMPasswordOperatorEnum.minSpecialCharactersQuantity]: (value: string, required_special_char_quantity) =>
-    (value.match(/[@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g)?.length || 0) < required_special_char_quantity
+    (value.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g)?.length || 0) < required_special_char_quantity
 };
