@@ -36,7 +36,7 @@ const operatorCheckResolver = {
   [IMPasswordOperatorEnum.minLength]: (value: string, required_password_length: number) =>
     value.length < required_password_length,
   [IMPasswordOperatorEnum.minNumberQuantity]: (value: string, required_numbers_quantity: number) =>
-    value.replaceAll(/\D/g, '').length < required_numbers_quantity,
+    (value.match(/[0-9]/g)?.length || 0) < required_numbers_quantity,
   [IMPasswordOperatorEnum.minCapitalLettersQuantity]: (value: string, required_cap_letters_quantity) =>
     (value.match(/[A-Z]/g)?.length || 0) < required_cap_letters_quantity,
   [IMPasswordOperatorEnum.minSmallLettersQuantity]: (value: string, required_small_letters_quantity) =>
