@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMTimeComparatorValidator} from 'angular-validators';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -13,30 +13,30 @@ import {takeUntil} from 'rxjs/operators';
 export class TimeComparatorExamplesComponent implements OnInit, OnDestroy {
   public nowDate: Date = new Date();
   public nowTime: string = `${this.nowDate.getHours()}:${this.nowDate.getMinutes()}`;
-  public equalFormControl: FormControl = new FormControl(
+  public equalFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMTimeComparatorValidator({comparingOperator: IMComparatorOperatorEnum.equal, comparingValue: this.nowTime})
   );
-  public greaterFormControl: FormControl = new FormControl(
+  public greaterFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMTimeComparatorValidator({comparingOperator: IMComparatorOperatorEnum.greater, comparingValue: this.nowTime})
   );
-  public greaterEqualFormControl: FormControl = new FormControl(
+  public greaterEqualFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMTimeComparatorValidator({comparingOperator: IMComparatorOperatorEnum.greaterEqual, comparingValue: this.nowTime})
   );
-  public lessFormControl: FormControl = new FormControl(
+  public lessFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMTimeComparatorValidator({comparingOperator: IMComparatorOperatorEnum.less, comparingValue: this.nowTime})
   );
-  public lessEqualFormControl: FormControl = new FormControl(
+  public lessEqualFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMTimeComparatorValidator({comparingOperator: IMComparatorOperatorEnum.lessEqual, comparingValue: this.nowTime})
   );
 
-  public equalForm: FormGroup = new FormGroup({
-    startTime: new FormControl(null, Validators.required),
-    endTime: new FormControl(
+  public equalForm: UntypedFormGroup = new UntypedFormGroup({
+    startTime: new UntypedFormControl(null, Validators.required),
+    endTime: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -44,9 +44,9 @@ export class TimeComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public greaterForm: FormGroup = new FormGroup({
-    startTime: new FormControl(null, Validators.required),
-    endTime: new FormControl(
+  public greaterForm: UntypedFormGroup = new UntypedFormGroup({
+    startTime: new UntypedFormControl(null, Validators.required),
+    endTime: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -54,9 +54,9 @@ export class TimeComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public greaterEqualForm: FormGroup = new FormGroup({
-    startTime: new FormControl(null, Validators.required),
-    endTime: new FormControl(
+  public greaterEqualForm: UntypedFormGroup = new UntypedFormGroup({
+    startTime: new UntypedFormControl(null, Validators.required),
+    endTime: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -64,9 +64,9 @@ export class TimeComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public lessForm: FormGroup = new FormGroup({
-    startTime: new FormControl(null, Validators.required),
-    endTime: new FormControl(
+  public lessForm: UntypedFormGroup = new UntypedFormGroup({
+    startTime: new UntypedFormControl(null, Validators.required),
+    endTime: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -74,9 +74,9 @@ export class TimeComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public lessEqualForm: FormGroup = new FormGroup({
-    startTime: new FormControl(null, Validators.required),
-    endTime: new FormControl(
+  public lessEqualForm: UntypedFormGroup = new UntypedFormGroup({
+    startTime: new UntypedFormControl(null, Validators.required),
+    endTime: new UntypedFormControl(
       null,
       [
         Validators.required,

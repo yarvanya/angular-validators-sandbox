@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMNumberDecimalPlacesValidator} from 'angular-validators';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -12,9 +12,9 @@ import {takeUntil} from 'rxjs/operators';
 
 export class NumberDecimalPlacesExamplesComponent implements OnInit, OnDestroy {
   public scales: number[] = [0, 1, 2, 3, 4, 5, 6, 7];
-  public scaleControl: FormControl = new FormControl(this.scales[0]);
-  public fixScaleControl: FormControl = new FormControl(false);
-  public decimalPlacesControl: FormControl = new FormControl(
+  public scaleControl: UntypedFormControl = new UntypedFormControl(this.scales[0]);
+  public fixScaleControl: UntypedFormControl = new UntypedFormControl(false);
+  public decimalPlacesControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMNumberDecimalPlacesValidator(this.scaleControl.value, this.fixScaleControl.value)
   );
@@ -42,7 +42,7 @@ export class NumberDecimalPlacesExamplesComponent implements OnInit, OnDestroy {
   }
 
   private createNewDecimalPlacesControl(scale: number, fixed: boolean): void {
-    this.decimalPlacesControl = new FormControl(
+    this.decimalPlacesControl = new UntypedFormControl(
       this.decimalPlacesControl?.value,
       IMNumberDecimalPlacesValidator(scale, fixed)
     );

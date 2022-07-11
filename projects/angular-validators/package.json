@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/yarvanya/angular-validators-sandbox/blob/main/projects/angular-validators/README.md",
   "peerDependencies": {
-    "@angular/common": "~12.2.16",
-    "@angular/core": "~12.2.16"
+    "@angular/common": "~14.0.5",
+    "@angular/core": "~14.0.5"
   },
   "dependencies": {
     "tslib": "^2.0.0"

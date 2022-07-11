@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMNumberComparatorValidator} from 'angular-validators';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -12,30 +12,30 @@ import {takeUntil} from 'rxjs/operators';
 
 export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
   public defaultAge = 18;
-  public equalFormControl: FormControl = new FormControl(
+  public equalFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMNumberComparatorValidator({comparingOperator: IMComparatorOperatorEnum.equal, comparingValue: this.defaultAge})
   );
-  public greaterFormControl: FormControl = new FormControl(
+  public greaterFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMNumberComparatorValidator({comparingOperator: IMComparatorOperatorEnum.greater, comparingValue: this.defaultAge})
   );
-  public greaterEqualFormControl: FormControl = new FormControl(
+  public greaterEqualFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMNumberComparatorValidator({comparingOperator: IMComparatorOperatorEnum.greaterEqual, comparingValue: this.defaultAge})
   );
-  public lessFormControl: FormControl = new FormControl(
+  public lessFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMNumberComparatorValidator({comparingOperator: IMComparatorOperatorEnum.less, comparingValue: this.defaultAge})
   );
-  public lessEqualFormControl: FormControl = new FormControl(
+  public lessEqualFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMNumberComparatorValidator({comparingOperator: IMComparatorOperatorEnum.lessEqual, comparingValue: this.defaultAge})
   );
 
-  public equalForm: FormGroup = new FormGroup({
-    firstAge: new FormControl(null, Validators.required),
-    secondAge: new FormControl(
+  public equalForm: UntypedFormGroup = new UntypedFormGroup({
+    firstAge: new UntypedFormControl(null, Validators.required),
+    secondAge: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -43,9 +43,9 @@ export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public greaterForm: FormGroup = new FormGroup({
-    firstAge: new FormControl(null, Validators.required),
-    secondAge: new FormControl(
+  public greaterForm: UntypedFormGroup = new UntypedFormGroup({
+    firstAge: new UntypedFormControl(null, Validators.required),
+    secondAge: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -53,9 +53,9 @@ export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public greaterEqualForm: FormGroup = new FormGroup({
-    firstAge: new FormControl(null, Validators.required),
-    secondAge: new FormControl(
+  public greaterEqualForm: UntypedFormGroup = new UntypedFormGroup({
+    firstAge: new UntypedFormControl(null, Validators.required),
+    secondAge: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -63,9 +63,9 @@ export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public lessForm: FormGroup = new FormGroup({
-    firstAge: new FormControl(null, Validators.required),
-    secondAge: new FormControl(
+  public lessForm: UntypedFormGroup = new UntypedFormGroup({
+    firstAge: new UntypedFormControl(null, Validators.required),
+    secondAge: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -73,9 +73,9 @@ export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public lessEqualForm: FormGroup = new FormGroup({
-    firstAge: new FormControl(null, Validators.required),
-    secondAge: new FormControl(
+  public lessEqualForm: UntypedFormGroup = new UntypedFormGroup({
+    firstAge: new UntypedFormControl(null, Validators.required),
+    secondAge: new UntypedFormControl(
       null,
       [
         Validators.required,

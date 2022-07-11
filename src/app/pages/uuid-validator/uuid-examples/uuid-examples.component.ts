@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMUUIdValidator} from 'angular-validators';
 
 @Component({
@@ -8,7 +8,7 @@ import {IMUUIdValidator} from 'angular-validators';
   styleUrls: ['./uuid-examples.component.scss']
 })
 export class UuidExamplesComponent {
-  public uuidControl = new FormControl(null, IMUUIdValidator());
+  public uuidControl = new UntypedFormControl(null, IMUUIdValidator());
   private nilId = '00000000-0000-0000-0000-000000000000';
 
   public onUUIdGenerate(): void {

@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {IMPasswordValidator, IMPasswordValidatorConfigModel} from 'angular-validators';
 import {Subscription} from 'rxjs';
 
@@ -9,15 +9,15 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./custom-password-examples.component.scss']
 })
 export class CustomPasswordExamplesComponent implements OnInit, OnDestroy {
-  public passwordFormGroup = new FormGroup({
-    minLength: new FormControl(6, Validators.min(1)),
-    minNumberQuantity: new FormControl(null, Validators.min(0)),
-    minCapitalLettersQuantity: new FormControl(null, Validators.min(0)),
-    minSmallLettersQuantity: new FormControl(null, Validators.min(0)),
-    minSpecialCharactersQuantity: new FormControl(null, Validators.min(0))
+  public passwordFormGroup = new UntypedFormGroup({
+    minLength: new UntypedFormControl(6, Validators.min(1)),
+    minNumberQuantity: new UntypedFormControl(null, Validators.min(0)),
+    minCapitalLettersQuantity: new UntypedFormControl(null, Validators.min(0)),
+    minSmallLettersQuantity: new UntypedFormControl(null, Validators.min(0)),
+    minSpecialCharactersQuantity: new UntypedFormControl(null, Validators.min(0))
   });
 
-  public password = new FormControl(null, IMPasswordValidator({
+  public password = new UntypedFormControl(null, IMPasswordValidator({
     minLength: this.passwordFormGroup.get('minLength').value
   }));
   public hidePassword = true;

@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMJSONValidator} from 'angular-validators';
 import {HttpClient} from '@angular/common/http';
 import {takeUntil} from 'rxjs/operators';
@@ -12,7 +12,7 @@ import {Subject} from 'rxjs';
 })
 
 export class JsonExamplesComponent implements OnInit, OnDestroy {
-  public jsonFormControl: FormControl = new FormControl(null, IMJSONValidator());
+  public jsonFormControl: UntypedFormControl = new UntypedFormControl(null, IMJSONValidator());
   public jsonExample: JSON;
   private subscriptions = new Subject();
 

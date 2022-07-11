@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMUrlValidator} from 'angular-validators';
 
 @Component({
@@ -8,5 +8,5 @@ import {IMUrlValidator} from 'angular-validators';
   styleUrls: ['./url-examples.component.scss']
 })
 export class UrlExamplesComponent {
-  public urlControl = new FormControl(null, IMUrlValidator());
+  public urlControl = new UntypedFormControl(null, IMUrlValidator());
 }
