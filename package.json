@@ -6,6 +6,7 @@
     "start": "ng serve --port 1111",
     "build-watch:lib": "ng build angular-validators --watch",
     "build": "ng build",
+    "build-lib": "ng-packagr -p projects/angular-validators/ng-package.json",
     "test": "ng test",
     "lint": "ng lint"
   },
