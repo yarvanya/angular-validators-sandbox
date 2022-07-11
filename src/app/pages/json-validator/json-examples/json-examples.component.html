@@ -4,7 +4,7 @@
 <div fxLayout="column" class="mt-1">
   <mat-form-field appearance="outline" fxFlex="100%">
     <mat-label>Put JSON here</mat-label>
-    <textarea matInput [formControl]="jsonFormControl" rows="8" [matTextareaAutosize]="true"></textarea>
+    <textarea matInput [formControl]="jsonFormControl" rows="8"></textarea>
     <mat-error *ngIf="jsonFormControl.invalid">
       {{jsonFormControl.errors | controlErrorResolver}}
     </mat-error>
