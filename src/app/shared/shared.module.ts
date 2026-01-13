@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
@@ -37,7 +36,6 @@ export const CUSTOM_MAT_DATE_FORMATS = {
     CommonModule,
     ReactiveFormsModule,
     MatSidenavModule,
-    FlexLayoutModule,
     MatTabsModule,
     MatButtonToggleModule,
     MatFormFieldModule,
