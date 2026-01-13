@@ -7,8 +7,12 @@
         "dist/angular-validators/angular-validators",
         "dist/angular-validators"
       ],
-      "@shared": ["src/app/shared/shared.module"],
-      "@services/*": ["src/services/*"]
+      "@shared": [
+        "src/app/shared/shared.module"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -18,12 +22,13 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
+    "target": "ES2022",
     "module": "es2020",
     "lib": [
       "ESNext",
       "dom"
-    ]
+    ],
+    "useDefineForClassFields": false
   },
   "include": [
     "src/**/*"
