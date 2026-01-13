@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMNumberInRangeValidator} from 'angular-validators';
 
 @Component({
@@ -9,5 +9,5 @@ import {IMNumberInRangeValidator} from 'angular-validators';
 })
 
 export class NumberInRangeExamplesComponent {
-  public percentageControl: FormControl = new FormControl(null, IMNumberInRangeValidator(1, 100));
+  public percentageControl: UntypedFormControl = new UntypedFormControl(null, IMNumberInRangeValidator(1, 100));
 }

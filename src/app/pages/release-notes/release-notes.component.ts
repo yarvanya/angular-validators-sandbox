@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {MatSelectChange} from '@angular/material/select';
 import {ReleaseNotes} from '../../constants/release-notes.constant';
 import {ReleaseNoteInterface} from '../../interfaces/release-note.interface';
@@ -12,7 +12,7 @@ import {ReleaseNoteInterface} from '../../interfaces/release-note.interface';
 
 export class ReleaseNotesComponent implements OnInit {
   public releaseNotes: ReleaseNoteInterface[] = ReleaseNotes;
-  public versionFormControl: FormControl = new FormControl(this.releaseNotes[this.releaseNotes.length - 1].version);
+  public versionFormControl: UntypedFormControl = new UntypedFormControl(this.releaseNotes[this.releaseNotes.length - 1].version);
   public notes: string[] = this.releaseNotes[this.releaseNotes.length - 1].notes;
 
   constructor() {}

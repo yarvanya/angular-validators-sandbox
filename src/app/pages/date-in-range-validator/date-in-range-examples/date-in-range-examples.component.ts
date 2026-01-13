@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMDateInRangeValidator} from 'angular-validators';
 import * as moment from 'moment';
 import {Moment} from 'moment';
@@ -15,5 +15,5 @@ export class DateInRangeExamplesComponent {
   public to = '26.04.2021';
   private fromDate: Moment = moment(this.from, 'DD.MM.YYYY').startOf('day');
   private toDate: Moment = moment(this.to, 'DD.MM.YYYY').startOf('day');
-  public dateControl: FormControl = new FormControl(null, IMDateInRangeValidator(this.fromDate, this.toDate));
+  public dateControl: UntypedFormControl = new UntypedFormControl(null, IMDateInRangeValidator(this.fromDate, this.toDate));
 }
