@@ -1,20 +1,21 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMEmailValidator} from 'angular-validators';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-custom-email-examples',
-  templateUrl: './custom-email-examples.component.html',
-  styleUrls: ['./custom-email-examples.component.scss']
+    selector: 'app-custom-email-examples',
+    templateUrl: './custom-email-examples.component.html',
+    styleUrls: ['./custom-email-examples.component.scss'],
+    standalone: false
 })
 
 export class CustomEmailExamplesComponent implements OnInit, OnDestroy {
   public defaultEmailScale = 2;
-  public scaleFormControl: FormControl = new FormControl(this.defaultEmailScale);
-  public fixScaleControl: FormControl = new FormControl(false);
-  public emailFormControl: FormControl = new FormControl(
+  public scaleFormControl: UntypedFormControl = new UntypedFormControl(this.defaultEmailScale);
+  public fixScaleControl: UntypedFormControl = new UntypedFormControl(false);
+  public emailFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMEmailValidator(this.scaleFormControl.value, this.fixScaleControl.value)
   );
@@ -42,7 +43,7 @@ export class CustomEmailExamplesComponent implements OnInit, OnDestroy {
   }
 
   private createNewEmailControl(scale: number, fixed: boolean): void {
-    this.emailFormControl = new FormControl(this.emailFormControl?.value, IMEmailValidator(scale, fixed));
+    this.emailFormControl = new UntypedFormControl(this.emailFormControl?.value, IMEmailValidator(scale, fixed));
     this.emailFormControl.markAsTouched();
   }
 

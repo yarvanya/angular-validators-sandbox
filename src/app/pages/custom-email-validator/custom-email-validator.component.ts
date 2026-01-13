@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-custom-email-validator',
-  templateUrl: './custom-email-validator.component.html',
-  styleUrls: ['./custom-email-validator.component.scss']
+    selector: 'app-custom-email-validator',
+    templateUrl: './custom-email-validator.component.html',
+    styleUrls: ['./custom-email-validator.component.scss'],
+    standalone: false
 })
 
 export class CustomEmailValidatorComponent {}

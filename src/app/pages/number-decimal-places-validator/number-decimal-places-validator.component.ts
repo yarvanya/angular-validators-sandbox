@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-number-decimal-places-validator',
-  templateUrl: './number-decimal-places-validator.component.html',
-  styleUrls: ['./number-decimal-places-validator.component.scss']
+    selector: 'app-number-decimal-places-validator',
+    templateUrl: './number-decimal-places-validator.component.html',
+    styleUrls: ['./number-decimal-places-validator.component.scss'],
+    standalone: false
 })
 
 export class NumberDecimalPlacesValidatorComponent implements OnInit {

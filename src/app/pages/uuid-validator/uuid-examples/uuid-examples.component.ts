@@ -1,14 +1,15 @@
 import {Component} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMUUIdValidator} from 'angular-validators';
 
 @Component({
-  selector: 'app-uuid-examples',
-  templateUrl: './uuid-examples.component.html',
-  styleUrls: ['./uuid-examples.component.scss']
+    selector: 'app-uuid-examples',
+    templateUrl: './uuid-examples.component.html',
+    styleUrls: ['./uuid-examples.component.scss'],
+    standalone: false
 })
 export class UuidExamplesComponent {
-  public uuidControl = new FormControl(null, IMUUIdValidator());
+  public uuidControl = new UntypedFormControl(null, IMUUIdValidator());
   private nilId = '00000000-0000-0000-0000-000000000000';
 
   public onUUIdGenerate(): void {

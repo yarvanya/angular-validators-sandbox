@@ -5,20 +5,21 @@ import {
   IMCountryEnum,
   IMPostCodeValidator
 } from 'angular-validators';
-import {AbstractControl, FormControl} from '@angular/forms';
+import {AbstractControl, UntypedFormControl} from '@angular/forms';
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-post-code-examples',
-  templateUrl: './post-code-examples.component.html',
-  styleUrls: ['./post-code-examples.component.scss']
+    selector: 'app-post-code-examples',
+    templateUrl: './post-code-examples.component.html',
+    styleUrls: ['./post-code-examples.component.scss'],
+    standalone: false
 })
 
 export class PostCodeExamplesComponent implements OnInit, OnDestroy {
   public availableCountries: IMCountryConfigInterface[] = IMCountryConfigurations;
 
-  public countryFormControl: FormControl = new FormControl(IMCountryEnum.Albania);
-  public postCodeFormControl: FormControl = new FormControl(null, IMPostCodeValidator(this.countryFormControl?.value));
+  public countryFormControl: UntypedFormControl = new UntypedFormControl(IMCountryEnum.Albania);
+  public postCodeFormControl: UntypedFormControl = new UntypedFormControl(null, IMPostCodeValidator(this.countryFormControl?.value));
   private postCodeSubscription: Subscription;
 
   public ngOnInit(): void {
@@ -27,7 +28,7 @@ export class PostCodeExamplesComponent implements OnInit, OnDestroy {
 
   public subscribeToCountrySelectionValueChanges(): void {
     this.postCodeSubscription = this.countryFormControl.valueChanges.subscribe(() => {
-      this.postCodeFormControl = new FormControl(
+      this.postCodeFormControl = new UntypedFormControl(
         this.postCodeFormControl?.value,
         IMPostCodeValidator(this.countryFormControl.value)
       );

@@ -3,13 +3,13 @@
 <mat-tab-group animationDuration="0ms">
   <mat-tab label="Equal To (===)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be equal to current today date.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="equalDatePicker"></mat-datepicker-toggle>
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="equalFormControl" [matDatepicker]="equalDatePicker">
@@ -20,13 +20,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end date has to be the same as start date.</span>
       </p>
 
-      <form [formGroup]="equalForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="equalForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="equalStartDatePicker"></mat-datepicker-toggle>
           <mat-label>Select start date</mat-label>
           <input matInput formControlName="startDate" [matDatepicker]="equalStartDatePicker">
@@ -36,7 +36,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="equalEndDatePicker"></mat-datepicker-toggle>
           <mat-label>Select end date</mat-label>
           <input matInput formControlName="endDate" [matDatepicker]="equalEndDatePicker">
@@ -52,13 +52,13 @@
   </mat-tab>
   <mat-tab label="Greater Than (>)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example selected date must be strictly greater than current today date.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="greaterDatePicker"></mat-datepicker-toggle>
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="greaterFormControl" [matDatepicker]="greaterDatePicker">
@@ -69,13 +69,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end date must be strictly greater than start date.</span>
       </p>
 
-      <form [formGroup]="greaterForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="greaterForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="greaterStartDatePicker"></mat-datepicker-toggle>
           <mat-label>Select start date</mat-label>
           <input matInput formControlName="startDate" [matDatepicker]="greaterStartDatePicker">
@@ -85,7 +85,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="greaterEndDatePicker"></mat-datepicker-toggle>
           <mat-label>Select end date</mat-label>
           <input matInput formControlName="endDate" [matDatepicker]="greaterEndDatePicker">
@@ -101,13 +101,13 @@
   </mat-tab>
   <mat-tab label="Greater Than Or Equal To (>=)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be greater than or equal to current today date.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="greaterEqualDatePicker"></mat-datepicker-toggle>
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="greaterEqualFormControl" [matDatepicker]="greaterEqualDatePicker">
@@ -118,13 +118,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end date must be greater than or equal to start date.</span>
       </p>
 
-      <form [formGroup]="greaterEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="greaterEqualForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="greaterEqualStartDatePicker"></mat-datepicker-toggle>
           <mat-label>Select start date</mat-label>
           <input matInput formControlName="startDate" [matDatepicker]="greaterEqualStartDatePicker">
@@ -134,7 +134,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="greaterEqualEndDatePicker"></mat-datepicker-toggle>
           <mat-label>Select end date</mat-label>
           <input matInput formControlName="endDate" [matDatepicker]="greaterEqualEndDatePicker">
@@ -150,13 +150,13 @@
   </mat-tab>
   <mat-tab label="Less Than (<)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be strictly less than current today date.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="lessDatePicker"></mat-datepicker-toggle>
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="lessFormControl" [matDatepicker]="lessDatePicker">
@@ -167,13 +167,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end date must be strictly less than start date.</span>
       </p>
 
-      <form [formGroup]="lessForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="lessForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="lessStartDatePicker"></mat-datepicker-toggle>
           <mat-label>Select start date</mat-label>
           <input matInput formControlName="startDate" [matDatepicker]="lessStartDatePicker">
@@ -183,7 +183,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="lessEndDatePicker"></mat-datepicker-toggle>
           <mat-label>Select end date</mat-label>
           <input matInput formControlName="endDate" [matDatepicker]="lessEndDatePicker">
@@ -199,13 +199,13 @@
   </mat-tab>
   <mat-tab label="Less Than Or Equal To (<=)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be less than or equal to current today date.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="lessEqualDatePicker"></mat-datepicker-toggle>
           <mat-label>Select date</mat-label>
           <input matInput [formControl]="lessEqualFormControl" [matDatepicker]="lessEqualDatePicker">
@@ -216,13 +216,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end date must be less than or equal to start date.</span>
       </p>
 
-      <form [formGroup]="lessEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="lessEqualForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="lessEqualStartDatePicker"></mat-datepicker-toggle>
           <mat-label>Select start date</mat-label>
           <input matInput formControlName="startDate" [matDatepicker]="lessEqualStartDatePicker">
@@ -232,7 +232,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-datepicker-toggle matPrefix [for]="lessEqualEndDatePicker"></mat-datepicker-toggle>
           <mat-label>Select end date</mat-label>
           <input matInput formControlName="endDate" [matDatepicker]="lessEqualEndDatePicker">

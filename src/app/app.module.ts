@@ -12,30 +12,24 @@ import {CustomEmailValidatorModule} from './pages/custom-email-validator/custom-
 import {CustomCreditCardValidatorModule} from './pages/custom-credit-card-validator/custom-credit-card-validator.module';
 import {AppComponent} from './app.component';
 import {UrlValidatorModule} from './pages/url-validator/url-validator.module';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {UuidValidatorModule} from './pages/uuid-validator/uuid-validator.module';
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    SharedModule,
-    HomeModule,
-    CustomPasswordValidatorModule,
-    CustomRequiredValidatorModule,
-    PhoneNumberValidatorModule,
-    CustomEmailValidatorModule,
-    NumberComparatorValidatorModule,
-    CustomCreditCardValidatorModule,
-    UrlValidatorModule,
-    UuidValidatorModule
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [AppRoutingModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        SharedModule,
+        HomeModule,
+        CustomPasswordValidatorModule,
+        CustomRequiredValidatorModule,
+        PhoneNumberValidatorModule,
+        CustomEmailValidatorModule,
+        NumberComparatorValidatorModule,
+        CustomCreditCardValidatorModule,
+        UrlValidatorModule,
+        UuidValidatorModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 
 export class AppModule {}

@@ -1,6 +1,6 @@
 <mat-drawer-container class="application-container">
   <mat-drawer mode="side" opened>
-    <div class="menu-container" fxLayout="column" fxLayoutAlign="space-between">
+    <div class="menu-container flex flex-col justify-between">
       <ul>
         <li>
           <a
@@ -20,7 +20,7 @@
         </li>
       </ul>
 
-      <ul fxLayout="column" fxLayoutAlign="end" fxFlex="100%">
+      <ul class="flex flex-col items-end w-full">
         <li>
           <b>
             <a [routerLink]="'release-notes'" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">

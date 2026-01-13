@@ -1,42 +1,43 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMDateComparatorValidator} from 'angular-validators';
-import * as moment from 'moment';
+import moment from 'moment';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-date-comparator-examples',
-  templateUrl: './date-comparator-examples.component.html',
-  styleUrls: ['./date-comparator-examples.component.scss']
+    selector: 'app-date-comparator-examples',
+    templateUrl: './date-comparator-examples.component.html',
+    styleUrls: ['./date-comparator-examples.component.scss'],
+    standalone: false
 })
 
 export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
   public today = moment().startOf('day');
-  public equalFormControl: FormControl = new FormControl(
+  public equalFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMDateComparatorValidator({comparingOperator: IMComparatorOperatorEnum.equal, comparingValue: this.today})
   );
-  public greaterFormControl: FormControl = new FormControl(
+  public greaterFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMDateComparatorValidator({comparingOperator: IMComparatorOperatorEnum.greater, comparingValue: this.today})
   );
-  public greaterEqualFormControl: FormControl = new FormControl(
+  public greaterEqualFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMDateComparatorValidator({comparingOperator: IMComparatorOperatorEnum.greaterEqual, comparingValue: this.today})
   );
-  public lessFormControl: FormControl = new FormControl(
+  public lessFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMDateComparatorValidator({comparingOperator: IMComparatorOperatorEnum.less, comparingValue: this.today})
   );
-  public lessEqualFormControl: FormControl = new FormControl(
+  public lessEqualFormControl: UntypedFormControl = new UntypedFormControl(
     null,
     IMDateComparatorValidator({comparingOperator: IMComparatorOperatorEnum.lessEqual, comparingValue: this.today})
   );
 
-  public equalForm: FormGroup = new FormGroup({
-    startDate: new FormControl(null, Validators.required),
-    endDate: new FormControl(
+  public equalForm: UntypedFormGroup = new UntypedFormGroup({
+    startDate: new UntypedFormControl(null, Validators.required),
+    endDate: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -44,9 +45,9 @@ export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public greaterForm: FormGroup = new FormGroup({
-    startDate: new FormControl(null, Validators.required),
-    endDate: new FormControl(
+  public greaterForm: UntypedFormGroup = new UntypedFormGroup({
+    startDate: new UntypedFormControl(null, Validators.required),
+    endDate: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -54,9 +55,9 @@ export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public greaterEqualForm: FormGroup = new FormGroup({
-    startDate: new FormControl(null, Validators.required),
-    endDate: new FormControl(
+  public greaterEqualForm: UntypedFormGroup = new UntypedFormGroup({
+    startDate: new UntypedFormControl(null, Validators.required),
+    endDate: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -64,9 +65,9 @@ export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public lessForm: FormGroup = new FormGroup({
-    startDate: new FormControl(null, Validators.required),
-    endDate: new FormControl(
+  public lessForm: UntypedFormGroup = new UntypedFormGroup({
+    startDate: new UntypedFormControl(null, Validators.required),
+    endDate: new UntypedFormControl(
       null,
       [
         Validators.required,
@@ -74,9 +75,9 @@ export class DateComparatorExamplesComponent implements OnInit, OnDestroy {
       ]
     )
   });
-  public lessEqualForm: FormGroup = new FormGroup({
-    startDate: new FormControl(null, Validators.required),
-    endDate: new FormControl(
+  public lessEqualForm: UntypedFormGroup = new UntypedFormGroup({
+    startDate: new UntypedFormControl(null, Validators.required),
+    endDate: new UntypedFormControl(
       null,
       [
         Validators.required,

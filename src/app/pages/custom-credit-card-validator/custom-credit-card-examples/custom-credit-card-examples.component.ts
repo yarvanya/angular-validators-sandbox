@@ -1,16 +1,17 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {UntypedFormControl} from '@angular/forms';
 import {IMCreditCardValidator, IMCreditCardTypeValidatorEnum} from 'angular-validators';
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-custom-credit-card-examples',
-  templateUrl: './custom-credit-card-examples.component.html',
-  styleUrls: ['./custom-credit-card-examples.component.scss']
+    selector: 'app-custom-credit-card-examples',
+    templateUrl: './custom-credit-card-examples.component.html',
+    styleUrls: ['./custom-credit-card-examples.component.scss'],
+    standalone: false
 })
 export class CustomCreditCardExamplesComponent implements OnInit, OnDestroy {
-  public creditCardNumber = new FormControl(null, IMCreditCardValidator());
-  public cardType = new FormControl(IMCreditCardTypeValidatorEnum.MasterCard);
+  public creditCardNumber = new UntypedFormControl(null, IMCreditCardValidator());
+  public cardType = new UntypedFormControl(IMCreditCardTypeValidatorEnum.MasterCard);
   public IMCreditCardTypeValidatorEnum = IMCreditCardTypeValidatorEnum;
   private creditCardNumberSubscription: Subscription;
 

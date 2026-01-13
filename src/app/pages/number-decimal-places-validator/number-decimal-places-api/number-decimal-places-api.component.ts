@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-number-decimal-places-api',
-  templateUrl: './number-decimal-places-api.component.html',
-  styleUrls: ['./number-decimal-places-api.component.scss']
+    selector: 'app-number-decimal-places-api',
+    templateUrl: './number-decimal-places-api.component.html',
+    styleUrls: ['./number-decimal-places-api.component.scss'],
+    standalone: false
 })
 
 export class NumberDecimalPlacesApiComponent implements OnInit {
