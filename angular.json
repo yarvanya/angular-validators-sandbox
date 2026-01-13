@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-validators-sandbox:build"
+            "buildTarget": "angular-validators-sandbox:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-validators-sandbox:build:production"
+              "buildTarget": "angular-validators-sandbox:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-validators-sandbox:build"
+            "buildTarget": "angular-validators-sandbox:build"
           }
         },
         "test": {
