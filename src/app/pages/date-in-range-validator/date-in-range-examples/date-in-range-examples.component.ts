@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {UntypedFormControl} from '@angular/forms';
 import {IMDateInRangeValidator} from 'angular-validators';
-import * as moment from 'moment';
+import moment from 'moment';
 import {Moment} from 'moment';
 
 @Component({

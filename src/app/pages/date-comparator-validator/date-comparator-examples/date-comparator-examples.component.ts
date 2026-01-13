@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {IMComparatorOperatorEnum, IMDateComparatorValidator} from 'angular-validators';
-import * as moment from 'moment';
+import moment from 'moment';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 

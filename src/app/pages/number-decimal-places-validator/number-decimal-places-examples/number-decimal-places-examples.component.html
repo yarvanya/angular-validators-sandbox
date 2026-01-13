@@ -1,10 +1,10 @@
 <h2>Here is example player:</h2>
 
-<form fxLayout="column" class="mt-1" autocomplete="off">
+<form class="flex flex-col mt-1" autocomplete="off">
   <h3>Select needed scale for number decimal places here:</h3>
   <mat-button-toggle-group [formControl]="scaleControl">
     <ng-container *ngFor="let scale_item of scales">
-      <mat-button-toggle fxFlex="100%" [value]="scale_item">{{scale_item}}</mat-button-toggle>
+      <mat-button-toggle class="w-full" [value]="scale_item">{{scale_item}}</mat-button-toggle>
     </ng-container>
   </mat-button-toggle-group>
 

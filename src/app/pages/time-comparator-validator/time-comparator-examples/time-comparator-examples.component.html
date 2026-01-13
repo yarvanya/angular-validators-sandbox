@@ -3,13 +3,13 @@
 <mat-tab-group animationDuration="0ms">
   <mat-tab label="Equal To (===)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be equal to current time.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select time</mat-label>
           <input matInput type="time" [formControl]="equalFormControl">
           <mat-error *ngIf="equalFormControl.invalid">
@@ -18,13 +18,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end time has to be the same as start time.</span>
       </p>
 
-      <form [formGroup]="equalForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="equalForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select start time</mat-label>
           <input matInput type="time" formControlName="startTime">
           <mat-error *ngIf="equalForm.get('startTime').invalid">
@@ -32,7 +32,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-label>Select end time</mat-label>
           <input matInput type="time" formControlName="endTime">
           <mat-error *ngIf="equalForm.get('endTime').invalid">
@@ -46,13 +46,13 @@
   </mat-tab>
   <mat-tab label="Greater Than (>)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example selected time must be strictly greater than current time.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select time</mat-label>
           <input matInput type="time" [formControl]="greaterFormControl">
           <mat-error *ngIf="greaterFormControl.invalid">
@@ -61,13 +61,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end time must be strictly greater than start time.</span>
       </p>
 
-      <form [formGroup]="greaterForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="greaterForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select start time</mat-label>
           <input matInput type="time" formControlName="startTime">
           <mat-error *ngIf="greaterForm.get('startTime').invalid">
@@ -75,7 +75,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-label>Select end time</mat-label>
           <input matInput type="time" formControlName="endTime">
           <mat-error *ngIf="greaterForm.get('endTime').invalid">
@@ -89,13 +89,13 @@
   </mat-tab>
   <mat-tab label="Greater Than Or Equal To (>=)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be greater than or equal to current time.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select time</mat-label>
           <input matInput type="time" [formControl]="greaterEqualFormControl">
           <mat-error *ngIf="greaterEqualFormControl.invalid">
@@ -104,13 +104,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end time must be greater than or equal to start time.</span>
       </p>
 
-      <form [formGroup]="greaterEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="greaterEqualForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select start time</mat-label>
           <input matInput type="time" formControlName="startTime">
           <mat-error *ngIf="greaterEqualForm.get('startTime').invalid">
@@ -118,7 +118,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-label>Select end time</mat-label>
           <input matInput type="time" formControlName="endTime">
           <mat-error *ngIf="greaterEqualForm.get('endTime').invalid">
@@ -132,13 +132,13 @@
   </mat-tab>
   <mat-tab label="Less Than (<)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be strictly less than current time.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select time</mat-label>
           <input matInput type="time" [formControl]="lessFormControl">
           <mat-error *ngIf="lessFormControl.invalid">
@@ -147,13 +147,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end time must be strictly less than start time.</span>
       </p>
 
-      <form [formGroup]="lessForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="lessForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select start time</mat-label>
           <input matInput type="time" formControlName="startTime">
           <mat-error *ngIf="lessForm.get('startTime').invalid">
@@ -161,7 +161,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-label>Select end time</mat-label>
           <input matInput type="time" formControlName="endTime">
           <mat-error *ngIf="lessForm.get('endTime').invalid">
@@ -175,13 +175,13 @@
   </mat-tab>
   <mat-tab label="Less Than Or Equal To (<=)">
     <div class="mt-2">
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>1. Comparing value is passed</b>
         <span>In next example value of the form control must be less than or equal to current time.</span>
       </p>
 
-      <form fxLayout="column" class="mt-1" autocomplete="off">
-        <mat-form-field fxFlex="100%">
+      <form class="flex flex-col mt-1" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select time</mat-label>
           <input matInput type="time" [formControl]="lessEqualFormControl">
           <mat-error *ngIf="lessEqualFormControl.invalid">
@@ -190,13 +190,13 @@
         </mat-form-field>
       </form>
 
-      <p fxLayout="column">
+      <p class="flex flex-col">
         <b>2. Comparing control value is passed</b>
         <span>Here are two form controls that are required and end time must be less than or equal to start time.</span>
       </p>
 
-      <form [formGroup]="lessEqualForm" fxLayout="column" class="mt-1" autocomplete="off" fxLayoutGap="12px">
-        <mat-form-field fxFlex="100%">
+      <form [formGroup]="lessEqualForm" class="flex flex-col mt-1 gap-3" autocomplete="off">
+        <mat-form-field class="w-full">
           <mat-label>Select start time</mat-label>
           <input matInput type="time" formControlName="startTime">
           <mat-error *ngIf="lessEqualForm.get('startTime').invalid">
@@ -204,7 +204,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="100%">
+        <mat-form-field class="w-full">
           <mat-label>Select end time</mat-label>
           <input matInput type="time" formControlName="endTime">
           <mat-error *ngIf="lessEqualForm.get('endTime').invalid">
