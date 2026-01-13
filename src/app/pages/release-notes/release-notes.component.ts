@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {UntypedFormControl} from '@angular/forms';
-import {MatLegacySelectChange as MatSelectChange} from '@angular/material/legacy-select';
 import {ReleaseNotes} from '../../constants/release-notes.constant';
 import {ReleaseNoteInterface} from '../../interfaces/release-note.interface';
 
@@ -19,7 +18,7 @@ export class ReleaseNotesComponent implements OnInit {
 
   public ngOnInit(): void {}
 
-  public onVersionChange(event: MatSelectChange): void {
+  public onVersionChange(event: any): void {
     const selectedVersion: string = event.value;
     this.notes = this.releaseNotes.find(release_note => release_note.version === selectedVersion).notes;
   }
