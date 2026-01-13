@@ -18,7 +18,7 @@ export const IMDateComparatorValidator = (config: IMDateComparatorValidatorConfi
 
 const getDateComparatorValidationError =
   (control_value: Moment, comparing_control_value: Moment, operator: IMComparatorOperatorEnum): ValidationErrors => {
-    if (control_value && comparing_control_value) {
+    if (control_value && comparing_control_value && typeof control_value === 'object' && typeof comparing_control_value === 'object') {
       if (operatorCheckResolver[operator](control_value, comparing_control_value)) {
         return {
           dateComparatorError: {
@@ -32,19 +32,19 @@ const getDateComparatorValidationError =
   };
 
 const operatorCheckResolver = {
-  [IMComparatorOperatorEnum.equal]: (value: Moment, comparing_value: Moment) => {
+  [IMComparatorOperatorEnum.equal]: (value: Moment, comparing_value: Moment): boolean => {
     return !value.isSame(comparing_value);
   },
-  [IMComparatorOperatorEnum.greater]: (value: Moment, comparing_value: Moment) => {
+  [IMComparatorOperatorEnum.greater]: (value: Moment, comparing_value: Moment): boolean => {
     return !value.isAfter(comparing_value);
   },
-  [IMComparatorOperatorEnum.greaterEqual]: (value: Moment, comparing_value: Moment) => {
+  [IMComparatorOperatorEnum.greaterEqual]: (value: Moment, comparing_value: Moment): boolean => {
     return !value.isSame(comparing_value) && !value.isAfter(comparing_value);
   },
-  [IMComparatorOperatorEnum.less]: (value: Moment, comparing_value: Moment) => {
+  [IMComparatorOperatorEnum.less]: (value: Moment, comparing_value: Moment): boolean => {
     return !value.isBefore(comparing_value);
   },
-  [IMComparatorOperatorEnum.lessEqual]: (value: Moment, comparing_value: Moment) => {
+  [IMComparatorOperatorEnum.lessEqual]: (value: Moment, comparing_value: Moment): boolean => {
     return !value.isSame(comparing_value) && !value.isBefore(comparing_value);
   }
 };
