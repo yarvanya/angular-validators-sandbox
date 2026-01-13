@@ -2,7 +2,7 @@ import {AbstractControl, ValidationErrors, ValidatorFn} from '@angular/forms';
 import {IMComparatorOperatorEnum} from '../enums/comparator-operator.enum';
 import {IMTimeComparatorValidatorConfigInterface} from '../interfaces/time-comparator-configuration.interface';
 import {Moment} from 'moment';
-import * as moment from 'moment';
+import moment from 'moment';
 import {IMTimeComparatorErrorInterface} from '../interfaces/time-comparator-error.interface';
 
 export const IMTimeComparatorValidator = (config: IMTimeComparatorValidatorConfigInterface): ValidatorFn => {
