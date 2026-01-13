@@ -4,9 +4,10 @@ import {IMCountryConfigurations, IMPhoneNumberValidator, IMCountryConfigInterfac
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-phone-number-examples',
-  templateUrl: './phone-number-examples.component.html',
-  styleUrls: ['./phone-number-examples.component.scss']
+    selector: 'app-phone-number-examples',
+    templateUrl: './phone-number-examples.component.html',
+    styleUrls: ['./phone-number-examples.component.scss'],
+    standalone: false
 })
 
 export class PhoneNumberExamplesComponent implements OnInit, OnDestroy {

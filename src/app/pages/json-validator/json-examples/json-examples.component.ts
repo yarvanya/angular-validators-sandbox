@@ -6,9 +6,10 @@ import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
 
 @Component({
-  selector: 'app-json-examples',
-  templateUrl: './json-examples.component.html',
-  styleUrls: ['./json-examples.component.scss']
+    selector: 'app-json-examples',
+    templateUrl: './json-examples.component.html',
+    styleUrls: ['./json-examples.component.scss'],
+    standalone: false
 })
 
 export class JsonExamplesComponent implements OnInit, OnDestroy {

@@ -9,9 +9,10 @@ import {AbstractControl, UntypedFormControl} from '@angular/forms';
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-post-code-examples',
-  templateUrl: './post-code-examples.component.html',
-  styleUrls: ['./post-code-examples.component.scss']
+    selector: 'app-post-code-examples',
+    templateUrl: './post-code-examples.component.html',
+    styleUrls: ['./post-code-examples.component.scss'],
+    standalone: false
 })
 
 export class PostCodeExamplesComponent implements OnInit, OnDestroy {

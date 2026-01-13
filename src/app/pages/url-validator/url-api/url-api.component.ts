@@ -3,9 +3,10 @@ import {UrlValidatorConfigurations} from '../url-validator-configurations.consta
 import {IMUrlProtocolTypeEnum} from 'angular-validators';
 
 @Component({
-  selector: 'app-url-api',
-  templateUrl: './url-api.component.html',
-  styleUrls: ['./url-api.component.scss']
+    selector: 'app-url-api',
+    templateUrl: './url-api.component.html',
+    styleUrls: ['./url-api.component.scss'],
+    standalone: false
 })
 export class UrlApiComponent {
   public IMUrlProtocolTypeEnum = IMUrlProtocolTypeEnum;

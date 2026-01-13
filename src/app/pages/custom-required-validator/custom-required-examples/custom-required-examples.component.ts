@@ -3,9 +3,10 @@ import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 import {IMRequiredValidator} from 'angular-validators';
 
 @Component({
-  selector: 'app-custom-required-examples',
-  templateUrl: './custom-required-examples.component.html',
-  styleUrls: ['./custom-required-examples.component.scss']
+    selector: 'app-custom-required-examples',
+    templateUrl: './custom-required-examples.component.html',
+    styleUrls: ['./custom-required-examples.component.scss'],
+    standalone: false
 })
 
 export class CustomRequiredExamplesComponent {

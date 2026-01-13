@@ -3,9 +3,10 @@ import {UntypedFormControl} from '@angular/forms';
 import {IMUrlValidator} from 'angular-validators';
 
 @Component({
-  selector: 'app-url-examples',
-  templateUrl: './url-examples.component.html',
-  styleUrls: ['./url-examples.component.scss']
+    selector: 'app-url-examples',
+    templateUrl: './url-examples.component.html',
+    styleUrls: ['./url-examples.component.scss'],
+    standalone: false
 })
 export class UrlExamplesComponent {
   public urlControl = new UntypedFormControl(null, IMUrlValidator());

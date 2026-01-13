@@ -5,9 +5,10 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-number-decimal-places-examples',
-  templateUrl: './number-decimal-places-examples.component.html',
-  styleUrls: ['./number-decimal-places-examples.component.scss']
+    selector: 'app-number-decimal-places-examples',
+    templateUrl: './number-decimal-places-examples.component.html',
+    styleUrls: ['./number-decimal-places-examples.component.scss'],
+    standalone: false
 })
 
 export class NumberDecimalPlacesExamplesComponent implements OnInit, OnDestroy {

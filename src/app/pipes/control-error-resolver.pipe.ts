@@ -16,7 +16,10 @@ import {
 } from 'angular-validators';
 import {ValidationErrors} from '@angular/forms';
 
-@Pipe({name: 'controlErrorResolver'})
+@Pipe({
+    name: 'controlErrorResolver',
+    standalone: false
+})
 
 export class ControlErrorResolverPipe implements PipeTransform {
   private errorResolver = {

@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-custom-credit-card-validator',
-  templateUrl: './custom-credit-card-validator.component.html',
-  styleUrls: ['./custom-credit-card-validator.component.scss']
+    selector: 'app-custom-credit-card-validator',
+    templateUrl: './custom-credit-card-validator.component.html',
+    styleUrls: ['./custom-credit-card-validator.component.scss'],
+    standalone: false
 })
 export class CustomCreditCardValidatorComponent {}

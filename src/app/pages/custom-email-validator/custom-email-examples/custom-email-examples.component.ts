@@ -5,9 +5,10 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-custom-email-examples',
-  templateUrl: './custom-email-examples.component.html',
-  styleUrls: ['./custom-email-examples.component.scss']
+    selector: 'app-custom-email-examples',
+    templateUrl: './custom-email-examples.component.html',
+    styleUrls: ['./custom-email-examples.component.scss'],
+    standalone: false
 })
 
 export class CustomEmailExamplesComponent implements OnInit, OnDestroy {

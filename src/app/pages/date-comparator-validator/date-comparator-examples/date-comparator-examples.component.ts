@@ -6,9 +6,10 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-date-comparator-examples',
-  templateUrl: './date-comparator-examples.component.html',
-  styleUrls: ['./date-comparator-examples.component.scss']
+    selector: 'app-date-comparator-examples',
+    templateUrl: './date-comparator-examples.component.html',
+    styleUrls: ['./date-comparator-examples.component.scss'],
+    standalone: false
 })
 
 export class DateComparatorExamplesComponent implements OnInit, OnDestroy {

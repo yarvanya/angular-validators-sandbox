@@ -5,9 +5,10 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-time-comparator-examples',
-  templateUrl: './time-comparator-examples.component.html',
-  styleUrls: ['./time-comparator-examples.component.scss']
+    selector: 'app-time-comparator-examples',
+    templateUrl: './time-comparator-examples.component.html',
+    styleUrls: ['./time-comparator-examples.component.scss'],
+    standalone: false
 })
 
 export class TimeComparatorExamplesComponent implements OnInit, OnDestroy {

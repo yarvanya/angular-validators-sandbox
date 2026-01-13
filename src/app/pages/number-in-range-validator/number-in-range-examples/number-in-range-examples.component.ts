@@ -3,9 +3,10 @@ import {UntypedFormControl} from '@angular/forms';
 import {IMNumberInRangeValidator} from 'angular-validators';
 
 @Component({
-  selector: 'app-number-in-range-examples',
-  templateUrl: './number-in-range-examples.component.html',
-  styleUrls: ['./number-in-range-examples.component.scss']
+    selector: 'app-number-in-range-examples',
+    templateUrl: './number-in-range-examples.component.html',
+    styleUrls: ['./number-in-range-examples.component.scss'],
+    standalone: false
 })
 
 export class NumberInRangeExamplesComponent {

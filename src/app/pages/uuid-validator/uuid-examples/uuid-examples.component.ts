@@ -3,9 +3,10 @@ import {UntypedFormControl} from '@angular/forms';
 import {IMUUIdValidator} from 'angular-validators';
 
 @Component({
-  selector: 'app-uuid-examples',
-  templateUrl: './uuid-examples.component.html',
-  styleUrls: ['./uuid-examples.component.scss']
+    selector: 'app-uuid-examples',
+    templateUrl: './uuid-examples.component.html',
+    styleUrls: ['./uuid-examples.component.scss'],
+    standalone: false
 })
 export class UuidExamplesComponent {
   public uuidControl = new UntypedFormControl(null, IMUUIdValidator());

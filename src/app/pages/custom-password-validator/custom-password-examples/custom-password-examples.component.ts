@@ -4,9 +4,10 @@ import {IMPasswordValidator, IMPasswordValidatorConfigModel} from 'angular-valid
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-custom-password-examples',
-  templateUrl: './custom-password-examples.component.html',
-  styleUrls: ['./custom-password-examples.component.scss']
+    selector: 'app-custom-password-examples',
+    templateUrl: './custom-password-examples.component.html',
+    styleUrls: ['./custom-password-examples.component.scss'],
+    standalone: false
 })
 export class CustomPasswordExamplesComponent implements OnInit, OnDestroy {
   public passwordFormGroup = new UntypedFormGroup({

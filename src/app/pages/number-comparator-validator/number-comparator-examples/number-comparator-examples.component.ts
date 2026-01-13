@@ -5,9 +5,10 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-number-comparator-examples',
-  templateUrl: './number-comparator-examples.component.html',
-  styleUrls: ['./number-comparator-examples.component.scss']
+    selector: 'app-number-comparator-examples',
+    templateUrl: './number-comparator-examples.component.html',
+    styleUrls: ['./number-comparator-examples.component.scss'],
+    standalone: false
 })
 
 export class NumberComparatorExamplesComponent implements OnInit, OnDestroy {

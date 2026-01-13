@@ -4,9 +4,10 @@ import {IMCreditCardValidator, IMCreditCardTypeValidatorEnum} from 'angular-vali
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-custom-credit-card-examples',
-  templateUrl: './custom-credit-card-examples.component.html',
-  styleUrls: ['./custom-credit-card-examples.component.scss']
+    selector: 'app-custom-credit-card-examples',
+    templateUrl: './custom-credit-card-examples.component.html',
+    styleUrls: ['./custom-credit-card-examples.component.scss'],
+    standalone: false
 })
 export class CustomCreditCardExamplesComponent implements OnInit, OnDestroy {
   public creditCardNumber = new UntypedFormControl(null, IMCreditCardValidator());

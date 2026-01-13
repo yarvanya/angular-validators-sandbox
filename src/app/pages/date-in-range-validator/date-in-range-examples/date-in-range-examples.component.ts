@@ -5,9 +5,10 @@ import * as moment from 'moment';
 import {Moment} from 'moment';
 
 @Component({
-  selector: 'app-date-in-range-examples',
-  templateUrl: './date-in-range-examples.component.html',
-  styleUrls: ['./date-in-range-examples.component.scss']
+    selector: 'app-date-in-range-examples',
+    templateUrl: './date-in-range-examples.component.html',
+    styleUrls: ['./date-in-range-examples.component.scss'],
+    standalone: false
 })
 
 export class DateInRangeExamplesComponent {

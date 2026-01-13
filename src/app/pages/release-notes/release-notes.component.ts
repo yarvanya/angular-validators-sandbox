@@ -4,9 +4,10 @@ import {ReleaseNotes} from '../../constants/release-notes.constant';
 import {ReleaseNoteInterface} from '../../interfaces/release-note.interface';
 
 @Component({
-  selector: 'app-release-notes',
-  templateUrl: './release-notes.component.html',
-  styleUrls: ['./release-notes.component.scss']
+    selector: 'app-release-notes',
+    templateUrl: './release-notes.component.html',
+    styleUrls: ['./release-notes.component.scss'],
+    standalone: false
 })
 
 export class ReleaseNotesComponent implements OnInit {
