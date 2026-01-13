@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UntypedFormControl} from '@angular/forms';
-import {MatSelectChange} from '@angular/material/select';
+import {MatLegacySelectChange as MatSelectChange} from '@angular/material/legacy-select';
 import {ReleaseNotes} from '../../constants/release-notes.constant';
 import {ReleaseNoteInterface} from '../../interfaces/release-note.interface';
 
